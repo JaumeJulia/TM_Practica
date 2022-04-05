@@ -1,0 +1,70 @@
+.container_img {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    width: 25%;
+    opacity: 0;
+  }
+  
+  .container_img:hover .image_back{
+    opacity: 0.3;
+  }
+
+  .container_img:hover .image_front_1 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    opacity: 0.7;
+  }
+
+  .container_img:hover .image_front_2 {
+    position: absolute;
+    top: 100%;
+    left: 250%;
+    opacity: 0.7;
+  }
+
+  .container_img:hover .overlay {
+    opacity: 1;
+  }
+  
+  .container_img:hover .image_front_text_1 {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    position: absolute;
+    top: 225%;
+    left: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .container_img:hover .image_front_text_2 {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    position: absolute;
+    top: 225%;
+    left: 300%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
