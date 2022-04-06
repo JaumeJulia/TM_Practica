@@ -4447,6 +4447,12 @@ fieldset:disabled .btn {
     overflow-y: auto;
 }
 
+.navbar-nav-follow {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 @media (min-width: 576px) {
     .navbar-expand-sm {
         flex-wrap: nowrap;
