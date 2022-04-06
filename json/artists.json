@@ -14,14 +14,13 @@
             }
         ],
         "Event":[
-            {   "fecha":" ",
-                "hora":" ",
-                "lugar":" "
+            {   "startDate":" ",
+                "location":" "
             }
         ],
-        "Comments":[
-            {   "email":" ",
-                "comentario":" "
+        "Comment":[
+            {   "author":" ",
+                "text":" "
             }
         ]
     }
