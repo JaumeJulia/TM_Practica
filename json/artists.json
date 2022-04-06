@@ -1,6 +1,28 @@
-{"person":[
-    {"name":"Rick", "familyName":"Astley"},
-    {"name":"Daft", "familyName":"Punk"},
-    {"name":"Ennio", "familyName":"Morricone"},
-    {"name":"Louis", "familyName":"Cole"}
+{"Person":[
+    {   "name":" ",
+        "url": " ",
+        "knowsAbout": " ",
+        "description":" ",
+        "MusicAlbum":[
+            {   "name":" ",
+                "image":" ",
+                "MusicRecording":[
+                    {   "name":" ",
+                        "url":" "
+                    }
+                ]
+            }
+        ],
+        "Event":[
+            {   "fecha":" ",
+                "hora":" ",
+                "lugar":" "
+            }
+        ],
+        "Comments":[
+            {   "email":" ",
+                "comentario":" "
+            }
+        ]
+    }
 ]}
