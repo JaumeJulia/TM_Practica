@@ -1,27 +1,116 @@
-{"Person":[
-    {   "name":" ",
-        "url": " ",
-        "knowsAbout": " ",
-        "description":" ",
-        "MusicAlbum":[
-            {   "name":" ",
-                "image":" ",
-                "MusicRecording":[
-                    {   "name":" ",
-                        "url":" "
-                    }
-                ]
+{
+    "Person": [{
+        "name": "Rick Astley",
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0",
+        "knowsAbout": "Cosas por las que es conocido o destacado.",
+        "description": "Biografía de wikipedia",
+        "MusicAlbum": [{
+            "name": "Whenever You Need Somebody",
+            "image": "assets/WheneverYouNeedSomebody.jpg",
+            "url": [{
+                "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+            }],
+            "MusicRecording": [{
+                    "name": "Never Gonna Give You Up",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "Whenever You Need Somebody",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "Together Forever",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "It Would Take a Strong Strong Man",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "The Love Has Gone",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "Don't Say Goodbye",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "Slipping Away",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "No More Looking for Love",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "You Move Me",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                },
+                {
+                    "name": "When I Fall in Love",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }]
+                }
+            ]
+        }],
+        "Event": [{
+                "startDate": "TUE 10 MAY",
+                "location": "HERITAGE BANK CENTER    CINCINNATI, OH, US",
+                "url": "https://www.songkick.com/concerts/40047083-new-kids-on-the-block-at-heritage-bank-center?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
+            },
+            {
+                "startDate": "THU 12 MAY",
+                "location": "GAINBRIDGE FIELDHOUSE    INDIANAPOLIS, IN, US",
+                "url": "https://www.songkick.com/concerts/40046973-new-kids-on-the-block-at-gainbridge-fieldhouse?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
+            },
+            {
+                "startDate": "FRI 13 MAY",
+                "location": "BRIDGESTONE ARENA    NASHVILLE, TN, US",
+                "url": "https://www.songkick.com/concerts/40047050-new-kids-on-the-block-at-bridgestone-arena?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
             }
         ],
-        "Event":[
-            {   "startDate":" ",
-                "location":" "
-            }
-        ],
-        "Comment":[
-            {   "author":" ",
-                "text":" "
+        "Comment": [{
+                "author": "John Smith",
+                "text": "Un músico como pocos. Siempre me divierto RickRolleando a mis amigos. xD"
+            },
+            {
+                "author": "Karen Watson",
+                "text": "Me encantan sus baladas."
+            },
+            {
+                "author": "Steven Spielberg",
+                "text": "Estaría encantado de tener su voz como parte de las canciones de mis películas."
             }
         ]
-    }
-]}
+    }]
+}
