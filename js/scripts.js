@@ -15,6 +15,16 @@ async function updateCurrentPage(choosenArtist) {
         return jsonContent.name === choosenArtist;
     }
     document.getElementById("prueba").innerHTML = artist[0].name;
+    writeLocalJson(artist[0]);
+    loadPage(artist[0]);
+}
+
+function loadPage() { //it will load the page with the localStorage Contents
+
+}
+
+function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
+
 }
 
 function prueba(artist) {
