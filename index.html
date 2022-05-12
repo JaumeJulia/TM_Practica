@@ -243,7 +243,7 @@
                     <div id="concert-section-collapse" class="accordion-collapse collapse" aria-labelledby="concert-comment-section-header-1">
                         <div class="accordion-body">
                             <!-- <p> hola que tal mira me presento soy el cejas</p> -->
-                            <table class="table table-striped table-dark">
+                            <table class="table table-striped table-dark" id="event_table">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -252,26 +252,28 @@
                                         <th scope="col">Más información</th>
                                     </tr>
                                 </thead>
-                                <tbody id="event_table">
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Balbastro 770, Buenos Aires</td>
-                                        <td>URL-1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Almirante Grau 221, La Paz, Bolivia</td>
-                                        <td>URL-2</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Santa Maria 2670, Providencia, Santiago</td>
-                                        <td>URL-3</td>
-                                    </tr>
-                                </tbody>
+                                <div>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Balbastro 770, Buenos Aires</td>
+                                            <td>URL-1</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Almirante Grau 221, La Paz, Bolivia</td>
+                                            <td>URL-2</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Santa Maria 2670, Providencia, Santiago</td>
+                                            <td>URL-3</td>
+                                        </tr>
+                                    </tbody>
+                                </div>
                             </table>
                         </div>
                     </div>
@@ -464,9 +466,6 @@
                     </div>
                 </aside>
             </div>
-        </section>
-        <section>
-            <p id="prueba" onclick="updateCurrentPage('Daft Punk');">Por dios, cambiame</p>
         </section>
     </main>
     <!-- Footer-->
