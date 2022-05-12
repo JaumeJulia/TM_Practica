@@ -70,8 +70,8 @@
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Rick Astley</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Cosas por las que es conocido o destacado.</p>
+                            <h1 id="artist_name" class="display-5 fw-bolder text-white mb-2">Rick Astley</h1>
+                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4">Cosas por las que es conocido o destacado.</p>
                             <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <iframe width="500" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe id="artist_video" width="500" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -106,8 +106,8 @@
             <div class="text-center">
                 <div class="fs-4 mb-4 fst-italic">Albums del Artista</div>
             </div>
-            <div class="card-group px-5 my-5">
-                <div class="card w-50 shadow border-0 mx-2">
+            <div id="album_section" class="card-group px-5 my-5">
+                <div id="album_card" class="card w-50 shadow border-0 mx-2">
                     <div class="container_img">
                         <img class="image image_back" src="assets/WheneverYouNeedSomebody.jpg" alt="..." />
                         <div class="overlay">
@@ -252,7 +252,7 @@
                                         <th scope="col">Más información</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="event_table">
                                     <tr>
                                         <th scope="row">1</th>
                                         <td>dd/mm/aaaa</td>
@@ -466,7 +466,7 @@
             </div>
         </section>
         <section>
-            <p id="prueba" onclick="updateCurrentPage('Rick Astley');">Por dios, cambiame</p>
+            <p id="prueba" onclick="updateCurrentPage('Daft Punk');">Por dios, cambiame</p>
         </section>
     </main>
     <!-- Footer-->
