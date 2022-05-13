@@ -49,7 +49,7 @@ async function modifyJson(fileUrl, data, artistName) { //TODO
     console.log(responseText);
 }
 
-function writeJson() { //TODO
+async function writeJson() { //TODO
     if (fileUrl !== masterFile) {
         //write json file if it's not the masterFile, we don't want to lose all data.
         const response = await fetch(fileUrl, {

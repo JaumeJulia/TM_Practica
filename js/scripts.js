@@ -6,6 +6,10 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
+window.onload = function() {
+    loadPageWithLocalStorage();
+};
+
 async function updateCurrentPage(choosenArtist) {
     const url = "../json/artists.json";
     const jsonContent = await readJson(url);
@@ -18,10 +22,12 @@ async function updateCurrentPage(choosenArtist) {
     loadPage(artist[0]);
 }
 
-function loadPage() { //it will load the page with the localStorage Contents
+function loadPageWithLocalStorage() { //it will load the page with the localStorage Contents
     var pageContent = readLocalJson();
     if (pageContent != null) {
         loadPage(pageContent);
+    } else { // if it's the first time loading in, we need to be sure we rick roll them
+        pageContent = updateCurrentPage('Rick Astley');
     }
 }
 
