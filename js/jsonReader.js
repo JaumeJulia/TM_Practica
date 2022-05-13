@@ -33,16 +33,33 @@ async function writeLocalJson(updatedPageContent) {
     localStorage.setItem(localJson, pageContent);
 }
 
+//Doesn't work properly
 
-//estas funciones estan comentadas y incompletas porque no creo que sea util modificar archivos en el server desde el cliente
+async function modifyJson(fileUrl, data, artistName) { //TODO
+    var jsonFile = await readJson(fileUrl);
 
-/* function modifyJson(fileUrl) {
-
+    const response = await fetch(fileUrl, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const responseText = await response.text();
+    console.log(responseText);
 }
 
-function writeJson(){
+function writeJson() { //TODO
     if (fileUrl !== masterFile) {
         //write json file if it's not the masterFile, we don't want to lose all data.
-        
+        const response = await fetch(fileUrl, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseText = await response.text();
+        console.log(responseText);
     }
-} */
+}

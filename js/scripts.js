@@ -14,35 +14,15 @@ async function updateCurrentPage(choosenArtist) {
     function findArtist(jsonContent) {
         return jsonContent.name === choosenArtist;
     }
-    document.getElementById("prueba").innerHTML = artist[0].name;
     writeLocalJson(artist[0]);
     loadPage(artist[0]);
 }
 
 function loadPage() { //it will load the page with the localStorage Contents
     var pageContent = readLocalJson();
-    document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
-    document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
-    document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
-
-    var album = document.getElementById("album_card");
-    document.getElementById("album_section").childNodes = null;
-    for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
-        //changing image
-        album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
-        //changing urlSpotify
-        album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.MusicAlbum[i].url.urlSpotify);
-        //changing urlYoutube
-        album.childNodes[1].childNodes[3].childNodes[3].setAttribute("href", pageContent.MusicAlbum[i].url.urlYoutube);
-        //changing name
-        album.childNodes[3].childNodes[1].innerHTML = pageContent.MusicAlbum[i].name;
-        console.log(pageContent.MusicAlbum[i].name);
-        //introducing songs
-        album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i]);
-        //append
-        document.getElementById("album_section").appendChild(album.cloneNode(true));
+    if (pageContent != null) {
+        loadPage(pageContent);
     }
-
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -79,6 +59,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     }
     events = events + "</tbody>";
     document.getElementById("event_table").childNodes[3].innerHTML = events;
+    window.scrollTo({ top: 0 });
 
 }
 
