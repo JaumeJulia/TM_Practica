@@ -6,12 +6,14 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
+const url = "../json/artists.json";
+
 window.onload = function() {
     loadPageWithLocalStorage();
 };
 
 async function updateCurrentPage(choosenArtist) {
-    const url = "../json/artists.json";
+    //const url = "../json/artists.json";
     const jsonContent = await readJson(url);
     var artist = jsonContent.Person.filter(findArtist);
 
@@ -76,4 +78,26 @@ function generateSongList(musicAlbum) {
     }
     songList = songList + "</ol>";
     return songList;
+}
+
+async function filterArtistByGenre(selectedGenres) {
+    jsonContent = await readJson(url);
+    var carrouselContent;
+    for (var i = 0; i < jsonContent.Person.length; i++) {
+        if (selectedGenres.includes(jsonContent.Person[i].genre)) {
+            carrouselContent += buildArtistCard(jsonContent.Person[i].name);
+        }
+    }
+    document.getElementById("carrousel").innerHTML = carrouselContent;
+}
+
+function buildArtistCard(artistName) {
+    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(' + artistName + ');">';
+    card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
+    card += '<div class="card h-100 shadow border-0">';
+    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg alt="..." />';
+    card += '<div class="card-body p-4 text-center">';
+    card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
+    card += '</div></div></a></div>';
+    return card;
 }
