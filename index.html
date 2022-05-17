@@ -70,8 +70,8 @@
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Rick Astley</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Cosas por las que es conocido o destacado.</p>
+                            <h1 id="artist_name" class="display-5 fw-bolder text-white mb-2">Rick Astley</h1>
+                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4">Cosas por las que es conocido o destacado.</p>
                             <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
@@ -79,10 +79,7 @@
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <iframe width="500" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        <iframe id="artist_video" width="500" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -109,8 +106,8 @@
             <div class="text-center">
                 <div class="fs-4 mb-4 fst-italic">Albums del Artista</div>
             </div>
-            <div class="card-group px-5 my-5">
-                <div class="card w-50 shadow border-0 mx-2">
+            <div id="album_section" class="card-group px-5 my-5">
+                <div id="album_card" class="card w-50 shadow border-0 mx-2">
                     <div class="container_img">
                         <img class="image image_back" src="assets/WheneverYouNeedSomebody.jpg" alt="..." />
                         <div class="overlay">
@@ -246,7 +243,7 @@
                     <div id="concert-section-collapse" class="accordion-collapse collapse" aria-labelledby="concert-comment-section-header-1">
                         <div class="accordion-body">
                             <!-- <p> hola que tal mira me presento soy el cejas</p> -->
-                            <table class="table table-striped table-dark">
+                            <table class="table table-striped table-dark" id="event_table">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -255,26 +252,28 @@
                                         <th scope="col">Más información</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Balbastro 770, Buenos Aires</td>
-                                        <td>URL-1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Almirante Grau 221, La Paz, Bolivia</td>
-                                        <td>URL-2</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>dd/mm/aaaa</td>
-                                        <td>Santa Maria 2670, Providencia, Santiago</td>
-                                        <td>URL-3</td>
-                                    </tr>
-                                </tbody>
+                                <div>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Balbastro 770, Buenos Aires</td>
+                                            <td>URL-1</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Almirante Grau 221, La Paz, Bolivia</td>
+                                            <td>URL-2</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>dd/mm/aaaa</td>
+                                            <td>Santa Maria 2670, Providencia, Santiago</td>
+                                            <td>URL-3</td>
+                                        </tr>
+                                    </tbody>
+                                </div>
                             </table>
                         </div>
                     </div>
@@ -385,9 +384,9 @@
                     <input type="checkbox" class="custom-control-input" id="customSwitch">
                     <label class="custom-control-label" for="customSwitch">Activar Modo Oscuro</label>
                 </div> -->
-                <div class="gallery js-flickity">
+                <div class="gallery js-flickity" id="carrousel">
                     <!-- Div del carrousel -->
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rick Astley');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/RickAstley.jpg" alt="..." />
@@ -397,7 +396,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Daft Punk');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/Daft-Punk.jpg" alt="..." />
@@ -407,7 +406,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Louis Cole');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/Louis-Cole.jpg" alt="..." />
@@ -417,7 +416,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Ennio Morricone');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/Ennio-Morricone.jpg" alt="..." />
@@ -427,7 +426,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Mick Gordon');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/MickGordon.jpg" alt="..." />
@@ -437,7 +436,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 mx-1 my-1">
+                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rise on Fire');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/RickAstley.jpg" alt="..." />
@@ -450,8 +449,7 @@
                 </div>
                 <!-- Call to action-->
                 <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-                    <div
-                        class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                    <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
                             <div class="fs-3 fw-bold text-white">Descubre con nosotros tus nuevos artistas favoritos
                             </div>
@@ -459,10 +457,8 @@
                         </div>
                         <div class="ms-xl-4">
                             <div class="input-group mb-2">
-                                <input class="form-control" type="text" placeholder="Correo electrónico..."
-                                    aria-label="Email..." aria-describedby="button-newsletter" />
-                                <button class="btn btn-outline-light" id="button-newsletter"
-                                    type="button">Registrate</button>
+                                <input class="form-control" type="text" placeholder="Correo electrónico..." aria-label="Email..." aria-describedby="button-newsletter" />
+                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Registrate</button>
                             </div>
                             <div class="small text-white-50">Nos importa tu privacidad, nunca compartiremos tus datos.
                             </div>
@@ -493,6 +489,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="js/jsonReader.js"></script>
     <script src="js/flickity.js"></script>
 </body>
 
