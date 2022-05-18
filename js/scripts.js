@@ -35,6 +35,7 @@ function loadPageWithLocalStorage() { //it will load the page with the localStor
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
     document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
+    WikipediaApiSearch(pageContent.name, pageContent.description);
     document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
     document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
 
@@ -100,4 +101,56 @@ function buildArtistCard(artistName) {
     card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
     card += '</div></div></a></div>';
     return card;
+}
+
+function WikipediaApiSearch(artistName, section){
+    jQuery.ajax({
+        type: "GET",
+        url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+            $.each(data, function (i, item) {
+                if (i == 1) {
+                    console.log(data);
+                    var searchData = item[0];
+                    WikipediaAPIGetContent(searchData, section);
+                }
+            });
+        },
+        error: function (errorMessage) {
+            alert(errorMessage);
+        }
+    });
+}
+
+function WikipediaAPIGetContent(search, section) {
+    jQuery.ajax({
+        type: "GET",
+        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?");
+            console.log(data);
+            var markup = data.parse.text["*"];
+            console.log(markup);
+            var blurb = $('<div></div>').html(markup);
+            // remove links as they will not work
+            console.log(blurb);
+            blurb.find('a').each(function () { $(this).replaceWith($(this).html()); });
+            // remove any references
+            blurb.find('sup').remove();
+            blurb.find('span').remove();
+            // remove cite error
+            blurb.find('ol').remove();/* 
+            $('#biografia').html($(blurb).find('p')); */
+            $('#biografia').html(blurb); 
+        },
+        error: function (errorMessage) {
+            alert(errorMessage);
+        }
+    });
 }
