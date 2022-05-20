@@ -13,7 +13,7 @@ window.onload = function() {
 };
 
 async function updateCurrentPage(choosenArtist) {
-    //const url = "../json/artists.json";
+
     const jsonContent = await readJson(url);
     var artist = jsonContent.Person.filter(findArtist);
 
@@ -35,11 +35,14 @@ function loadPageWithLocalStorage() { //it will load the page with the localStor
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
     document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
+    WikipediaApiSearch(pageContent.name, pageContent.description);
+    TwitterApiSerach(pageContent.name, pageContent.follows);
     document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
     document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
 
     let album = document.getElementById("album_card");
     document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
+    console.log(album);
     for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
         album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
@@ -80,24 +83,60 @@ function generateSongList(musicAlbum) {
     return songList;
 }
 
-async function filterArtistByGenre(selectedGenres) {
-    jsonContent = await readJson(url);
-    var carrouselContent;
-    for (var i = 0; i < jsonContent.Person.length; i++) {
-        if (selectedGenres.includes(jsonContent.Person[i].genre)) {
-            carrouselContent += buildArtistCard(jsonContent.Person[i].name);
+function WikipediaApiSearch(artistName, section){
+    jQuery.ajax({
+        type: "GET",
+        url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+            $.each(data, function (i, item) {
+                if (i == 1) {
+                    console.log(data);
+                    var searchData = item[0];
+                    WikipediaAPIGetContent(searchData, section);
+                }
+            });
+        },
+        error: function (errorMessage) {
+            alert(errorMessage);
         }
-    }
-    document.getElementById("carrousel").innerHTML = carrouselContent;
+    });
 }
 
-function buildArtistCard(artistName) {
-    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(' + artistName + ');">';
-    card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
-    card += '<div class="card h-100 shadow border-0">';
-    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg alt="..." />';
-    card += '<div class="card-body p-4 text-center">';
-    card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
-    card += '</div></div></a></div>';
-    return card;
+function WikipediaAPIGetContent(search, section) {
+    jQuery.ajax({
+        type: "GET",
+        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+            var markup = data.parse.text["*"];
+            var blurb = $('<div></div>').html(markup);
+            // remove links as they will not work
+            blurb.find('a').each(function () { $(this).replaceWith($(this).html()); });
+            // remove any references
+            blurb.find('sup').remove();
+            blurb.find('span').remove();
+            // remove cite error
+            blurb.find('ol').remove();/* 
+            $('#biografia').html($(blurb).find('p')); */
+            $('#biografia').html(blurb); 
+        },
+        error: function (errorMessage) {
+            alert(errorMessage);
+        }
+    });
+}
+
+function TwitterApiSerach(artistName, artistTwitter){
+    let twitter = document.getElementById("artistTwitterPanel");
+    twitter.childNodes[1].childNodes[1].innerHTML = "<i class=\"fa fa-twitter-square\" aria-hidden=\"true\"></i>"+ artistName;
+    twitter.childNodes[2].innerHTML = "<a class=\"twitter-timeline\" href=\"https://twitter.com/"+ artistTwitter+"\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by"+ artistTwitter+"</a>"; 
+    console.log( twitter);
+    document.getElementById("twitterPanel").innerHTML="";
+    document.getElementById("twitterPanel").appendChild(twitter.cloneNode(true));
+
 }
