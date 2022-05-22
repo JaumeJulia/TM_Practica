@@ -33,6 +33,23 @@ async function writeLocalJson(updatedPageContent) {
     localStorage.setItem(localJson, pageContent);
 }
 
+function storeData(tag, data) {
+    localStorage.setItem(tag, data);
+}
+
+function retrieveLocalData(tag) {
+    return localStorage.getItem(tag);
+}
+
+function storeDataAsJSON(tag, data) {
+    localStorage.setItem(tag, JSON.stringify(data));
+}
+
+function retrieveLocalDataAsJSON(tag, data) {
+    data = localStorage.getItem(tag);
+    return JSON.parse(data);
+}
+
 //Doesn't work properly
 
 async function modifyJson(fileUrl, data, artistName) { //TODO

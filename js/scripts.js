@@ -6,31 +6,56 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-const url = "../json/artists.json";
+const urlMainJson = "../json/artists.json";
 
 window.onload = function() {
-    loadPageWithLocalStorage();
+    var storedArtist = retrieveLocalData("artistName");
+    console.log(storedArtist);
+    console.log(storedArtist);
+    if (storedArtist == null) {
+        updateCurrentPage("Rick Astley");
+    } else {
+        updateCurrentPageWithLocalStorage();
+    }
 };
 
-async function updateCurrentPage(choosenArtist) {
+async function updateCurrentPage(artistName) {
+    var storedArtist = retrieveLocalData("artistName");
+    if (storedArtist === artistName) {
+        updateCurrentPageWithLocalStorage();
+    } else {
+        const jsonContent = await readJson(urlMainJson);
+        var artist = jsonContent.Person.filter(findArtist);
 
-    const jsonContent = await readJson(url);
-    var artist = jsonContent.Person.filter(findArtist);
-
-    function findArtist(jsonContent) {
-        return jsonContent.name === choosenArtist;
+        function findArtist(jsonContent) {
+            return jsonContent.name === artistName;
+        }
+        storeData("artistName", artist[0].name);
+        storeDataAsJSON("jsonContents", artist[0]);
+        console.log(artist[0]);
+        loadPage(artist[0]);
+        WikipediaApiSearch(artist[0].name, artist[0].description);
     }
-    writeLocalJson(artist[0]);
-    loadPage(artist[0]);
 }
 
-function loadPageWithLocalStorage() { //it will load the page with the localStorage Contents
-    var pageContent = readLocalJson();
-    if (pageContent != null) {
-        loadPage(pageContent);
-    } else { // if it's the first time loading in, we need to be sure we rick roll them
-        pageContent = updateCurrentPage('Rick Astley');
-    }
+function updateCurrentPageWithLocalStorage() {
+    loadPage(retrieveLocalDataAsJSON("jsonContents"));
+    loadWikiDescription(retrieveLocalData("wiki"));
+}
+
+function loadWikiDescription(data) {
+    console.log(data);
+    var blurb = $('<div></div>').html(data);
+    // remove links as they will not work
+    console.log(blurb);
+    blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+    // remove any references
+    blurb.find('sup').remove();
+    blurb.find('span').remove();
+    // remove cite error
+    blurb.find('ol').remove();
+    console.log(blurb);
+    $('#biografia').html(blurb);
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -83,15 +108,36 @@ function generateSongList(musicAlbum) {
     return songList;
 }
 
-function WikipediaApiSearch(artistName, section){
+async function filterArtistByGenre(selectedGenres) {
+    jsonContent = await readJson(urlMainJson);
+    var carrouselContent;
+    for (var i = 0; i < jsonContent.Person.length; i++) {
+        if (selectedGenres.includes(jsonContent.Person[i].genre)) {
+            carrouselContent += buildArtistCard(jsonContent.Person[i].name);
+        }
+    });
+}
+
+function buildArtistCard(artistName) {
+    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(' + artistName + ');">';
+    card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
+    card += '<div class="card h-100 shadow border-0">';
+    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg alt="..." />';
+    card += '<div class="card-body p-4 text-center">';
+    card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
+    card += '</div></div></a></div>';
+    return card;
+}
+
+function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: false,
         dataType: "json",
-        success: function (data, textStatus, jqXHR) {
-            $.each(data, function (i, item) {
+        success: function(data, textStatus, jqXHR) {
+            $.each(data, function(i, item) {
                 if (i == 1) {
                     console.log(data);
                     var searchData = item[0];
@@ -99,7 +145,7 @@ function WikipediaApiSearch(artistName, section){
                 }
             });
         },
-        error: function (errorMessage) {
+        error: function(errorMessage) {
             alert(errorMessage);
         }
     });
@@ -108,35 +154,30 @@ function WikipediaApiSearch(artistName, section){
 function WikipediaAPIGetContent(search, section) {
     jQuery.ajax({
         type: "GET",
-        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?",
+        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: false,
         dataType: "json",
-        success: function (data, textStatus, jqXHR) {
+        success: function(data, textStatus, jqXHR) {
+            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
+            console.log(data);
             var markup = data.parse.text["*"];
-            var blurb = $('<div></div>').html(markup);
-            // remove links as they will not work
-            blurb.find('a').each(function () { $(this).replaceWith($(this).html()); });
-            // remove any references
-            blurb.find('sup').remove();
-            blurb.find('span').remove();
-            // remove cite error
-            blurb.find('ol').remove();/* 
-            $('#biografia').html($(blurb).find('p')); */
-            $('#biografia').html(blurb); 
+            console.log(markup);
+            storeData("wiki", markup);
+            loadWikiDescription(markup);
         },
-        error: function (errorMessage) {
+        error: function(errorMessage) {
             alert(errorMessage);
         }
     });
 }
 
-function TwitterApiSerach(artistName, artistTwitter){
+function TwitterApiSerach(artistName, artistTwitter) {
     let twitter = document.getElementById("artistTwitterPanel");
-    twitter.childNodes[1].childNodes[1].innerHTML = "<i class=\"fa fa-twitter-square\" aria-hidden=\"true\"></i>"+ artistName;
-    twitter.childNodes[2].innerHTML = "<a class=\"twitter-timeline\" href=\"https://twitter.com/"+ artistTwitter+"\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by"+ artistTwitter+"</a>"; 
-    console.log( twitter);
-    document.getElementById("twitterPanel").innerHTML="";
+    twitter.childNodes[1].childNodes[1].innerHTML = "<i class=\"fa fa-twitter-square\" aria-hidden=\"true\"></i>" + artistName;
+    twitter.childNodes[2].innerHTML = "<a class=\"twitter-timeline\" href=\"https://twitter.com/" + artistTwitter + "\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by" + artistTwitter + "</a>";
+    console.log(twitter);
+    document.getElementById("twitterPanel").innerHTML = "";
     document.getElementById("twitterPanel").appendChild(twitter.cloneNode(true));
 
 }
