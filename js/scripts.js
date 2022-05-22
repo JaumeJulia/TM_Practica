@@ -6,36 +6,60 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-const url = "../json/artists.json";
+const urlMainJson = "../json/artists.json";
 
 window.onload = function() {
-    loadPageWithLocalStorage();
+    var storedArtist = retrieveLocalData("artistName");
+    console.log(storedArtist);
+    console.log(storedArtist);
+    if (storedArtist == null) {
+        updateCurrentPage("Rick Astley");
+    } else {
+        updateCurrentPageWithLocalStorage();
+    }
 };
 
-async function updateCurrentPage(choosenArtist) {
-    //const url = "../json/artists.json";
-    const jsonContent = await readJson(url);
-    var artist = jsonContent.Person.filter(findArtist);
+async function updateCurrentPage(artistName) {
+    var storedArtist = retrieveLocalData("artistName");
+    if (storedArtist === artistName) {
+        updateCurrentPageWithLocalStorage();
+    } else {
+        const jsonContent = await readJson(urlMainJson);
+        var artist = jsonContent.Person.filter(findArtist);
 
-    function findArtist(jsonContent) {
-        return jsonContent.name === choosenArtist;
+        function findArtist(jsonContent) {
+            return jsonContent.name === artistName;
+        }
+        storeData("artistName", artist[0].name);
+        storeDataAsJSON("jsonContents", artist[0]);
+        console.log(artist[0]);
+        loadPage(artist[0]);
+        WikipediaApiSearch(artist[0].name, artist[0].description);
     }
-    writeLocalJson(artist[0]);
-    loadPage(artist[0]);
 }
 
-function loadPageWithLocalStorage() { //it will load the page with the localStorage Contents
-    var pageContent = readLocalJson();
-    if (pageContent != null) {
-        loadPage(pageContent);
-    } else { // if it's the first time loading in, we need to be sure we rick roll them
-        pageContent = updateCurrentPage('Rick Astley');
-    }
+function updateCurrentPageWithLocalStorage() {
+    loadPage(retrieveLocalDataAsJSON("jsonContents"));
+    loadWikiDescription(retrieveLocalData("wiki"));
+}
+
+function loadWikiDescription(data) {
+    console.log(data);
+    var blurb = $('<div></div>').html(data);
+    // remove links as they will not work
+    console.log(blurb);
+    blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+    // remove any references
+    blurb.find('sup').remove();
+    blurb.find('span').remove();
+    // remove cite error
+    blurb.find('ol').remove();
+    console.log(blurb);
+    $('#biografia').html(blurb);
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
     document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
-    WikipediaApiSearch(pageContent.name, pageContent.description);
     document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
     document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
 
@@ -82,7 +106,7 @@ function generateSongList(musicAlbum) {
 }
 
 async function filterArtistByGenre(selectedGenres) {
-    jsonContent = await readJson(url);
+    jsonContent = await readJson(urlMainJson);
     var carrouselContent;
     for (var i = 0; i < jsonContent.Person.length; i++) {
         if (selectedGenres.includes(jsonContent.Person[i].genre)) {
@@ -103,15 +127,15 @@ function buildArtistCard(artistName) {
     return card;
 }
 
-function WikipediaApiSearch(artistName, section){
+function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: false,
         dataType: "json",
-        success: function (data, textStatus, jqXHR) {
-            $.each(data, function (i, item) {
+        success: function(data, textStatus, jqXHR) {
+            $.each(data, function(i, item) {
                 if (i == 1) {
                     console.log(data);
                     var searchData = item[0];
@@ -119,7 +143,7 @@ function WikipediaApiSearch(artistName, section){
                 }
             });
         },
-        error: function (errorMessage) {
+        error: function(errorMessage) {
             alert(errorMessage);
         }
     });
@@ -128,28 +152,19 @@ function WikipediaApiSearch(artistName, section){
 function WikipediaAPIGetContent(search, section) {
     jQuery.ajax({
         type: "GET",
-        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?",
+        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: false,
         dataType: "json",
-        success: function (data, textStatus, jqXHR) {
-            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section="+section+"&page=" + search + "&callback=?");
+        success: function(data, textStatus, jqXHR) {
+            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
             console.log(data);
             var markup = data.parse.text["*"];
             console.log(markup);
-            var blurb = $('<div></div>').html(markup);
-            // remove links as they will not work
-            console.log(blurb);
-            blurb.find('a').each(function () { $(this).replaceWith($(this).html()); });
-            // remove any references
-            blurb.find('sup').remove();
-            blurb.find('span').remove();
-            // remove cite error
-            blurb.find('ol').remove();/* 
-            $('#biografia').html($(blurb).find('p')); */
-            $('#biografia').html(blurb); 
+            storeData("wiki", markup);
+            loadWikiDescription(markup);
         },
-        error: function (errorMessage) {
+        error: function(errorMessage) {
             alert(errorMessage);
         }
     });
