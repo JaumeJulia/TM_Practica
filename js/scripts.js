@@ -115,7 +115,7 @@ async function filterArtistByGenre(selectedGenres) {
         if (selectedGenres.includes(jsonContent.Person[i].genre)) {
             carrouselContent += buildArtistCard(jsonContent.Person[i].name);
         }
-    });
+    }
 }
 
 function buildArtistCard(artistName) {
