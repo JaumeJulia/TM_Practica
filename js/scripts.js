@@ -11,18 +11,17 @@ const urlMainJson = "../json/artists.json";
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
     console.log(storedArtist);
-    console.log(storedArtist);
     if (storedArtist == null) {
         updateCurrentPage("Rick Astley");
     } else {
-        updateCurrentPageWithLocalStorage();
+        updateCurrentPageWithLocalStorage(storedArtist);
     }
 };
 
 async function updateCurrentPage(artistName) {
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
-        updateCurrentPageWithLocalStorage();
+        updateCurrentPageWithLocalStorage(artistName);
     } else {
         const jsonContent = await readJson(urlMainJson);
         var artist = jsonContent.Person.filter(findArtist);
@@ -35,16 +34,18 @@ async function updateCurrentPage(artistName) {
         console.log(artist[0]);
         loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
+        TwitterApiSearch(artist[0].name, artist[0].follows);
     }
 }
 
-function updateCurrentPageWithLocalStorage() {
+function updateCurrentPageWithLocalStorage(artistName) {
     loadPage(retrieveLocalDataAsJSON("jsonContents"));
     loadWikiDescription(retrieveLocalData("wiki"));
+    loadTwitts(retrieveLocalData("twitter"), artistName);
 }
 
 function loadWikiDescription(data) {
-    console.log(data);
+    //console.log(data);
     var blurb = $('<div></div>').html(data);
     // remove links as they will not work
     console.log(blurb);
@@ -60,8 +61,6 @@ function loadWikiDescription(data) {
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
     document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
-    WikipediaApiSearch(pageContent.name, pageContent.description);
-    TwitterApiSerach(pageContent.name, pageContent.follows);
     document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
     document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
 
@@ -159,10 +158,10 @@ function WikipediaAPIGetContent(search, section) {
         async: false,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
-            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
-            console.log(data);
+            //console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
+            //console.log(data);
             var markup = data.parse.text["*"];
-            console.log(markup);
+            //console.log(markup);
             storeData("wiki", markup);
             loadWikiDescription(markup);
         },
@@ -172,12 +171,22 @@ function WikipediaAPIGetContent(search, section) {
     });
 }
 
-function TwitterApiSerach(artistName, artistTwitter) {
+function TwitterApiSearch(artistName, artistTwitter) {
+    var twitterResponse = "<a class=\"twitter-timeline\" href=\"https://twitter.com/" + artistTwitter + "\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by" + artistTwitter + "</a>";
+    //var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/daftpunk?ref_src=twsrc%5Etfw">Tweets by daftpunk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+    console.log("artistTwitter: " + artistTwitter)
+    storeData("twitter", twitterResponse);
+    loadTwitts(twitterResponse, artistName);
+}
+
+function loadTwitts(data, artistName) {
     let twitter = document.getElementById("artistTwitterPanel");
+    console.log("artistName: " + artistName);
     twitter.childNodes[1].childNodes[1].innerHTML = "<i class=\"fa fa-twitter-square\" aria-hidden=\"true\"></i>" + artistName;
-    twitter.childNodes[2].innerHTML = "<a class=\"twitter-timeline\" href=\"https://twitter.com/" + artistTwitter + "\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by" + artistTwitter + "</a>";
+    twitter.childNodes[2].innerHTML = data;
     console.log(twitter);
     document.getElementById("twitterPanel").innerHTML = "";
     document.getElementById("twitterPanel").appendChild(twitter.cloneNode(true));
-
+    //$('#twitterPanel').html("");
+    //$('#twitterPanel').html(twitter.cloneNode(true));
 }
