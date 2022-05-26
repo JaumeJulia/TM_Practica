@@ -441,12 +441,12 @@
                                     </div>
                                     <div id="twitterPanel" class="col-md-4">
                                         <div id="artistTwitterPanel" class="panel panel-danger">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i> Rick Astley
-                                                </h3>
+                                            <div id="twitterHeading" class="panel-heading">
+                                                <!-- <h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i> Rick Astley
+                                                </h3> -->
                                             </div>
-                                            <div class="panel-body">
-                                                <a class="twitter-timeline" href="https://twitter.com/rickastley" data-widget-id="12345" width="280" data-chrome="transparent">Tweets by rickastley</a>
+                                            <div id="twitterBody" class="panel-body">
+                                                <!-- <a class="twitter-timeline" href="https://twitter.com/rickastley" data-widget-id="12345" width="280" data-chrome="transparent">Tweets by rickastley</a> -->
                                             </div>
                                         </div>
                                     </div>
@@ -610,7 +610,7 @@
     <script src="js/jsonUtilities.js"></script>
     <script src="js/flickity.js"></script>
     <script src="js/twitterApi.js"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>

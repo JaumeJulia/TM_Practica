@@ -14,6 +14,7 @@ window.onload = function() {
     if (storedArtist == null) {
         updateCurrentPage("Rick Astley");
     } else {
+        console.log("recargando la pagina desde la caché");
         updateCurrentPageWithLocalStorage(storedArtist);
     }
 };
@@ -21,8 +22,10 @@ window.onload = function() {
 async function updateCurrentPage(artistName) {
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
-        updateCurrentPageWithLocalStorage(artistName);
+        console.log("Eligió el mismo artista ya elegido, no hay actualización");
+        //updateCurrentPageWithLocalStorage(artistName);
     } else {
+        console.log("cargando desde el json");
         const jsonContent = await readJson(urlMainJson);
         var artist = jsonContent.Person.filter(findArtist);
 
@@ -172,21 +175,15 @@ function WikipediaAPIGetContent(search, section) {
 }
 
 function TwitterApiSearch(artistName, artistTwitter) {
-    var twitterResponse = "<a class=\"twitter-timeline\" href=\"https://twitter.com/" + artistTwitter + "\" data-widget-id=\"12345\" width=\"280\" data-chrome=\"transparent\">Tweets by" + artistTwitter + "</a>";
-    //var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/daftpunk?ref_src=twsrc%5Etfw">Tweets by daftpunk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
+    twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
     console.log("artistTwitter: " + artistTwitter)
+    console.log("twitterResponse: " + twitterResponse);
     storeData("twitter", twitterResponse);
     loadTwitts(twitterResponse, artistName);
 }
 
 function loadTwitts(data, artistName) {
-    let twitter = document.getElementById("artistTwitterPanel");
-    console.log("artistName: " + artistName);
-    twitter.childNodes[1].childNodes[1].innerHTML = "<i class=\"fa fa-twitter-square\" aria-hidden=\"true\"></i>" + artistName;
-    twitter.childNodes[2].innerHTML = data;
-    console.log(twitter);
-    document.getElementById("twitterPanel").innerHTML = "";
-    document.getElementById("twitterPanel").appendChild(twitter.cloneNode(true));
-    //$('#twitterPanel').html("");
-    //$('#twitterPanel').html(twitter.cloneNode(true));
+    document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
+    document.getElementById("twitterBody").innerHTML = data;
 }
