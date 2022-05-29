@@ -215,9 +215,9 @@ function loadComments(data) {
 
 async function guardarComentario() {
 
-    const jsonContent = await readJson(urlMainJson);
-    var artista = jsonContent.Person.filter(document.getElementById("artist-name").value);
-    console.log(artista);
+    /*  const jsonContent = await readJson(urlMainJson);
+     var artista = jsonContent.Person.filter(document.getElementById("artist-name").value);
+     console.log(artista); */
     var comentario = document.getElementById("comment").value;
     var nombreUsuario = document.getElementById("commentor-name").value;
     if (nombreUsuario == "") {
@@ -226,7 +226,8 @@ async function guardarComentario() {
     if (comentario == "") {
         alert("El campo del comentario no debe estar vacio");
     }
-    artista.Comment[author] = nombreUsuario;
-    artista.Comment[text] = comentario;
-    console.log(artista);
+    modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
+    /*     artista.Comment[author] = nombreUsuario;
+        artista.Comment[text] = comentario;
+        console.log(artista); */
 }
