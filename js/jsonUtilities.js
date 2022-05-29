@@ -80,3 +80,23 @@ async function writeJson() { //TODO
         console.log(responseText);
     }
 }
+
+async function addComent(data, artistName, author){
+    var jsonFile = await readJson(masterFile);
+    var comment = {"author": author, "text": data};
+    for(i = 0 ; i < jsonFile.Person.lenght ; i++){
+        if(jsonFile.Person[i].name === artistName){
+            jsonFile.Person[i].Comment.add(comment);
+            break;
+        }
+    }
+    const response = await fetch("../json/test.json", {
+        method: 'POST',
+        body: JSON.stringify(jsonFile),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const responseText = await response.text();
+    console.log(responseText);
+}

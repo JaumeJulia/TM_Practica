@@ -226,7 +226,8 @@ async function guardarComentario() {
     if (comentario == "") {
         alert("El campo del comentario no debe estar vacio");
     }
-    modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
+    //modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
+    addComent(comentario, document.getElementById("artist_name").value, nombreUsuario);
     /*     artista.Comment[author] = nombreUsuario;
         artista.Comment[text] = comentario;
         console.log(artista); */
