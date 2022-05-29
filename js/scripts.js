@@ -38,6 +38,9 @@ async function updateCurrentPage(artistName) {
         loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
         TwitterApiSearch(artist[0].name, artist[0].follows);
+        console.log("Recording:");
+        console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
     }
 }
 
@@ -104,7 +107,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 function generateSongList(musicAlbum) {
     var songList = "<ol>"
     for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
-        songList = songList + "<li>" + musicAlbum.MusicRecording[i].name + "</li>";
+        songList = songList + "<li><div onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
@@ -186,4 +189,12 @@ function TwitterApiSearch(artistName, artistTwitter) {
 function loadTwitts(data, artistName) {
     document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
     document.getElementById("twitterBody").innerHTML = data;
+}
+
+function spotifyPlayer(url) {
+
+    var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+    document.getElementById("spotify-player").innerHTML = song;
+
+
 }
