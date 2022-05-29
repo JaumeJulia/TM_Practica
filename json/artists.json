@@ -4,6 +4,7 @@
         "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0",
         "knowsAbout": "Cosas por las que es conocido o destacado.",
         "description": "2",
+        "follows": "rickastley",
         "MusicAlbum": [{
                 "name": "Whenever You Need Somebody",
                 "image": "assets/WheneverYouNeedSomebody.jpg",
@@ -183,7 +184,8 @@
         "name": "Daft Punk",
         "url": "https://www.youtube.com/watch?v=gAjR4_CbPpQ",
         "knowsAbout": "Cosas por las que es conocido o destacado.",
-        "description": "Biografía de wikipedia",
+        "description": "2",
+        "follows": "daftpunk",
         "MusicAlbum": [{
                 "name": "Random Access Memories",
                 "image": "assets/RandomAccessMemories.jpg",

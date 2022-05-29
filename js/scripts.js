@@ -11,19 +11,21 @@ const urlMainJson = "../json/artists.json";
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
     console.log(storedArtist);
-    console.log(storedArtist);
     if (storedArtist == null) {
         updateCurrentPage("Rick Astley");
     } else {
-        updateCurrentPageWithLocalStorage();
+        console.log("recargando la pagina desde la caché");
+        updateCurrentPageWithLocalStorage(storedArtist);
     }
 };
 
 async function updateCurrentPage(artistName) {
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
-        updateCurrentPageWithLocalStorage();
+        console.log("Eligió el mismo artista ya elegido, no hay actualización");
+        //updateCurrentPageWithLocalStorage(artistName);
     } else {
+        console.log("cargando desde el json");
         const jsonContent = await readJson(urlMainJson);
         var artist = jsonContent.Person.filter(findArtist);
 
@@ -35,16 +37,21 @@ async function updateCurrentPage(artistName) {
         console.log(artist[0]);
         loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
+        TwitterApiSearch(artist[0].name, artist[0].follows);
+        console.log("Recording:");
+        console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
     }
 }
 
-function updateCurrentPageWithLocalStorage() {
+function updateCurrentPageWithLocalStorage(artistName) {
     loadPage(retrieveLocalDataAsJSON("jsonContents"));
     loadWikiDescription(retrieveLocalData("wiki"));
+    loadTwitts(retrieveLocalData("twitter"), artistName);
 }
 
 function loadWikiDescription(data) {
-    console.log(data);
+    //console.log(data);
     var blurb = $('<div></div>').html(data);
     // remove links as they will not work
     console.log(blurb);
@@ -65,6 +72,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 
     let album = document.getElementById("album_card");
     document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
+    console.log(album);
     for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
         album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
@@ -99,7 +107,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 function generateSongList(musicAlbum) {
     var songList = "<ol>"
     for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
-        songList = songList + "<li>" + musicAlbum.MusicRecording[i].name + "</li>";
+        songList = songList + "<li><div onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
@@ -113,7 +121,6 @@ async function filterArtistByGenre(selectedGenres) {
             carrouselContent += buildArtistCard(jsonContent.Person[i].name);
         }
     }
-    document.getElementById("carrousel").innerHTML = carrouselContent;
 }
 
 function buildArtistCard(artistName) {
@@ -157,10 +164,10 @@ function WikipediaAPIGetContent(search, section) {
         async: false,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
-            console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
-            console.log(data);
+            //console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
+            //console.log(data);
             var markup = data.parse.text["*"];
-            console.log(markup);
+            //console.log(markup);
             storeData("wiki", markup);
             loadWikiDescription(markup);
         },
@@ -168,4 +175,26 @@ function WikipediaAPIGetContent(search, section) {
             alert(errorMessage);
         }
     });
+}
+
+function TwitterApiSearch(artistName, artistTwitter) {
+    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
+    twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+    console.log("artistTwitter: " + artistTwitter)
+    console.log("twitterResponse: " + twitterResponse);
+    storeData("twitter", twitterResponse);
+    loadTwitts(twitterResponse, artistName);
+}
+
+function loadTwitts(data, artistName) {
+    document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
+    document.getElementById("twitterBody").innerHTML = data;
+}
+
+function spotifyPlayer(url) {
+
+    var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+    document.getElementById("spotify-player").innerHTML = song;
+
+
 }

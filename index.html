@@ -16,54 +16,164 @@
     <link href="css/carrouselStyle.css" rel="stylesheet" />
     <link href="css/flickity.css" rel="stylesheet" />
     <link href="css/imageFadeOut.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/searchBar.css" />
+    <link href="css/searchBar.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-nav-follow navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html">Artistas Destacados</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="form">
-                            <form action="./" method="get">
-                                <div class="search-bar">
-                                    <input type="text" class="search-bar__input" name="search" placeholder="Busca tu artista favorito...">
-                                    <button type="submit" class="search-bar__button">
-                                        <i class="bootstrap-icons bi-search"></i>
-                                    </button>
-                                </div>
-                            </form>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" aria-label="Third navbar example">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Artistas Destacados</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample03">
+                    <!-- Lista de Navegacion -->
+                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                        <li class="nav-item p-1">
+                            <a class="btn btn-secondary" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <!-- Te lleva a Rick Astley -->
-                        <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Sugiere un artista</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
-                            </ul>
+                        <li class="nav-item p-1">
+                            <!-- Boton aboutModal -->
+                            <a class="btn btn-secondary text-nowrap" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                                        Sobre Nosotros
+                                    </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-                                <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-                            </ul>-->
+                        <li class="nav-item p-1">
+                            <a class="btn btn-secondary text-nowrap" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                        Sugiere Artista
+                                    </a>
                         </li>
                     </ul>
+                    <form>
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </form>
                 </div>
             </div>
         </nav>
+        <!-- About Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text-center my-5">
+                            <h1 class="fw-bolder mb-3">
+                                Nuestra misión es dar a conocer los hitos de los artistas más destacados.
+                            </h1>
+                            <p class="lead fw-normal text-muted mb-4">
+                                <em>Artistas destacados</em> nos invita a conocer los hitos de los artistas que se han destacado a lo largo de la historia, hitos que los ha vuelto atemporales y queridos por todas las generaciónes que les siguieron.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-body justify-content-center">
+                        <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                            <div class="col mb-5 mb-5 mb-xl-0">
+                                <div class="text-center">
+                                    <img class="img-fluid rounded-circle mb-4 px-4" src="assets/ImagenDePrueba.jpg" alt="..." />
+                                    <h5 class="fw-bolder">Jaume "El músico" Julià</h5>
+                                    <div class="fst-italic text-muted">La inspiración</div>
+                                </div>
+                            </div>
+                            <div class="col mb-5 mb-5 mb-xl-0">
+                                <div class="text-center">
+                                    <img class="img-fluid rounded-circle mb-4 px-4" src="assets/ImagenDePrueba.jpg" alt="..." />
+                                    <h5 class="fw-bolder">Pau "El JSONs" Capellà</h5>
+                                    <div class="fst-italic text-muted">El trabajo duro</div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="text-center">
+                                    <img class="img-fluid rounded-circle mb-4 px-4" src="assets/ImagenDePrueba.jpg" alt="..." />
+                                    <h5 class="fw-bolder">Alberto "El ayudante" Cugat</h5>
+                                    <div class="fst-italic text-muted">La conciencia</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Modal -->
+        <div class="modal fade" id="contactModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <div class="modal-title w-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h1 class="fw-bolder">¡Contactanos!</h1>
+                            <p class="lead fw-normal text-muted mb-0">
+                                Nos encantaría saber de tus artistas favoritos
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Nombre del artista..." data-sb-validations="required" />
+                                <label for="name">Nombre del artista</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">
+                                    Se requiere un nombre.
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
+                                <label for="email">Tu dirección email</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">
+                                    Se requiere un emal.
+                                </div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">
+                                    El email introducido no es valido.
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Introduce tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Por qué se le conoce</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">
+                                    Introduce los motivos por los que queres ver este artista en nuestra página.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                         Enviar
+                     </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal Confirmacion -->
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel2">
+                            Confirmación
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        ¡Tendremos en cuenta tu sugerencia!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                         Cerrar
+                     </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-5">
@@ -71,7 +181,7 @@
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 id="artist_name" class="display-5 fw-bolder text-white mb-2">Rick Astley</h1>
-                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4">Cosas por las que es conocido o destacado.</p>
+                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4"></p>
                             <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
@@ -102,12 +212,12 @@
             </div>
         </section>
         <!-- Testimonial section-->
-        <div class="container py-5 bg-light">
+        <div class="container py-5 bg-light justify-content-center">
             <div class="text-center">
                 <div class="fs-4 mb-4 fst-italic">Albums del Artista</div>
             </div>
-            <div id="album_section" class="card-group px-5 my-5">
-                <div id="album_card" class="card w-50 shadow border-0 mx-2">
+            <div id="album_section" class="row">
+                <div id="album_card" class="card h-100 shadow border-0 col-lg-3 mb-5 mx-1">
                     <div class="container_img">
                         <img class="image image_back" src="assets/WheneverYouNeedSomebody.jpg" alt="..." />
                         <div class="overlay">
@@ -121,7 +231,7 @@
                             <div class="image_front_text_2">Spotify</div>
                         </div>
                     </div>
-                    <div class="card-body p-4 text-center">
+                    <div class="card-body p-4 text-center card-text">
                         <h5 class="card-title mb-3">Whenever You Need Somebody</h5>
                         <font size="-1" class="card-text mb-auto">
                             <ol>
@@ -139,7 +249,7 @@
                         </font>
                     </div>
                 </div>
-                <div class="card w-50 shadow border-0 mx-2">
+                <div class="card h-100 shadow border-0 col-lg-3 mb-5 mx-1">
                     <div class="container_img">
                         <img class="image image_back" src="assets/ImagenDePrueba.jpg" alt="..." />
                         <div class="overlay">
@@ -153,7 +263,7 @@
                             <div class="image_front_text_2">Spotify</div>
                         </div>
                     </div>
-                    <div class="card-body p-4 text-center">
+                    <div class="card-body p-4 text-center card-text">
                         <h5 class="card-title mb-3">Titulo del album</h5>
                         <font size="-1" class="card-text mb-auto">
                             <ol>
@@ -169,7 +279,7 @@
                         </font>
                     </div>
                 </div>
-                <div class="card w-50 shadow border-0 mx-2">
+                <div class="card h-100 shadow border-0 col-lg-3 mb-5 mx-1">
                     <div class="container_img">
                         <img class="image image_back" src="assets/ImagenDePrueba.jpg" alt="..." />
                         <div class="overlay">
@@ -183,7 +293,7 @@
                             <div class="image_front_text_2">Spotify</div>
                         </div>
                     </div>
-                    <div class="card-body p-4 text-center">
+                    <div class="card-body p-4 text-center card-text">
                         <h5 class="card-title mb-3">Titulo del album</h5>
                         <font size="-1" class="card-text mb-auto">
                             <ol>
@@ -199,7 +309,7 @@
                         </font>
                     </div>
                 </div>
-                <div class="card w-50 shadow border-0 mx-2">
+                <div class="card h-100 shadow border-0 col-lg-3 mb-5 mx-1">
                     <div class="container_img">
                         <img class="image image_back" src="assets/ImagenDePrueba.jpg" alt="..." />
                         <div class="overlay">
@@ -213,7 +323,7 @@
                             <div class="image_front_text_2">Spotify</div>
                         </div>
                     </div>
-                    <div class="card-body p-4 text-center">
+                    <div class="card-body p-4 text-center card-text">
                         <h5 class="card-title mb-3">Titulo del album</h5>
                         <font size="-1" class="card-text mb-auto">
                             <ol>
@@ -229,6 +339,10 @@
                         </font>
                     </div>
                 </div>
+            </div>
+            <!-- Reproductor (Solo se tiene que modificar el campo src) -->
+            <div id="spotify-player" class="center-80">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1zyFFgmRlW5GbTyTTyjQ8w?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
         <!-- Concerts & Comments section-->
@@ -329,8 +443,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <img class="img-fluid" src="assets/twitterRickAstley.jpg" alt="Twitter-Rick-Astley">
+                                    <div id="twitterPanel" class="col-md-4">
+                                        <div id="artistTwitterPanel" class="panel panel-danger">
+                                            <div id="twitterHeading" class="panel-heading">
+                                                <!-- <h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i> Rick Astley
+                                                </h3> -->
+                                            </div>
+                                            <div id="twitterBody" class="panel-body">
+                                                <!-- <a class="twitter-timeline" href="https://twitter.com/rickastley" data-widget-id="12345" width="280" data-chrome="transparent">Tweets by rickastley</a> -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +506,7 @@
                     <input type="checkbox" class="custom-control-input" id="customSwitch">
                     <label class="custom-control-label" for="customSwitch">Activar Modo Oscuro</label>
                 </div> -->
-                <div class="gallery js-flickity" id="carrousel">
+                <div class="gallery js-flickity">
                     <!-- Div del carrousel -->
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rick Astley');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -491,6 +613,9 @@
     <script src="js/scripts.js"></script>
     <script src="js/jsonUtilities.js"></script>
     <script src="js/flickity.js"></script>
+    <script src="js/twitterApi.js"></script>
+    <script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
