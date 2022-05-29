@@ -366,6 +366,19 @@
                     "location": "BRIDGESTONE ARENA    NASHVILLE, TN, US",
                     "url": "https://www.songkick.com/concerts/40047050-new-kids-on-the-block-at-bridgestone-arena?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
                 }
+            ],
+            "Comment": [{
+                    "author": "John Smith",
+                    "text": "Un músico como pocos. Siempre me divierto RickRolleando a mis amigos. xD"
+                },
+                {
+                    "author": "Karen Watson",
+                    "text": "Me encantan sus baladas."
+                },
+                {
+                    "author": "Steven Spielberg",
+                    "text": "Estaría encantado de tener su voz como parte de las canciones de mis películas."
+                }
             ]
         }, {
             "name": "Daft Punk",
@@ -782,7 +795,8 @@
                     ]
                 }
             ],
-            "Event": []
+            "Event": [],
+            "Comment": []
         },
         {
             "name": "Louis Cole",
@@ -1115,7 +1129,8 @@
                     ]
                 }
             ],
-            "Event": []
+            "Event": [],
+            "Comment": []
         },
         {
             "name": "Luis Fonsi",
@@ -1290,7 +1305,8 @@
                     ]
                 }
             ],
-            "Event": []
+            "Event": [],
+            "Comment": []
         },
         {
             "name": "Tom Misch",
@@ -1493,7 +1509,8 @@
                     ]
                 }
             ],
-            "Event": []
+            "Event": [],
+            "Comment": []
         },
         {
             "name": "Rise on Fire",
@@ -1546,7 +1563,8 @@
                     }
                 ]
             }],
-            "Event": []
+            "Event": [],
+            "Comment": []
         }
     ]
 }
