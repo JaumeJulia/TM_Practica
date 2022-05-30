@@ -25,7 +25,9 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" aria-label="Third navbar example">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Artistas Destacados</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/ArtistasDestacados.svg" alt="ArtistasDestacados" class="image image_front_1" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -117,16 +119,16 @@
                         </div>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Nombre del artista..." data-sb-validations="required" />
+                                <input class="form-control" name="Artist Name" type="text" placeholder="Nombre del artista..." data-sb-validations="required" />
                                 <label for="name">Nombre del artista</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">
                                     Se requiere un nombre.
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
+                                <input class="form-control" name="Sender email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
                                 <label for="email">Tu dirección email</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">
                                     Se requiere un emal.
@@ -136,18 +138,19 @@
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Introduce tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" name="Message" type="text" placeholder="Introduce tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Por qué se le conoce</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">
                                     Introduce los motivos por los que queres ver este artista en nuestra página.
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                Enviar
+                                </button>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-                         Enviar
-                     </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -179,13 +182,13 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
-                        <div class="my-5 text-center text-xl-start">
-                            <h1 id="artist_name" class="display-5 fw-bolder text-white mb-2"></h1>
-                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4"></p>
+                        <div class="my-5 text-center text-xl-start" vocab="https://schema.org/" typeof="MusicGroup">
+                            <h1 id="artist_name" class="display-5 fw-bolder text-white mb-2" property="name"></h1>
+                            <p id="artist_introduction" class="lead fw-normal text-white-50 mb-4" property="knowsAbout"></p>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <iframe id="artist_video" width="500" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center" property="subjectOf" typeof="VideoObject">
+                        <iframe id="artist_video" width="500" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -193,11 +196,11 @@
         <!-- Features section-->
         <section class="py-5" id="features">
             <div class="container px-5 my-5">
-                <div class="row gx-5">
+                <div class="row gx-5" typeof="MusicGroup">
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="fw-bolder mb-0">Biografia</h2>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8" property="description">
                         <p id="biografia" class="gx-5">
                         </p>
                     </div>
@@ -210,22 +213,22 @@
                 <div class="fs-4 mb-4 fst-italic">Albums del Artista</div>
             </div>
             <div id="album_section" class="row">
-                <div id="album_card" class="card h-100 shadow border-0 col-lg-3 mb-5 mx-1">
+                <div id="album_card" vocab="https://schema.org/" typeof="MusicAlbum" class="card h-100 border-0 col-lg-3 mb-5">
                     <div class="container_img">
-                        <img class="image image_back" alt="..." />
+                        <img class="image image_back" alt="..." property="image" />
                         <div class="overlay">
-                            <a class="text-decoration-none link-dark stretched-link">
+                            <a class="text-decoration-none link-dark stretched-link" property="url">
                                 <img src="assets/YoutubeMusic.svg" alt="YoutubeMusic" class="image image_front_1" />
                             </a>
                             <div class="image_front_text_1">Youtube Music</div>
-                            <a class="text-decoration-none link-dark stretched-link">
+                            <a class="text-decoration-none link-dark stretched-link" property="url">
                                 <img src="assets/Spotify.svg" alt="Spotify" class="image image_front_2" />
                             </a>
                             <div class="image_front_text_2">Spotify</div>
                         </div>
                     </div>
                     <div class="card-body p-4 text-center card-text">
-                        <h5 class="card-title mb-3"></h5>
+                        <h5 class="card-title mb-3" property="name"></h5>
                         <font size="-1" class="card-text mb-auto">
                         </font>
                     </div>
@@ -267,7 +270,7 @@
                             Comentarios sobre el artista
                         </button>
                     </h2>
-                    <div id="comment-section-collapse" class="accordion-collapse collapse" aria-labelledby="concert-comment-section-header-2">
+                    <div id="comment-section-collapse" class="accordion-collapse collapse" aria-labelledby="concert-comment-section-header-2" vocab="https://schema.org/" typeof="MusicGroup">
                         <div class="accordion-body">
                             <div class="container px-5 my-5">
                                 <div class="row gx-5">
