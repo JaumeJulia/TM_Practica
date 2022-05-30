@@ -7,6 +7,7 @@
 // Use this file to add JavaScript to your project
 
 const urlMainJson = "../json/artists.json";
+//var wikiDescriptionLoaded = false;
 
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
@@ -20,6 +21,8 @@ window.onload = function() {
 };
 
 async function updateCurrentPage(artistName) {
+    //console.log("estado de la wiki", wikiDescriptionLoaded);
+    //wikiDescriptionLoaded = false;
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
         console.log("Eligió el mismo artista ya elegido, no hay actualización");
@@ -35,12 +38,12 @@ async function updateCurrentPage(artistName) {
         storeData("artistName", artist[0].name);
         storeDataAsJSON("jsonContents", artist[0]);
         console.log(artist[0]);
-        loadPage(artist[0]);
+        //loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
         TwitterApiSearch(artist[0].name, artist[0].sameAs);
         console.log("Recording:");
-        console.log(artist[0].album[0].track[0].url[0].urlSpotify);
-        spotifyPlayer(artist[0].album[0].track[0].url[0].urlSpotify);
+        console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
     }
 }
 
@@ -63,6 +66,9 @@ function loadWikiDescription(data) {
     blurb.find('ol').remove();
     console.log(blurb);
     $('#biografia').html(blurb);
+
+    //wikiDescriptionLoaded = true;
+    //console.log("descripcion cargada", wikiDescriptionLoaded);
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -90,28 +96,28 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         document.getElementById("album_section").appendChild(album.cloneNode(true));
     }
 
-    var events = "<tbody>";
+    var eventTable = document.createElement("tbody");
+    var events = "";
     for (var i = 0; i < pageContent.Event.length; i++) {
         var index = i + 1;
         events = events + '<tr><th scope="row">' + index + '</th>';
-        events = events +'<div property="event" typeof="Event">';
+        events = events + '<div property="event" typeof="Event">';
         events = events + '<td property="startDate">' + pageContent.Event[i].startDate + '</td>';
         events = events + '<td property="location">' + pageContent.Event[i].location + '</td>';
-        events = events + '<td property="url"><a href="'+ pageContent.Event[i].url+'">Link</a></td>';
+        events = events + '<td property="url"><a href="' + pageContent.Event[i].url + '">Link</a></td>';
         events = events + '</tr>';
     }
-    events = events + "</tbody>";
-    document.getElementById("event_table").childNodes[3].innerHTML = events;
+    eventTable.innerHTML = events;
+    document.getElementById("event_table").appendChild(eventTable);
     window.scrollTo({ top: 0 });
-
 }
 
 function generateSongList(musicAlbum, genre) {
     var type = 'property="track" typeof="MusicRecording"';
-    var metadata = '<meta content="'+musicAlbum.MusicRecording.length+'" property="numTracks" />\n<meta content="'+genre+'" property="genre" />'
-    var songList = metadata+"\n<ol>"
+    var metadata = '<meta content="' + musicAlbum.MusicRecording.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />'
+    var songList = metadata + "\n<ol>"
     for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
-        songList = songList + "<li><div "+type+" onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
+        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
@@ -143,7 +149,7 @@ function WikipediaApiSearch(artistName, section) {
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
         contentType: "application/json; charset=utf-8",
-        async: false,
+        async: true,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
             $.each(data, function(i, item) {
@@ -155,6 +161,7 @@ function WikipediaApiSearch(artistName, section) {
             });
         },
         error: function(errorMessage) {
+            //wikiDescriptionLoaded = true;
             alert(errorMessage);
         }
     });
@@ -165,7 +172,7 @@ function WikipediaAPIGetContent(search, section) {
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
         contentType: "application/json; charset=utf-8",
-        async: false,
+        async: true,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
             //console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
@@ -173,9 +180,11 @@ function WikipediaAPIGetContent(search, section) {
             var markup = data.parse.text["*"];
             //console.log(markup);
             storeData("wiki", markup);
-            loadWikiDescription(markup);
+            //loadWikiDescription(markup);
+            window.location.reload();
         },
         error: function(errorMessage) {
+            //wikiDescriptionLoaded = true;
             alert(errorMessage);
         }
     });
@@ -187,7 +196,7 @@ function TwitterApiSearch(artistName, artistTwitter) {
     console.log("artistTwitter: " + artistTwitter)
     console.log("twitterResponse: " + twitterResponse);
     storeData("twitter", twitterResponse);
-    loadTwitts(twitterResponse, artistName);
+    //loadTwitts(twitterResponse, artistName);
 }
 
 function loadTwitts(data, artistName) {
@@ -196,9 +205,6 @@ function loadTwitts(data, artistName) {
 }
 
 function spotifyPlayer(url) {
-
     var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
     document.getElementById("spotify-player").innerHTML = song;
-
-
 }
