@@ -7,6 +7,7 @@
 // Use this file to add JavaScript to your project
 
 const urlMainJson = "../json/artists.json";
+//var wikiDescriptionLoaded = false;
 
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
@@ -20,6 +21,8 @@ window.onload = function() {
 };
 
 async function updateCurrentPage(artistName) {
+    //console.log("estado de la wiki", wikiDescriptionLoaded);
+    //wikiDescriptionLoaded = false;
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
         console.log("Eligió el mismo artista ya elegido, no hay actualización");
@@ -41,6 +44,14 @@ async function updateCurrentPage(artistName) {
         console.log("Recording:");
         console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        //var counter = 0;
+        /* while (wikiDescriptionLoaded === false || counter < 200) {
+            console.log("esperando");
+            counter += 1;
+        } */
+        //console.log("listo");
+        //wikiDescriptionLoaded = false;
+        //window.location.reload();
     }
 }
 
@@ -63,6 +74,9 @@ function loadWikiDescription(data) {
     blurb.find('ol').remove();
     console.log(blurb);
     $('#biografia').html(blurb);
+
+    //wikiDescriptionLoaded = true;
+    //console.log("descripcion cargada", wikiDescriptionLoaded);
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -139,7 +153,7 @@ function WikipediaApiSearch(artistName, section) {
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
         contentType: "application/json; charset=utf-8",
-        async: false,
+        async: true,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
             $.each(data, function(i, item) {
@@ -151,6 +165,7 @@ function WikipediaApiSearch(artistName, section) {
             });
         },
         error: function(errorMessage) {
+            //wikiDescriptionLoaded = true;
             alert(errorMessage);
         }
     });
@@ -161,7 +176,7 @@ function WikipediaAPIGetContent(search, section) {
         type: "GET",
         url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
         contentType: "application/json; charset=utf-8",
-        async: false,
+        async: true,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
             //console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
@@ -170,8 +185,10 @@ function WikipediaAPIGetContent(search, section) {
             //console.log(markup);
             storeData("wiki", markup);
             loadWikiDescription(markup);
+            window.location.reload();
         },
         error: function(errorMessage) {
+            //wikiDescriptionLoaded = true;
             alert(errorMessage);
         }
     });
