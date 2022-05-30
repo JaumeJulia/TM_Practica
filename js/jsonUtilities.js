@@ -81,12 +81,12 @@ async function writeJson() { //TODO
     }
 }
 
-async function addComent(data, artistName, author){
+async function addComent(data, artistName, author) {
     var jsonFile = await readJson(masterFile);
-    var comment = {"author": author, "text": data};
-    for(i = 0 ; i < jsonFile.Person.lenght ; i++){
-        if(jsonFile.Person[i].name === artistName){
-            jsonFile.Person[i].Comment.add(comment);
+    var comment = { "author": author, "text": data };
+    for (i = 0; i < jsonFile.lenght; i++) {
+        if (jsonFile.name === artistName) {
+            jsonFile.Review.add(comment);
             break;
         }
     }
