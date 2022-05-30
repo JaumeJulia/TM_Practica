@@ -51,6 +51,7 @@ function updateCurrentPageWithLocalStorage(artistName) {
     loadPage(retrieveLocalDataAsJSON("jsonContents"));
     loadWikiDescription(retrieveLocalData("wiki"));
     loadTwitts(retrieveLocalData("twitter"), artistName);
+    loadComments(retrieveLocalDataAsJSON("jsonContents"));
 }
 
 function loadWikiDescription(data) {
@@ -207,4 +208,37 @@ function loadTwitts(data, artistName) {
 function spotifyPlayer(url) {
     var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
     document.getElementById("spotify-player").innerHTML = song;
+}
+
+function loadComments(data) {
+    console.log("Entrando en la seccion de comentarios");
+    var seccionComentarios = document.getElementById("comentarios");
+    console.log(seccionComentarios);
+    var commentarios = "";
+    for (let i = 0; i < data.Comment.length; i++) {
+        commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + data.Comment[i].author + '</div>' + data.Comment[i].text + '</div></div>';
+    }
+    seccionComentarios.innerHTML = commentarios;
+
+    console.log(seccionComentarios);
+}
+
+async function guardarComentario() {
+
+    /*  const jsonContent = await readJson(urlMainJson);
+     var artista = jsonContent.Person.filter(document.getElementById("artist-name").value);
+     console.log(artista); */
+    var comentario = document.getElementById("comment").value;
+    var nombreUsuario = document.getElementById("commentor-name").value;
+    if (nombreUsuario == "") {
+        alert("Debes poner un nombre para mostrar tu comentario");
+    }
+    if (comentario == "") {
+        alert("El campo del comentario no debe estar vacio");
+    }
+    //modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
+    addComent(comentario, document.getElementById("artist_name").value, nombreUsuario);
+    /*     artista.Comment[author] = nombreUsuario;
+        artista.Comment[text] = comentario;
+        console.log(artista); */
 }
