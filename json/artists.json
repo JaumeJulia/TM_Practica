@@ -1,413 +1,1789 @@
-{
-    "Person": [{
-        "name": "Rick Astley",
-        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0",
-        "knowsAbout": "Cosas por las que es conocido o destacado.",
-        "description": "2",
-        "follows": "rickastley",
-        "MusicAlbum": [{
-                "name": "Whenever You Need Somebody",
-                "image": "assets/WheneverYouNeedSomebody.jpg",
+[
+    {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Rick Astley",
+    "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0",
+    "knowsAbout": "El artista detrás del Rick-Roll.",
+    "genre": "pop",
+    "description": "2",
+    "sameAs": "rickastley",
+    "MusicAlbum": [{
+                    "@type": "MusicAlbum",
+                    "name": "Whenever You Need Somebody",
+                    "image": "assets/WheneverYouNeedSomebody.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    }],
+                    "MusicRecording": [{
+                            "@type": "MusicRecording",
+                            "name": "Never Gonna Give You Up",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=lYBUbBu4W08&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Whenever You Need Somebody",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5owW7rEIdQkbL39wt0iEv8?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=raBobo3GZYA&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Together Forever",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5eFiEFtrq5dLgVHSZANUNl?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=i_Q88T1HI_w&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "It Would Take a Strong Strong Man",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1YdjBLwswLbmoK2abgdp3P?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=dc7UCha20yw&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Love Has Gone",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6RFfPtZrp24dizU3Vq38EP?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=d0t04zd918U&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Don't Say Goodbye",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0hTSv1xPoQ6PIJp8OMzSql?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=NnLO1yupSoM&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Slipping Away",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3bvrkDfaPU5hELptyFqIBV?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0125n60K-z8&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "No More Looking for Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7ksH5cE4jUYXoTCfcrcq0H?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=-NzNaBJjohk&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "You Move Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5Su2VhRNod6YDjE65BYJy3?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=NlxK_hVeKWQ&feature=share"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "When I Fall in Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/38kgUGexsy9l9mUMGyi8oH?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=zoGOXDIsKXM&feature=share"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Hold Me in Your Arms",
+                    "image": "assets/HoldMeInYourArms.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/7jFoulkN5p0nHAZ1gyAPHs?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kFftR4F4OZ_rnM4lusrhrqDQirLSwsZ_0"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "She Wants to Dance with Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7hHKBI40gVyKXUsjZRKf9g?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=LbJtwIMLeRc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Take Me to Your Heart",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/39LkwAdYfaYtHQUVmKIcL7?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=OFMthc9YkOw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Don't Want to Lose Her",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0gTERyUq8J8ggsNWUrtfEg?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=dAPNM3-LyKY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Giving Up on Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1ouqbtBFM6r79hX7MHP0Aj?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=BQWv4_OcSmM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Ain't Too Proud To Beg",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7LYXIcFB6SyO8OKZNfFUIq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=INbP13PWSQk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Till Then (Time Stands Still)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6s3yfxpoL3dFzkqWIWKLCL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=rgmxNZ3xA4g&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Dial My Number",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/24IO8FErzfs1EXW9Cz0uma?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=zvZKZp7NoJY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I'll Never Let You Down",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3cEaADmnNbzhRybQ6HBCMD?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=3nV9udxkkxw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Don't Want to Be Your Lover",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1rgt0xr9T6soZckX9uYxvh?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=a62kTC4GE2E&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Hold Me in Your Arms",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2Kk62hOwkwiiwol9f98ETO?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=a4DkPD97AB4&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "50",
+                    "image": "assets/rick_astley_50.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/4f9CV4zRabJ0e5q8QEx0tv?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nFVlLCq67W_4Dle-u83WYE5rTsuqr72E4"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Keep Singing",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6TdHgARbMSVuftE4Lb0dHY?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=AC3Ejf7vPEY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Angels on My Side",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5EW05nJtJ9EcxDWPygONxV?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=cc91EfoBh8A&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Wish Away",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5oJhZqsZHghRVCOCUIP0Zz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=CtSKH5mhgM0&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "This Old House",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2KwU4OGRsE5QLiu8RgslfC?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=YG8qjlqxpk8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Pieces",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3CdMKQa0IUhKJ9qP2jnsC7?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=BHF413JWkGo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "God Says / Dance",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4mFtfh6vWW3tXyxAhDCt7h?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=5o7WEv5Q5ZE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Like the Sun",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2ivSulFCO1IWfRyheKSqpS?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=-uXgWWUG4-k&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Somebody Loves Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0UTqo4PdaYZyt2uTStqIi1?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0XEnBSWZYNs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Let It Rain",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1yzMfDLOumLrMAbXnEyOun?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=oqqeK9b3Pbs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Pray with Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2rDYkd0I58VHRDJoAjiFpv?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=SS0eA0PKDb4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Coming Home Tonight",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0bteu7Lx5CK28Q4PY5Y9zy?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4ZoT_GGtYB4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Let It Be Tonight",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2yHtoaW8kJ3BBS1meQtMsq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=-UwdhxrMZmM&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Beautiful Life",
+                    "image": "assets/rick_astley_beautiful_life.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/3IqiZzsC1gef7qgvCXTqTj?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_m9j_zS31asUS2iqI6_oA8zfY6Nx-NWMYU"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Beautiful Life",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/58IakFxrNWhkpOsKKooZFA?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=EPUVstUH22k&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Chance to Dance",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5WUhM87LmeiFPa5WcXB4UM?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ptrJzIWKfwU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "She Makes Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2GszAWQ3HJRK8SkaeWAqZW?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=6hdB6nweG_4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Shivers",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3WM5tzqlowNnupLBAultab?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=nDoU231XCqs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Last Night on Earth",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0gV0Xuj3Bsb134lCoNmr9E?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=CdI9nxxXe4U&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Every Corner",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4PmxZ94RpEp8083hwOxS7p?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=XLXQiOAUsk0&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Need the Light",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2RvYVrWNvo3rIQ7CG2JdRL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Kl9mvwLZyUA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Better Together",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/580EriX7YWyKKgnw4la6Qh?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=heRI8ppF3Z4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Empty Heart",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0KaGoDZ0SFuJ8GTnGmKEUN?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=6RZp-8_uX0U&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Rise Up",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5ZgbLnD1xXtG1pLfup49IW?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=k5L-mzt1KUo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Try",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4Lal1QsJW1dAl2LmwEGjOl?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=rAUkXDhrk5k&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Good Old Days",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3XOOqcmU6rQ8CDc6OnvcHA?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=1yLkoKFLnBM&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                }
+            ],
+            "Event": [{
+                    "@type": "Event",
+                    "startDate": "TUE 10 MAY",
+                    "location": "HERITAGE BANK CENTER    CINCINNATI, OH, US",
+                    "url": "https://www.songkick.com/concerts/40047083-new-kids-on-the-block-at-heritage-bank-center?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
+                },
+                {
+                    "@type": "Event",
+                    "startDate": "THU 12 MAY",
+                    "location": "GAINBRIDGE FIELDHOUSE    INDIANAPOLIS, IN, US",
+                    "url": "https://www.songkick.com/concerts/40046973-new-kids-on-the-block-at-gainbridge-fieldhouse?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
+                },
+                {
+                    "@type": "Event",
+                    "startDate": "FRI 13 MAY",
+                    "location": "BRIDGESTONE ARENA    NASHVILLE, TN, US",
+                    "url": "https://www.songkick.com/concerts/40047050-new-kids-on-the-block-at-bridgestone-arena?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
+                }
+            ],
+            "Review": [{
+                "@type": "Review",
+                    "author": "John Smith",
+                    "text": "Un músico como pocos. Siempre me divierto RickRolleando a mis amigos. xD"
+                },
+                {
+                    "@type": "Review",
+                    "author": "Karen Watson",
+                    "text": "Me encantan sus baladas."
+                },
+                {
+                    "@type": "Review",
+                    "author": "Steven Spielberg",
+                    "text": "Estaría encantado de tener su voz como parte de las canciones de mis películas."
+                }
+            ]
+        },
+        {
+            "@type": "MusicGroup",
+            "name": "Daft Punk",
+            "url": "https://www.youtube.com/watch?v=gAjR4_CbPpQ",
+            "knowsAbout": "Padres del sonido del futuro.",
+            "genre": "electronic",
+            "description": "2",
+            "sameAs": "daftpunk",
+            "MusicAlbum": [{
+                    "@type": "MusicAlbum",
+                    "name": "Random Access Memories",
+                    "image": "assets/RandomAccessMemories.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nZZjkBu_E4olFSb5Ey-fQ-4a0ZCqJICdQ&feature=gws_kp_album&feature=gws_kp_artist"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Give Life Back to Music",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0dEIca2nhcxDUV8C5QkPYb?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=zKSsP2084nU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Game of Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3ctALmweZBapfBdFiIVpji?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=_vOcbrUsmjM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Giorgio by Moroder",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0oks4FnzhNp5QPTZtoet7c?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ZFZM6jDTWd4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Within",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7Bxv0WL7UC6WwQpk9TzdMJ?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=iNjGNNoUjkk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Instant Crush",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2cGxRwrMyEAp8dEbuZaVv6?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=khnokW3Mw24&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Lose Yourself to Dance",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5CMjjywI0eZMixPeqNd75R?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=iU7oF4OXZSE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Touch",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7oaEjLP2dTJLJsITbAxTOz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=RRMbhEdmhYw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Get Lucky",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/69kOkLUCkxIZYexIgSG8rq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4D7u5KF7SP8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Beyond",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0k1xMUwn9sb7bZiqdT9ygx?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=RE_XX6jk2Lo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Motherboard",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/79koEJRtKOOGJ0VSAF3FMk?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=3x-Q-iRvib4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Fragments of Time",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0IedgQjjJ8Ad4B3UDQ5Lyn?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=3rpQTqpFTF4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Doin’ It Right",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/36c4JohayB9qd64eidQMBi?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=wmSkU6R9Zi8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Contact",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2KHRENHQzTIQ001nlP9Gdc?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=UoF1dFWKsVk&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Discovery",
+                    "image": "assets/Discovery.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lMA_iEf3aqk5YSDsnrPKojXegOiecSF94&feature=gws_kp_album&feature=gws_kp_artist"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "One More Time",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0DiWol3AO6WpXZgp0goxAV?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=MNVcs2RSG60&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Aerodynamic",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3H3cOQ6LBLSvmcaV7QkZEu?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=sP8pIospPig&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Digital Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2VEZx7NWsZ1D0eJ4uv5Fym?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Smi8vAbm_8o&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Harder, Better, Faster, Stronger",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5W3cjX2J3tjhG8zb6u0qHn?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0yZ6UNEP9Vc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Crescendolls",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1E8S3CSv20KrKT0C1yAjkO?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=F6e2rM2-oLY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Nightvision",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/63JXZZRbmzooashakb0zbu?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=iRHo9cz2wFc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Superheroes",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/186hvCTyrni4KT9nwIQ7zS?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=mZdfvOuRvFc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "High Life",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/098ttCNmncrO4YvqWUNMvn?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=IUpgPigGJ5s&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Something About Us",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1NeLwFETswx8Fzxl2AFl91?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=URzOGF_QGls&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Voyager",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7cMFjxhbXBpOlais7KMF3j?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=OWiVJMgms9E&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Veridis Quo",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2LD2gT7gwAurzdQDQtILds?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=qe8Q7mjxjig&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Short Circuit",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4npMbTuxrUA3Wd7edACZ2L?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Can7kOYrGpI&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Face to Face",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7v9Q0dAb9t7h8gJOkcJHay?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=qXI87eMP-bs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Too Long",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3n4ow4XGzwSIPxA3JHLF9p?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ifJxwoDmQqY&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Homework",
+                    "image": "assets/daft_punk-Homework.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/6JRaPcrT3cMBEmkgSqEPhI?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lAbfrCq-BVAU2Z2yAIjsEN0jwghzcAFSY"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Daftendirekt",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0wrjNnj3QP3K8JuCy91zWB?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=yuoghR-5-Xs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "WDPK 83.7 FM",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6pfNHtG6QKH1JB9Bm1SsPq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=OzZAHvq_UqI&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Revolution 909",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1GLVS763ScItK1BRzbpYcs?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Wtd6DvLoCsU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Da Funk",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4IUkEUQmp2HkJZrf0vUru5?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=PwILkY9gRrc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Phoenix",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6NglQcVwf2YSQOyas9YuOk?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=5AJ8yHebaok&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Fresh",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4o1Xrjlz2WpNa97kkNXyVh?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=LMNlm7khYwA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Around the World",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1q4poN5PaGvY1RbEC5gl5s?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=K0HSD_i2DvA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Rollin' & Scratchin'",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7wWeIUvvfRaNirdlireOuX?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=q27KtfR1ESA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Teachers",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4UHd9OG8OOPR2JEhXOVJgS?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=3yq-NFiEywo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "High Fidelity",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/25oB2tfQWWdGGr5GoKz0S8?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=JXWkKO4eplY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Rock'n Roll",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/41xqdrOR76ohQ4OeeMe1ZP?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ZW7WfdTuth8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Oh Yeah",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5VIciQgxKg7wyGJtdwYaeK?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=zr28TRk9vCg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Burnin'",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3TukSaT1CQlYuk8Y8FD5Z1?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=DBHipNYuAZk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Indo Silver Club",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1Zc0ExmqbvUNCwxpO7iQpy?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=VubH7FuW6TQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Alive",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1jmPN5cUQMSrhqmWHixXbv?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=WY8hqzYT_uk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Funk Ad",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5x0Si3aykdZzoHd9Uzh7gL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=YqUyNvGsM9s&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Human After All",
+                    "image": "assets/daft_punk-Human_After_All.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/1A2GTWGtFfWp7KSQTwWOyo?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kyBLbpI5BRf2wHsxpI8MM_WwF3epmn7U0"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Human After All",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3aCKAkMx3yfaj3AO5Gz47e?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=PXYeARRyDWk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Prime Time of Your Life",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0UZRFYMoz9xmeE2AQUhTDl?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=zDiS-_GP7do&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Robot Rock",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7LL40F6YdZgeiQ6en1c7Lk?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=sFZjqVnWBhc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Steam Machine",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/60HSQkYSlJVtdRdHgzRsXz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0sa2R-PM0Uk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Make Love",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4ABWPP59ItFKykdaDF09K5?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=UeZG0viNAjM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Brainwasher",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/73MAeHX5sqLYfuYclsrvHc?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=RdVEQbWjaTE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "On/Off",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3dWxT7lAv6lmXEW2AEZyPQ?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=7VYgrfWQ8Ss&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Television Rules the Nation",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/37M8nuFfSrlKfTR0AAp7gK?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=YKaN7a19jLc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Technologic",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1iNeZGJsoC0D7ZyJTdIbDS?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=D8K90hX4PrE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Emotion",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0Dezmoeb373GNcYBjLVAMH?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=d-OGBZSDKBU&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                }
+            ],
+            "Event": [],
+            "Review": []
+        },
+        {
+            "@type": "MusicGroup",
+            "name": "Louis Cole",
+            "url": "https://www.youtube.com/watch?v=GnEmD17kYsE",
+            "knowsAbout": "Artista multi-instrumental",
+            "genre": "fusion",
+            "description": "2",
+            "sameAs": "LouisColeMusic",
+            "MusicAlbum": [{
+                    "@type": "MusicAlbum",
+                    "name": "Louis Cole and Genevieve Artadi",
+                    "image": "assets/Louis_cole-firstAlbum.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/7o5y1ttfkpL6zf6P2uCYPQ?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lhCqHosxyxeVMBhhnHA1Ok1RSn3m2AT-w"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Hyugens",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2WicJxh7Mi7YL62iUa5Is2?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=NUGcnFekRsg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Mystery Of A Burning Fire Feat. Sam Gendel",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6Aggwrs1kwwPQMobbYyxzF?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ixIhiFgbVfo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "From Two Sides",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0LGbc2Wii08uwVD4gBO5LR?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=s7sH2ZZHaG0&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "F--- The Makeup, Skip The Shower",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4DmABSFNyMwpzOo1UvK8Nz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=i1Hu2Ti14Lc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Trust The Light",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4ROtaPYggXhf9bYV99fHBW?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=QZYXdipMABs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "All I Want To",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4IPMZ5SlBDblv8AghWm6OB?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=lFUwxOuhcBQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Window Shop",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0Obvb0dyqdOPyjWJJKMniU?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=q2wtxFMhcrY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Like A Storm",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6wf9OsHdtIQ4dCxh354R6T?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Z2MqLfY5JLw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "String Images",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1F1VD4KclJGeE1n5vtjSAk?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=cB2WyiAKwrA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Say What You Say Feat. Sammy Stephens",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0svYAa2breYg4Hf0jS5bwW?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=2LgvX-Kjr40&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Worlds Upon Worlds",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2zJWoDeRsA81ETc7ia4QEr?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=fG5m78eQFMA&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Think Thoughts",
+                    "image": "assets/Louis_Cole-Think_Thoughts.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/3c9ODwk9kgkv90SSbhPqwl?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lUarVSyFvtS2zszcz7ivVS1A9b7vUhEk0"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Gotta Be Another Way",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4thvjgllSnRXMZ37gOAipp?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=e3lSBgpb6AE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Things About You",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7snRALM7X6I9cNR1vqdUjm?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=uUM593qcILE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Paying The Price Now (con Tim Lefebvre)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6cA87nJJZsZgzg7CFxRc23?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=NpA0jRjsNio&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Around",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/33Cd7g6s4ce2n0paWgWVjM?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=kaIUcAVos5Y&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "What Did I Do To You (con John Escreet)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/71sBxpTxQfGAcCfUyLFPti?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=UMACPkMbdBs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Here Comes The Big One (con David Binney)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0Pq1onPHm0TZFDQcTcRf88?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=XWzvQPZhtvI&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Remember",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4UeXQ4744h3qum15iz3NpA?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=cjxvZhl1iC8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Out There",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3xAOOpnZH0Q0T3THWGwHuh?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ucwovkxW4N8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "That's Where You Are",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3SiCXFBvSKTKyjdem8IzIr?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ORLSD1h3E54&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Things About You Remix (con Vikram)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/50oZCMNd6LKWKj0wHbyu2f?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=T3dwHVRJC_E&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Let Go",
+                    "image": "assets/Louis_Cole-Let_Go.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/4Zs8pUAVPJjiSjIEtI9BG8?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lVpskavU3X5bHVDUGNe3zrno7YmKoMTY4"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "What's in Your Heart",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0pLT0IT7xKaNlY4HvrWCx7?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=UFe8M5Xh9-A&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Time Traveler",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/53qkkSKD3fQaZmzA2vGoo4?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=itRWssMSuvw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Let Go",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/20HbCRbzlWoxqb89OxC12Z?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=tUzYLWpEkOg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Dreaming on Forever",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2rlOmNdFKtXc6pvjn44kyI?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=YXbB6o9FxG4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Before",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1tGr88pcA83lEuCV7cIi7U?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=KeUxpDcxOS4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Something More",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/30DlhZ982J4ONXhNYoXqTz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=PjS9FO23eVY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Spotlight (con Vikram)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/45cgY0HWfz7CLxWtxhoK9B?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=pkuad7VhtRA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "What's in Your Heart (Xtra Fat Mix)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4X12WyrLbvAin3jFS4HPKs?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=2PxCDjGdP4s&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Life",
+                    "image": "assets/Louis_Cole-Life.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/4SVxz8yqIymDrdiX2YBeQe",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_n9H5AcBM8dgFVZiWzrtoT1jmZ33AVL1NE"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Knower Rulez",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1E4F6q4FaeNbaSOMlO3fFk?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=dQY-wxW4nCo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Hanging On",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5MEAdc9kKuFbsYRY0HJ8LB?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=kLZJ-0IP9bY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Government Knows",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0NcYJeUQMTvVIZGGduJWX3?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4zH9Zca1vRM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "All Time",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/37fSE5VTxUjtPlPEeL1xAm?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=EqF2UHlrcD8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Overtime",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2CVWc2gNM8YCTMdFXJI8Wg?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ZVJigvTWpWA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Butts Tits Money",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0QUojS0q0TNRDs4qkSglGa?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=LKS1XSiyGYQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Die Right Now",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5li8Xl69ORKZNrqn1Uz3IX?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=nuIUQCZ2Mn8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "More Than Just Another Try",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1V1udgnqGqxyW7l3kSybtL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=q076unR4U54&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Pizza",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4JwYGZ6bRh19I7fQjh5e8p?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=FG6Aa-JY8Ts&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Real Thing",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4LgfZCa1TR66yaMZuUGkAQ?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=W6jMtlMI4Fw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Lose My Mind",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/01ANRIM5xadzvgMqVhoC9b?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=9xqhVbra4yY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Cry Tomorrow, Laugh Today",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0DZb8jsh2F8Jv276AZNOiL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0NE8IiFmStY&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                }
+            ],
+            "Event": [],
+            "Review": []
+        },
+        {
+            "@type": "MusicGroup",
+            "name": "Luis Fonsi",
+            "url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+            "knowsAbout": "Artista de reggaeton que revolucionó la escena con una sola canción",
+            "genre": "Reggaeton",
+            "description": "2",
+            "sameAs": "LuisFonsi",
+            "MusicAlbum": [{
+                    "@type": "MusicAlbum",
+                    "name": "Comenzare",
+                    "image": "assets/Luis_Fonsi-Comenzare.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/10TIwSSiAKER6mmXVawoOi?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kADb2U7KzLlORjwZ8vKqQq65MGf4iYj9o"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Si Tú Quisieras",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6GDZP6ZEUp9JdaZHromy4a?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=kFMXxH4twzM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Comenzare",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2J56VuKRxD6KyGInLACBsP?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=EjZ5j-BwVGQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Perdóname",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2bf8AENXLhpiV0bO9RWnrE?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Z9gLTgO-6Go&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Tu Calor",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3LmwfL0hZ5CJqV5gKTulll?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=bKl2rbonanM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Dime Como",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/65fwfD1kvSRFR4ytqWV0Ss?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=vphKBjhiBL0&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Yo Frente Al Amor",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1qdM11INXvYQZc3RqCXDwq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=JFAN9TyvYHg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Por Ella",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1AdD0njInuxCRWc4SAbMJL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=XX-TWvpjnrg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Tres Veces No",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/41GsevN8YyCHNjVDblQkwE?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=sK8QgRHWzoo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Me Ire",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1rehGa1wo9zKfYhnKNFv4t?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4NcPzHzS9Nw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Ya No Se Querer",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/53t7EKiCZzX165AUBqwd0H?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=1phbji7H9iU&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "Fight the Feeling",
+                    "image": "assets/Luis_Fonsi-Fight_the_Feeling.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/7cvzxUV0peinUHJmdhADmU?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nXOyihBPTkMHdr3JRyn9Dw0Q8RmlwIQqU"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Fight The Feeling",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6qDTU2CNVdUZVEOrcpTDob?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=qxAF-HUMdhQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Secret",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3fGU6TsDYZJgq0uNOdoxxr?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=jmU6hBq0dVc&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Turn It Up",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3hSoYWM6RQfUrq66TVM34y?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4BkM5pJ1I1I&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Save Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7GrH1YjZnGDYa2azOFREBG?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=M7RED3sbiyQ&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "You Got Nothing On Me",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3mRIWvfSulX1fXdC4Je0OL?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=FMqOR9ZzIbs&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "If Only",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5j0nD3znmlS6HAErdScvwM?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=SgtqCcEEsFA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Keep My Cool",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5TQ4GRqHykai6u5W4yCTer?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Y5VrqLnepdw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Tell Her Tonight",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3vdqM7QaJ6fgdxur5OXUNi?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=onCmlOH50XU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Twisted",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2RRX3TAHb2YCieb10EfYkJ?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=6CMHl2ewKPg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "One Night Thing",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/59zZVQLqFetx5sKREFD8e6?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=2_zKCr5I2cM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Wish",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3HogKXgStfUoXusG7N5Tt3?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4CbnFYD9WY0&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                }
+            ],
+            "Event": [],
+            "Review": []
+        },
+        {
+            "@type": "MusicGroup",
+            "name": "Tom Misch",
+            "url": "https://www.youtube.com/watch?v=M1N_wbhAfQ4",
+            "knowsAbout": "Se volvió uno con el groove desde muy joven como artista multi-instrumentista.",
+            "genre": "jazz-funk",
+            "description": "1",
+            "sameAs": "TomMisch",
+            "MusicAlbum": [{
+                    "@type": "MusicAlbum",
+                    "name": "Geography",
+                    "image": "assets/Tom_Misch-Geography.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/28enuddLPEA914scE6Drvk?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_mmD1gNBJZVNLv1HQqK4i7Cfg_CiWIy5d0"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "Before Paris",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4D5POIvEJfBH8wO80Ic4T8?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Iu9MVgMYrEY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Lost in Paris (con D'Anthony Carlos)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4A7DUET5H4f7dJkUhjfVFB?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=QBL2m1PNqJM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "South of the River",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5w3yxRRxy5pvZdUvBJF6ve?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=NdJHvUTWx6c&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Movie",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6pxElwU80zhjbCC77Vn8EI?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=DUzEYcR2VtM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Tick Tock",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/3al8a3uZrOZIHc6J1n8i5f?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=oMIC0HSkcdk&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "It Runs Through Me (con De La Soul)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/02CygBCQOIyEuhNZqHHcNx?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=M1N_wbhAfQ4&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Isn't She Lovely",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/23H8PpuhyTDHwpqcDm7vS6?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=1JdAaBNCwSY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Disco Yes",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/61Ivix5DTnDPVjp1dgLyov?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=EXWOJvlDwbU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Man Like You",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/673BqQR0tNM3VtzcV3Ul2Q?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=vfhedBxja5g&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Water Baby (con Loyle Carner)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6Pd20wirRDM9k4e69px3dN?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Tj-4gZ9fuGE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "You're On My Mind",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/0ORL2BIQwHdshE8Zp2En2M?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=0t9beWP_2Tw&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Cos I Love You",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/58xN31xmYcfrgA56gAeM3W?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ZscBW9g21GY&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "We've Come So Far",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/46mMjdrfaJicOdrOA7NtBa?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=rTIBWYjmiE0&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "@type": "MusicAlbum",
+                    "name": "What Kinda Music",
+                    "image": "assets/Tom_Misch-What_Kinda_Music.jpg",
+                    "url": [{
+                        "urlSpotify": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI?autoplay=true",
+                        "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lxzy3zKmi0jbWs2EDXNU4gm-IVR7544dM"
+                    }],
+                    "MusicRecording": [{
+                        "@type": "MusicRecording",
+                            "name": "What Kinda Music",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/47w6S27JF4Zvrz1Wd6R66Z?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=4az3mKDOrEo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Festival",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/2lXFtsU8naRn2mC0DACJEl?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=PkVsMATKkw0&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Nightrider (con Freddie Gibbs)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5TgZ7lOUugOdabBcD9a6ud?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=ImllpvDwbQ8&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Tidal Wave",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4Goj7amQLl2PiPYaiB0VlV?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=o-llwv4pLrg&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Sensational",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/5oEhWt6RfUHSBiSfZVnymh?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Zbv9A8vkR64&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "The Real",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/28wERzXJWMb4Qx1bf9EXyW?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=JFD4lFaPXGo&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Lift Off (con Rocco Palladino)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/6yvTddeHmEiYG7FN8a5frz?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=-qTn6kue3uM&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "I Did It For You",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/4xWLo3R0jjTVOdmtjC5MKI?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=rYmfRdzcRoA&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Last 100",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/39WFZVKifA8Fl2TZI2kp0S?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=EO5dUydK2vU&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Kyiv",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1vzqTU4KJrKhezhPgZkjTr?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=a7hNEbdcHjE&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Julie Mangos",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/7qGAPavRijMOtbm7EzCaUq?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=56BDXuxNL1M&feature=gws_kp_track"
+                            }]
+                        },
+                        {
+                            "@type": "MusicRecording",
+                            "name": "Storm Before The Calm (con Kaidi Akinnibi)",
+                            "url": [{
+                                "urlSpotify": "https://open.spotify.com/embed/track/1wq5gRZ5JRn25N4JCUg1oO?utm_source=generator",
+                                "urlYoutube": "https://music.youtube.com/watch?v=Vt6OvW7ZSn0&feature=gws_kp_track"
+                            }]
+                        }
+                    ]
+                }
+            ],
+            "Event": [],
+            "Review": []
+        },
+        {
+            "@type": "MusicGroup",
+            "name": "Rise on Fire",
+            "url": "https://www.youtube.com/watch?v=qiMZjpvJIUI",
+            "knowsAbout": "Banda local de Mallorca.",
+            "genre": "metal",
+            "description": "2",
+            "sameAs": "rise_onfire",
+            "MusicAlbum": [{
+                "@type": "MusicAlbum",
+                "name": "You Better Pray",
+                "image": "assets/Rise_on_Fire-YBP.jpg",
                 "url": [{
-                    "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
-                    "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
+                    "urlSpotify": "https://open.spotify.com/album/6kQbLoNTZpZGcYTl1uN06N",
+                    "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lj-cXVGpZ9Bc1ZcFktf0tyIexney2X2oY"
                 }],
                 "MusicRecording": [{
-                        "name": "Never Gonna Give You Up",
+                    "@type": "MusicRecording",
+                        "name": "The Pray",
                         "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT?si=e40cdcdf296c496e",
-                            "urlYoutube": "https://music.youtube.com/watch?v=lYBUbBu4W08&feature=share"
+                            "urlSpotify": "https://open.spotify.com/embed/track/03MwlI3Y6ooX43gowUZEPp?utm_source=generator",
+                            "urlYoutube": "https://music.youtube.com/watch?v=qiMZjpvJIUI&feature=gws_kp_track"
                         }]
                     },
                     {
-                        "name": "Whenever You Need Somebody",
+                        "@type": "MusicRecording",
+                        "name": "Hated by Gods",
                         "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/5owW7rEIdQkbL39wt0iEv8?si=2040714408554441",
-                            "urlYoutube": "https://music.youtube.com/watch?v=raBobo3GZYA&feature=share"
+                            "urlSpotify": "https://open.spotify.com/embed/track/77uY8pKl2L0lUHw4NIQORr?utm_source=generator",
+                            "urlYoutube": "https://music.youtube.com/watch?v=_P7qpmPgm4o&feature=gws_kp_track"
                         }]
                     },
                     {
-                        "name": "Together Forever",
+                        "@type": "MusicRecording",
+                        "name": "Mistaken",
                         "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/5eFiEFtrq5dLgVHSZANUNl?si=d5888479246b409f",
-                            "urlYoutube": "https://music.youtube.com/watch?v=i_Q88T1HI_w&feature=share"
+                            "urlSpotify": "https://open.spotify.com/embed/track/5UUJ3tHyy35qn7uq9gNx4e?utm_source=generator",
+                            "urlYoutube": "https://music.youtube.com/watch?v=iMGT0TmqukI&feature=gws_kp_track"
                         }]
                     },
                     {
-                        "name": "It Would Take a Strong Strong Man",
+                        "@type": "MusicRecording",
+                        "name": "Collapse",
                         "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/1YdjBLwswLbmoK2abgdp3P?si=5f0ff2063f8545f0",
-                            "urlYoutube": "https://music.youtube.com/watch?v=dc7UCha20yw&feature=share"
+                            "urlSpotify": "https://open.spotify.com/embed/track/6AtUKhyUcyfOseExeziHKb?utm_source=generator",
+                            "urlYoutube": "https://music.youtube.com/watch?v=DQfqLLsVtYw&feature=gws_kp_track"
                         }]
                     },
                     {
-                        "name": "The Love Has Gone",
+                        "@type": "MusicRecording",
+                        "name": "The End of Everything",
                         "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/6RFfPtZrp24dizU3Vq38EP?si=eb018b2cde7e40c8",
-                            "urlYoutube": "https://music.youtube.com/watch?v=d0t04zd918U&feature=share"
-                        }]
-                    },
-                    {
-                        "name": "Don't Say Goodbye",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0hTSv1xPoQ6PIJp8OMzSql?si=ae5ed8a0ba2143ab",
-                            "urlYoutube": "https://music.youtube.com/watch?v=NnLO1yupSoM&feature=share"
-                        }]
-                    },
-                    {
-                        "name": "Slipping Away",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/3bvrkDfaPU5hELptyFqIBV?si=6b9f8ff90f394d2e",
-                            "urlYoutube": "https://music.youtube.com/watch?v=0125n60K-z8&feature=share"
-                        }]
-                    },
-                    {
-                        "name": "No More Looking for Love",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7ksH5cE4jUYXoTCfcrcq0H?si=525511a433e6433f",
-                            "urlYoutube": "https://music.youtube.com/watch?v=-NzNaBJjohk&feature=share"
-                        }]
-                    },
-                    {
-                        "name": "You Move Me",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/5Su2VhRNod6YDjE65BYJy3?si=4494059c7d094653",
-                            "urlYoutube": "https://music.youtube.com/watch?v=NlxK_hVeKWQ&feature=share"
-                        }]
-                    },
-                    {
-                        "name": "When I Fall in Love",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/38kgUGexsy9l9mUMGyi8oH?si=8620647c0ae5444f",
-                            "urlYoutube": "https://music.youtube.com/watch?v=zoGOXDIsKXM&feature=share"
+                            "urlSpotify": "https://open.spotify.com/embed/track/58Sn1injxLUJyJzZsyrw3g?utm_source=generator",
+                            "urlYoutube": "https://music.youtube.com/watch?v=HKhO6P6cHp4&feature=gws_kp_track"
                         }]
                     }
                 ]
-            },
-            {
-                "name": "Hold Me in Your Arms",
-                "image": "assets/HoldMeInYourArms.jpg",
-                "url": [{
-                    "urlSpotify": "https://open.spotify.com/album/7jFoulkN5p0nHAZ1gyAPHs?autoplay=true",
-                    "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kFftR4F4OZ_rnM4lusrhrqDQirLSwsZ_0"
-                }],
-                "MusicRecording": [{
-                        "name": "She Wants to Dance with Me",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7hHKBI40gVyKXUsjZRKf9g?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=LbJtwIMLeRc&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Take Me to Your Heart",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/39LkwAdYfaYtHQUVmKIcL7?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=OFMthc9YkOw&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "I Don't Want to Lose Her",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0gTERyUq8J8ggsNWUrtfEg?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=dAPNM3-LyKY&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Giving Up on Love",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/1ouqbtBFM6r79hX7MHP0Aj?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=BQWv4_OcSmM&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Ain't Too Proud To Beg",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7LYXIcFB6SyO8OKZNfFUIq?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=INbP13PWSQk&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Till Then (Time Stands Still)",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/6s3yfxpoL3dFzkqWIWKLCL?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=rgmxNZ3xA4g&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Dial My Number",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/24IO8FErzfs1EXW9Cz0uma?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=zvZKZp7NoJY&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "I'll Never Let You Down",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/3cEaADmnNbzhRybQ6HBCMD?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=3nV9udxkkxw&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "I Don't Want to Be Your Lover",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/1rgt0xr9T6soZckX9uYxvh?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=a62kTC4GE2E&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Hold Me in Your Arms",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/2Kk62hOwkwiiwol9f98ETO?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=a4DkPD97AB4&feature=gws_kp_track"
-                        }]
-                    }
-                ]
-            }
-        ],
-        "Event": [{
-                "startDate": "TUE 10 MAY",
-                "location": "HERITAGE BANK CENTER    CINCINNATI, OH, US",
-                "url": "https://www.songkick.com/concerts/40047083-new-kids-on-the-block-at-heritage-bank-center?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
-            },
-            {
-                "startDate": "THU 12 MAY",
-                "location": "GAINBRIDGE FIELDHOUSE    INDIANAPOLIS, IN, US",
-                "url": "https://www.songkick.com/concerts/40046973-new-kids-on-the-block-at-gainbridge-fieldhouse?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
-            },
-            {
-                "startDate": "FRI 13 MAY",
-                "location": "BRIDGESTONE ARENA    NASHVILLE, TN, US",
-                "url": "https://www.songkick.com/concerts/40047050-new-kids-on-the-block-at-bridgestone-arena?utm_source=11593&utm_medium=partner&utm_campaign=widget&utm_content=81555"
-            }
-        ],
-        "Comment": [{
-                "author": "John Smith",
-                "text": "Un músico como pocos. Siempre me divierto RickRolleando a mis amigos. xD"
-            },
-            {
-                "author": "Karen Watson",
-                "text": "Me encantan sus baladas."
-            },
-            {
-                "author": "Steven Spielberg",
-                "text": "Estaría encantado de tener su voz como parte de las canciones de mis películas."
-            }
-        ]
-    }, {
-        "name": "Daft Punk",
-        "url": "https://www.youtube.com/watch?v=gAjR4_CbPpQ",
-        "knowsAbout": "Cosas por las que es conocido o destacado.",
-        "description": "2",
-        "follows": "daftpunk",
-        "MusicAlbum": [{
-                "name": "Random Access Memories",
-                "image": "assets/RandomAccessMemories.jpg",
-                "url": [{
-                    "urlSpotify": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa?autoplay=true",
-                    "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nZZjkBu_E4olFSb5Ey-fQ-4a0ZCqJICdQ&feature=gws_kp_album&feature=gws_kp_artist"
-                }],
-                "MusicRecording": [{
-                        "name": "Give Life Back to Music",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0dEIca2nhcxDUV8C5QkPYb?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=zKSsP2084nU&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "The Game of Love",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/3ctALmweZBapfBdFiIVpji?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=_vOcbrUsmjM&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Giorgio by Moroder",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0oks4FnzhNp5QPTZtoet7c?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=ZFZM6jDTWd4&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Within",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7Bxv0WL7UC6WwQpk9TzdMJ?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=iNjGNNoUjkk&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Instant Crush",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/2cGxRwrMyEAp8dEbuZaVv6?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=khnokW3Mw24&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Lose Yourself to Dance",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/5CMjjywI0eZMixPeqNd75R?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=iU7oF4OXZSE&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Touch",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7oaEjLP2dTJLJsITbAxTOz?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=RRMbhEdmhYw&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Get Lucky",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/69kOkLUCkxIZYexIgSG8rq?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=4D7u5KF7SP8&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Beyond",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0k1xMUwn9sb7bZiqdT9ygx?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=RE_XX6jk2Lo&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Motherboard",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/79koEJRtKOOGJ0VSAF3FMk?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=3x-Q-iRvib4&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Fragments of Time",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0IedgQjjJ8Ad4B3UDQ5Lyn?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=3rpQTqpFTF4&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Doin’ It Right",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/36c4JohayB9qd64eidQMBi?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=wmSkU6R9Zi8&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Contact",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/2KHRENHQzTIQ001nlP9Gdc?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=UoF1dFWKsVk&feature=gws_kp_track"
-                        }]
-                    }
-                ]
-            },
-            {
-                "name": "Discovery",
-                "image": "assets/Discovery.jpg",
-                "url": [{
-                    "urlSpotify": "https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc?autoplay=true",
-                    "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lMA_iEf3aqk5YSDsnrPKojXegOiecSF94&feature=gws_kp_album&feature=gws_kp_artist"
-                }],
-                "MusicRecording": [{
-                        "name": "One More Time",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/0DiWol3AO6WpXZgp0goxAV?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=MNVcs2RSG60&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Aerodynamic",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/3H3cOQ6LBLSvmcaV7QkZEu?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=sP8pIospPig&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Digital Love",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/2VEZx7NWsZ1D0eJ4uv5Fym?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=Smi8vAbm_8o&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Harder, Better, Faster, Stronger",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/5W3cjX2J3tjhG8zb6u0qHn?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=0yZ6UNEP9Vc&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Crescendolls",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/1E8S3CSv20KrKT0C1yAjkO?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=F6e2rM2-oLY&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Nightvision",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/63JXZZRbmzooashakb0zbu?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=iRHo9cz2wFc&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Superheroes",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/186hvCTyrni4KT9nwIQ7zS?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=mZdfvOuRvFc&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "High Life",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/098ttCNmncrO4YvqWUNMvn?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=IUpgPigGJ5s&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Something About Us",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/1NeLwFETswx8Fzxl2AFl91?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=URzOGF_QGls&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Voyager",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7cMFjxhbXBpOlais7KMF3j?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=OWiVJMgms9E&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Veridis Quo",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/2LD2gT7gwAurzdQDQtILds?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=qe8Q7mjxjig&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Short Circuit",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/4npMbTuxrUA3Wd7edACZ2L?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=Can7kOYrGpI&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Face to Face",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/7v9Q0dAb9t7h8gJOkcJHay?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=qXI87eMP-bs&feature=gws_kp_track"
-                        }]
-                    },
-                    {
-                        "name": "Too Long",
-                        "url": [{
-                            "urlSpotify": "https://open.spotify.com/track/3n4ow4XGzwSIPxA3JHLF9p?autoplay=true",
-                            "urlYoutube": "https://music.youtube.com/watch?v=ifJxwoDmQqY&feature=gws_kp_track"
-                        }]
-                    }
-                ]
-            }
-        ],
-        "Event": [],
-        "Comment": []
-    }]
-}
+            }],
+            "Event": [],
+            "Review": []
+        }
+]

@@ -11136,3 +11136,9 @@ html {
     background-repeat: no-repeat;
     min-height: 15rem;
 }
+
+.center-80 {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
