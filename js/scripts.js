@@ -73,18 +73,19 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     let album = document.getElementById("album_card");
     document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
     console.log(album);
-    for (var i = 0; i < pageContent.album.length; i++) {
+    console.log(pageContent.MusicAlbum.length);
+    for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
-        album.childNodes[1].childNodes[1].setAttribute("src", pageContent.album[i].image);
+        album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
         //changing urlSpotify
-        album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.album[i].url[0].urlSpotify);
+        album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.MusicAlbum[i].url[0].urlSpotify);
         //changing urlYoutube
-        album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.album[i].url[0].urlYoutube);
+        album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.MusicAlbum[i].url[0].urlYoutube);
         //changing name
-        album.childNodes[3].childNodes[1].innerHTML = pageContent.album[i].name;
-        console.log(pageContent.album[i].name);
+        album.childNodes[3].childNodes[1].innerHTML = pageContent.MusicAlbum[i].name;
+        console.log(pageContent.MusicAlbum[i].name);
         //introducing songs
-        album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.album[i], pageContent.genre);
+        album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i], pageContent.genre);
         //append
         document.getElementById("album_section").appendChild(album.cloneNode(true));
     }
@@ -106,10 +107,11 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 }
 
 function generateSongList(musicAlbum, genre) {
-    var metadata = '<meta content="'+musicAlbum.track.length+'" property="numTracks" />\n<meta content="'+genre+'" property="genre" />'
+    var type = 'property="track" typeof="MusicRecording"';
+    var metadata = '<meta content="'+musicAlbum.MusicRecording.length+'" property="numTracks" />\n<meta content="'+genre+'" property="genre" />'
     var songList = metadata+"\n<ol>"
-    for (var i = 0; i < musicAlbum.track.length; i++) {
-        songList = songList + "<li><div onclick=\"spotifyPlayer('" + musicAlbum.track[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.track[i].name + "</div></li>";
+    for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
+        songList = songList + "<li><div "+type+" onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
