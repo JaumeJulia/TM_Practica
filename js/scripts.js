@@ -124,21 +124,55 @@ function generateSongList(musicAlbum, genre) {
     return songList;
 }
 
+function fetchSelectedGenres() {
+    var selectedGenres = [];
+    if (document.getElementById("pop_genre").checked) {
+        console.log("popeado bro");
+        selectedGenres.push("pop");
+    }
+    if (document.getElementById("metal_genre").checked) {
+        selectedGenres.push("metal");
+    }
+    if (document.getElementById("fusion_genre").checked) {
+        selectedGenres.push("fusion");
+    }
+    if (document.getElementById("electronic_genre").checked) {
+        selectedGenres.push("electronic");
+    }
+    if (document.getElementById("jazz-fusion_genre").checked) {
+        selectedGenres.push("jazz-fusion");
+    }
+    if (document.getElementById("reggaeton_genre").checked) {
+        selectedGenres.push("reggaeton");
+    }
+    console.log("generos cogidos");
+    console.log(selectedGenres);
+    filterArtistByGenre(selectedGenres);
+}
+
 async function filterArtistByGenre(selectedGenres) {
     jsonContent = await readJson(urlMainJson);
     var carrouselContent;
-    for (var i = 0; i < jsonContent.Person.length; i++) {
-        if (selectedGenres.includes(jsonContent.Person[i].genre)) {
-            carrouselContent += buildArtistCard(jsonContent.Person[i].name);
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (selectedGenres.includes(jsonContent[i].genre)) {
+            carrouselContent += buildArtistCard(jsonContent[i].name);
         }
     }
+    document.getElementById("carrousel").innerHTML = carrouselContent;
+    //var flickity = document.getElementById("flickity");
+    document.getElementById("flickity").remove;
+    var flickity = document.createElement('script');
+    flickity.id = "flickity";
+    flickity.src = "js/flickity.js?amapola=0";
+    document.getElementById('body').appendChild(flickity);
+    //document.getElementsById('body').appendChild(flickity);
 }
 
 function buildArtistCard(artistName) {
-    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(' + artistName + ');">';
+    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(\'' + artistName + '\')">';
     card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
     card += '<div class="card h-100 shadow border-0">';
-    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg alt="..." />';
+    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg" alt="..." />';
     card += '<div class="card-body p-4 text-center">';
     card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
     card += '</div></div></a></div>';

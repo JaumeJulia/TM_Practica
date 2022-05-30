@@ -20,7 +20,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body id="body" class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" aria-label="Third navbar example">
@@ -347,44 +347,47 @@
                                 sisisisisisisisisi
                             </button> -->
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Pop
-                            </label>
+                                <input type="checkbox" class="form-check-input" id="pop_genre">
+                                <label class="form-check-label" for="pop_genre">
+                                    Pop
+                                </label>
                             </div>
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Metal
-                            </label>
+                                <input type="checkbox" class="form-check-input" id="metal_genre">
+                                <label class="form-check-label" for="metal_genre">
+                                    Metal
+                                </label>
                             </div>
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Fusion
-                            </label>
+                                <input type="checkbox" class="form-check-input" id="fusion_genre">
+                                <label class="form-check-label" for="fusion_genre">
+                                    Fusion
+                                </label>
                             </div>
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Electronic
-                            </label>
+                                <input type="checkbox" class="form-check-input" id="electronic_genre">
+                                <label class="form-check-label" for="electronic_genre">
+                                    Electronic
+                                </label>
                             </div>
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Jazz-fusion
-                            </label>
+                                <input type="checkbox" class="form-check-input" id="jazz-fusion_genre">
+                                <label class="form-check-label" for="jazz-fusion_genre">
+                                    Jazz-fusion
+                                </label>
                             </div>
                             <div>
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                Reggaeton
+                                <input type="checkbox" class="form-check-input" id="reggaeton_genre">
+                                <label class="form-check-label" for="reggaeton_genre">
+                                    Reggaeton
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="fetchSelectedGenres()">
+                            Aplicar
+                        </button>
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
                             Cerrar
                         </button>
@@ -437,12 +440,12 @@
                     <input type="checkbox" class="custom-control-input" id="customSwitch">
                     <label class="custom-control-label" for="customSwitch">Activar Modo Oscuro</label>
                 </div> -->
-                <div class="gallery js-flickity">
+                <div class="gallery js-flickity" id="carrousel">
                     <!-- Div del carrousel -->
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rick Astley');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/RickAstley.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Rick Astley.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Rick Astley</h5>
                                 </div>
@@ -452,7 +455,7 @@
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Daft Punk');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/Daft-Punk.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Daft Punk.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Daft Punk</h5>
                                 </div>
@@ -462,7 +465,7 @@
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Louis Cole');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/Louis-Cole.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Louis Cole.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Louis Cole</h5>
                                 </div>
@@ -472,7 +475,7 @@
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Luis Fonsi');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/Luis-Fonsi.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Luis Fonsi.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Luis Fonsi</h5>
                                 </div>
@@ -482,7 +485,7 @@
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Tom Misch');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/Tom-Misch.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Tom Misch.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Tom Misch</h5>
                                 </div>
@@ -492,7 +495,7 @@
                     <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rise on Fire');">
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="assets/RickAstley.jpg" alt="..." />
+                                <img class="card-img-top" src="assets/Rick Astley.jpg" alt="..." />
                                 <div class="card-body p-4 text-center">
                                     <h5 class="card-title mb-3">Rise on Fire</h5>
                                 </div>
@@ -526,7 +529,7 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/jsonUtilities.js"></script>
-    <script src="js/flickity.js"></script>
+    <script id="flickity" src="js/flickity.js"></script>
     <script src="js/twitterApi.js"></script>
     <script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
