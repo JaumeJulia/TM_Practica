@@ -25,7 +25,9 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" aria-label="Third navbar example">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Artistas Destacados</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/ArtistasDestacados.svg" alt="ArtistasDestacados" class="image image_front_1" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -117,16 +119,16 @@
                         </div>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Nombre del artista..." data-sb-validations="required" />
+                                <input class="form-control" name="Artist Name" type="text" placeholder="Nombre del artista..." data-sb-validations="required" />
                                 <label for="name">Nombre del artista</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">
                                     Se requiere un nombre.
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
+                                <input class="form-control" name="Sender email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
                                 <label for="email">Tu dirección email</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">
                                     Se requiere un emal.
@@ -136,18 +138,19 @@
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Introduce tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" name="Message" type="text" placeholder="Introduce tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Por qué se le conoce</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">
                                     Introduce los motivos por los que queres ver este artista en nuestra página.
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                Enviar
+                                </button>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-                         Enviar
-                     </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
