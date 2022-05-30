@@ -180,7 +180,7 @@ function WikipediaAPIGetContent(search, section) {
             var markup = data.parse.text["*"];
             //console.log(markup);
             storeData("wiki", markup);
-            //loadWikiDescription(markup);
+            loadWikiDescription(markup);
             window.location.reload();
         },
         error: function(errorMessage) {
