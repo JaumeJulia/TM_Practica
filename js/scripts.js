@@ -148,7 +148,7 @@ function buildArtistCard(artistName) {
 function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
-        url: "http://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
+        url: "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
         dataType: "json",
@@ -163,6 +163,7 @@ function WikipediaApiSearch(artistName, section) {
         },
         error: function(errorMessage) {
             //wikiDescriptionLoaded = true;
+            alert("Wikipedia apiSearch");
             alert(errorMessage);
         }
     });
@@ -171,7 +172,7 @@ function WikipediaApiSearch(artistName, section) {
 function WikipediaAPIGetContent(search, section) {
     jQuery.ajax({
         type: "GET",
-        url: "http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
+        url: "https://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
         dataType: "json",
@@ -186,6 +187,7 @@ function WikipediaAPIGetContent(search, section) {
         },
         error: function(errorMessage) {
             //wikiDescriptionLoaded = true;
+            alert("Wikipedia getContent");
             alert(errorMessage);
         }
     });
@@ -215,8 +217,8 @@ function loadComments(data) {
     var seccionComentarios = document.getElementById("comentarios");
     console.log(seccionComentarios);
     var commentarios = "";
-    for (let i = 0; i < data.Comment.length; i++) {
-        commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + data.Comment[i].author + '</div>' + data.Comment[i].text + '</div></div>';
+    for (let i = 0; i < data.Review.length; i++) {
+        commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
     }
     seccionComentarios.innerHTML = commentarios;
 
