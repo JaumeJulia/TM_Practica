@@ -82,6 +82,7 @@ async function writeJson() { //TODO
 }
 
 async function addComent(data, artistName, author) {
+    console.log("Llega a addComent");
     var jsonFile = await readJson(masterFile);
     var comment = { "author": author, "text": data };
     for (i = 0; i < jsonFile.lenght; i++) {
