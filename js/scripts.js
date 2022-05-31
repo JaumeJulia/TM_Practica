@@ -223,13 +223,13 @@ function loadComments(data) {
     seccionComentarios.innerHTML = commentarios;
 
     var comments = retrieveLocalDataAsJSON("Reviews");
-    if(comments!= null){
+    if (comments != null) {
         for (let i = 0; i < comments.length; i++) {
-            if(comments[i].artist == data.name){
-                 commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
-        
+            if (comments[i].artist == data.name) {
+                commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
+
             }
-           }
+        }
     }
     seccionComentarios.innerHTML = commentarios;
     console.log(seccionComentarios);
@@ -242,40 +242,40 @@ async function guardarComentario() {
      console.log(artista); */
     var comentario = document.getElementById("comment").value;
     var nombreUsuario = document.getElementById("commentor-name").value;
-    
+
     if (nombreUsuario == "") {
         alert("Debes poner un nombre para mostrar tu comentario");
     }
     if (comentario == "") {
         alert("El campo del comentario no debe estar vacio");
     }
-    try{
+    try {
         guardarComentariosLocalStorage(document.getElementById("artist_name").innerHTML, nombreUsuario, comentario);
-    }
-    catch(error){
+    } catch (error) {
         alert(error);
     }
     //modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
-    
+
     //addComent(comentario, document.getElementById("artist_name").value, nombreUsuario);
     /*     artista.Comment[author] = nombreUsuario;
         artista.Comment[text] = comentario;
         console.log(artista); */
 }
 
-function guardarComentariosLocalStorage(artistName, author, comment){
+function guardarComentariosLocalStorage(artistName, author, comment) {
     var comments = retrieveLocalDataAsJSON("Reviews");
-    if(comments != null){
+    var newComment = "";
+    if (comments != null) {
         var i = 0;
-        var newComment = "";
-        newComment = newComment + '[{"artist" : "'+comments[i].artist+'", "author" : "'+comments[i].author+'", "text" : "'+comments[i].text+'"},';
-        i = i+1;
-        for(; i <comments.length; i++){
-            newComment = newComment + '{"artist" : "'+comments[i].artist+'", "author" : "'+comments[i].author+'", "text" : "'+comments[i].text+'"},';
+        //var newComment = "";
+        newComment = newComment + '[{"artist" : "' + comments[i].artist + '", "author" : "' + comments[i].author + '", "text" : "' + comments[i].text + '"},';
+        i = i + 1;
+        for (; i < comments.length; i++) {
+            newComment = newComment + '{"artist" : "' + comments[i].artist + '", "author" : "' + comments[i].author + '", "text" : "' + comments[i].text + '"},';
         }
-        newComment = newComment + '{"artist" : "'+artistName+'", "author" : "'+author+'", "text" : "'+comment+'"}]';
-    }else{
-        var newComment = '[{"artist" : "'+artistName+'", "author" : "'+author+'", "text" : "'+comment+'"}]';
+        newComment = newComment + '{"artist" : "' + artistName + '", "author" : "' + author + '", "text" : "' + comment + '"}]';
+    } else {
+        newComment = '[{"artist" : "' + artistName + '", "author" : "' + author + '", "text" : "' + comment + '"}]';
     }
     newComment = JSON.parse(newComment);
     storeDataAsJSON("Reviews", newComment);

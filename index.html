@@ -280,7 +280,10 @@
                                                 <!-- Comment form-->
                                                 <form class="mb-4">
                                                     <input id="commentor-name" class="form-label" rows="1" placeholder="Dinos tu nombre"></input>
-                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="Join the discussion and leave a comment!"></textarea> <button onclick="guardarComentario()">Dejar el comentario</button></form>
+                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="Join the discussion and leave a comment!"></textarea> <input type="button" class="btn btn-outline-primary" value="Dejar el comentario"
+                                                        onclick="guardarComentario()" />
+                                                    <!-- </input> -->
+                                                </form>
 
                                                 <!-- Comment with nested comments-->
                                                 <div id="comentarios"></div>
