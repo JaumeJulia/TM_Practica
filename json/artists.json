@@ -10,7 +10,7 @@
         "MusicAlbum": [{
                 "@type": "MusicAlbum",
                 "name": "Whenever You Need Somebody",
-                "image": "assets/WheneverYouNeedSomebody.jpg",
+                "image": "assets/WheneverYouNeedSomebody.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
@@ -100,7 +100,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Hold Me in Your Arms",
-                "image": "assets/HoldMeInYourArms.jpg",
+                "image": "assets/HoldMeInYourArms.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/7jFoulkN5p0nHAZ1gyAPHs?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kFftR4F4OZ_rnM4lusrhrqDQirLSwsZ_0"
@@ -190,7 +190,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "50",
-                "image": "assets/rick_astley_50.jpg",
+                "image": "assets/rick_astley_50.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/4f9CV4zRabJ0e5q8QEx0tv?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nFVlLCq67W_4Dle-u83WYE5rTsuqr72E4"
@@ -296,7 +296,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Beautiful Life",
-                "image": "assets/rick_astley_beautiful_life.jpg",
+                "image": "assets/rick_astley_beautiful_life.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/3IqiZzsC1gef7qgvCXTqTj?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_m9j_zS31asUS2iqI6_oA8zfY6Nx-NWMYU"
@@ -447,7 +447,7 @@
         "MusicAlbum": [{
                 "@type": "MusicAlbum",
                 "name": "Random Access Memories",
-                "image": "assets/RandomAccessMemories.jpg",
+                "image": "assets/RandomAccessMemories.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nZZjkBu_E4olFSb5Ey-fQ-4a0ZCqJICdQ&feature=gws_kp_album&feature=gws_kp_artist"
@@ -561,7 +561,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Discovery",
-                "image": "assets/Discovery.jpg",
+                "image": "assets/Discovery.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lMA_iEf3aqk5YSDsnrPKojXegOiecSF94&feature=gws_kp_album&feature=gws_kp_artist"
@@ -683,7 +683,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Homework",
-                "image": "assets/daft_punk-Homework.jpg",
+                "image": "assets/daft_punk-Homework.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/6JRaPcrT3cMBEmkgSqEPhI?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lAbfrCq-BVAU2Z2yAIjsEN0jwghzcAFSY"
@@ -821,7 +821,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Human After All",
-                "image": "assets/daft_punk-Human_After_All.jpg",
+                "image": "assets/daft_punk-Human_After_All.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/1A2GTWGtFfWp7KSQTwWOyo?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kyBLbpI5BRf2wHsxpI8MM_WwF3epmn7U0"
@@ -923,7 +923,7 @@
         "MusicAlbum": [{
                 "@type": "MusicAlbum",
                 "name": "Louis Cole and Genevieve Artadi",
-                "image": "assets/Louis_cole-firstAlbum.jpg",
+                "image": "assets/Louis_cole-firstAlbum.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/7o5y1ttfkpL6zf6P2uCYPQ?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lhCqHosxyxeVMBhhnHA1Ok1RSn3m2AT-w"
@@ -1021,7 +1021,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Think Thoughts",
-                "image": "assets/Louis_Cole-Think_Thoughts.jpg",
+                "image": "assets/Louis_Cole-Think_Thoughts.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/3c9ODwk9kgkv90SSbhPqwl?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lUarVSyFvtS2zszcz7ivVS1A9b7vUhEk0"
@@ -1111,7 +1111,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Let Go",
-                "image": "assets/Louis_Cole-Let_Go.jpg",
+                "image": "assets/Louis_Cole-Let_Go.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/4Zs8pUAVPJjiSjIEtI9BG8?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lVpskavU3X5bHVDUGNe3zrno7YmKoMTY4"
@@ -1185,7 +1185,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Life",
-                "image": "assets/Louis_Cole-Life.jpg",
+                "image": "assets/Louis_Cole-Life.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/4SVxz8yqIymDrdiX2YBeQe",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_n9H5AcBM8dgFVZiWzrtoT1jmZ33AVL1NE"
@@ -1303,7 +1303,7 @@
         "MusicAlbum": [{
                 "@type": "MusicAlbum",
                 "name": "Comenzare",
-                "image": "assets/Luis_Fonsi-Comenzare.jpg",
+                "image": "assets/Luis_Fonsi-Comenzare.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/10TIwSSiAKER6mmXVawoOi?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kADb2U7KzLlORjwZ8vKqQq65MGf4iYj9o"
@@ -1393,7 +1393,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "Fight the Feeling",
-                "image": "assets/Luis_Fonsi-Fight_the_Feeling.jpg",
+                "image": "assets/Luis_Fonsi-Fight_the_Feeling.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/7cvzxUV0peinUHJmdhADmU?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nXOyihBPTkMHdr3JRyn9Dw0Q8RmlwIQqU"
@@ -1503,7 +1503,7 @@
         "MusicAlbum": [{
                 "@type": "MusicAlbum",
                 "name": "Geography",
-                "image": "assets/Tom_Misch-Geography.jpg",
+                "image": "assets/Tom_Misch-Geography.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/28enuddLPEA914scE6Drvk?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_mmD1gNBJZVNLv1HQqK4i7Cfg_CiWIy5d0"
@@ -1617,7 +1617,7 @@
             {
                 "@type": "MusicAlbum",
                 "name": "What Kinda Music",
-                "image": "assets/Tom_Misch-What_Kinda_Music.jpg",
+                "image": "assets/Tom_Misch-What_Kinda_Music.webp",
                 "url": [{
                     "urlSpotify": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lxzy3zKmi0jbWs2EDXNU4gm-IVR7544dM"
@@ -1735,7 +1735,7 @@
         "MusicAlbum": [{
             "@type": "MusicAlbum",
             "name": "You Better Pray",
-            "image": "assets/Rise_on_Fire-YBP.jpg",
+            "image": "assets/Rise_on_Fire-YBP.webp",
             "url": [{
                 "urlSpotify": "https://open.spotify.com/album/6kQbLoNTZpZGcYTl1uN06N",
                 "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lj-cXVGpZ9Bc1ZcFktf0tyIexney2X2oY"
