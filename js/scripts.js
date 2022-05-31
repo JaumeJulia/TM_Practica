@@ -218,7 +218,7 @@ function loadComments(data) {
     console.log(seccionComentarios);
     var commentarios = "";
     for (let i = 0; i < data.Review.length; i++) {
-        commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
+        commentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
     }
     seccionComentarios.innerHTML = commentarios;
 
@@ -226,7 +226,7 @@ function loadComments(data) {
     if (comments != null) {
         for (let i = 0; i < comments.length; i++) {
             if (comments[i].artist == data.name) {
-                commentarios += '<div class="d-flex mb-3"><div class="ms-3"><div class="fw-bold">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
+                commentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
 
             }
         }
