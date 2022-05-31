@@ -163,6 +163,7 @@ function WikipediaApiSearch(artistName, section) {
         },
         error: function(errorMessage) {
             //wikiDescriptionLoaded = true;
+            alert("Wikipedia apiSearch");
             alert(errorMessage);
         }
     });
@@ -186,13 +187,14 @@ function WikipediaAPIGetContent(search, section) {
         },
         error: function(errorMessage) {
             //wikiDescriptionLoaded = true;
+            alert("Wikipedia getContent");
             alert(errorMessage);
         }
     });
 }
 
 function TwitterApiSearch(artistName, artistTwitter) {
-    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
+    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
     console.log("artistTwitter: " + artistTwitter)
     console.log("twitterResponse: " + twitterResponse);
