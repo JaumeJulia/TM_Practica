@@ -152,24 +152,31 @@ function fetchSelectedGenres() {
 
 async function filterArtistByGenre(selectedGenres) {
     jsonContent = await readJson(urlMainJson);
-    var carrouselContent;
+    var carrouselContent = "";
+    var traslation = 0;
     for (var i = 0; i < jsonContent.length; i++) {
         if (selectedGenres.includes(jsonContent[i].genre)) {
-            carrouselContent += buildArtistCard(jsonContent[i].name);
+            carrouselContent += buildArtistCard(jsonContent[i].name, traslation);
+            traslation += 102.78;
         }
     }
-    document.getElementById("carrousel").innerHTML = carrouselContent;
+    console.log(document.getElementById("carrousel").childNodes);
+    document.getElementById("carrousel").childNodes[9].innerHTML = carrouselContent;
     //var flickity = document.getElementById("flickity");
-    document.getElementById("flickity").remove;
-    var flickity = document.createElement('script');
-    flickity.id = "flickity";
-    flickity.src = "js/flickity.js?amapola=0";
-    document.getElementById('body').appendChild(flickity);
+    //document.getElementById("flickity").remove;
+    //var flickity = document.createElement('script');
+    //flickity.id = "flickity";
+    //flickity.src = "js/flickity.js?amapola=0";
+    //document.getElementById('body').appendChild(flickity);
     //document.getElementsById('body').appendChild(flickity);
 }
 
-function buildArtistCard(artistName) {
-    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(\'' + artistName + '\')">';
+function buildArtistCard(artistName, traslation) {
+    var isSelected = "";
+    if (traslation === 0) {
+        isSelected = "is-selected";
+    }
+    var card = '<div class="col-lg-4 mx-1 my-1 ' + isSelected + '" onclick="updateCurrentPage(\'' + artistName + '\');" style="position: absolute; left: 0px; transform: translateX(' + traslation + '%);">';
     card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
     card += '<div class="card h-100 shadow border-0">';
     card += '<img class="card-img-top" src="assets/' + artistName + '.jpg" alt="..." />';
