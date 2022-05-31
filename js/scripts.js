@@ -283,3 +283,9 @@ function guardarComentariosLocalStorage(artistName, author, comment){
     document.getElementById("comment").value = null;
     document.getElementById("commentor-name").value = null;
 }
+
+function busqueda(artistName) {
+    if(event.key === 'Enter') {
+        updateCurrentPage(artistName.value);        
+    }
+}
