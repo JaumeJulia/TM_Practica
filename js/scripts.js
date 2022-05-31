@@ -10,21 +10,16 @@ const urlMainJson = "../json/artists.json";
 
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
-    console.log(storedArtist);
     if (storedArtist == null) {
         updateCurrentPage("Rick Astley");
     } else {
-        console.log("recargando la pagina desde la caché");
         updateCurrentPageWithLocalStorage(storedArtist);
     }
 };
 
 async function updateCurrentPage(artistName) {
     var storedArtist = retrieveLocalData("artistName");
-    if (storedArtist === artistName) {
-        console.log("Eligió el mismo artista ya elegido, no hay actualización");
-    } else {
-        console.log("cargando desde el json");
+    if (storedArtist === artistName) {} else {
         const jsonContent = await readJson(urlMainJson);
         var artist = jsonContent.filter(findArtist);
 
@@ -33,12 +28,9 @@ async function updateCurrentPage(artistName) {
         }
         storeData("artistName", artist[0].name);
         storeDataAsJSON("jsonContents", artist[0]);
-        console.log(artist[0]);
         loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
         TwitterApiSearch(artist[0].name, artist[0].sameAs);
-        console.log("Recording:");
-        console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         loadComments(artist[0]);
     }
@@ -55,14 +47,12 @@ function loadWikiDescription(data) {
     //console.log(data);
     var blurb = $('<div></div>').html(data);
     // remove links as they will not work
-    console.log(blurb);
     blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
     // remove any references
     blurb.find('sup').remove();
     blurb.find('span').remove();
     // remove cite error
     blurb.find('ol').remove();
-    console.log(blurb);
     $('#biografia').html(blurb);
 }
 
@@ -73,8 +63,6 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 
     let album = document.getElementById("album_card");
     document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
-    console.log(album);
-    console.log(pageContent.MusicAlbum.length);
     for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
         album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
@@ -84,7 +72,6 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.MusicAlbum[i].url[0].urlYoutube);
         //changing name
         album.childNodes[3].childNodes[1].innerHTML = pageContent.MusicAlbum[i].name;
-        console.log(pageContent.MusicAlbum[i].name);
         //introducing songs
         album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i], pageContent.genre);
         //append
@@ -160,18 +147,22 @@ function WikipediaAPIGetContent(search, section) {
 }
 
 function TwitterApiSearch(artistName, artistTwitter) {
-    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
-    twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
-    console.log("artistTwitter: " + artistTwitter)
-    console.log("twitterResponse: " + twitterResponse);
+    var twitterResponse = '<a async="" class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
+    reload_js('external/js/widgets.js');
     storeData("twitter", twitterResponse);
     loadTwitts(twitterResponse, artistName);
 }
 
 function loadTwitts(data, artistName) {
-    document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
+    document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title">' + artistName + '</h3>';
     document.getElementById("twitterBody").innerHTML = data;
 }
+
+function reload_js(src) {
+    $('script[src="' + src + '"]').remove();
+    $('<script>').attr('src', src).appendTo('body');
+}
+
 
 function spotifyPlayer(url) {
     var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
@@ -179,9 +170,7 @@ function spotifyPlayer(url) {
 }
 
 function loadComments(data) {
-    console.log("Entrando en la seccion de comentarios");
     var seccionComentarios = document.getElementById("comentarios");
-    console.log(seccionComentarios);
     var commentarios = "";
     for (let i = 0; i < data.Review.length; i++) {
         commentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
@@ -198,7 +187,6 @@ function loadComments(data) {
         }
     }
     seccionComentarios.innerHTML = commentarios;
-    console.log(seccionComentarios);
 }
 
 async function guardarComentario() {
