@@ -14,7 +14,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/carrouselStyle.css" rel="stylesheet" />
-    <link href="css/flickity.css" rel="stylesheet" />
+    <!-- <link href="css/flickity.css" rel="stylesheet" /> -->
     <link href="css/imageFadeOut.css" rel="stylesheet" />
     <link href="css/searchBar.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -218,7 +218,7 @@
                         <img class="card-img-top" width="200" height="250" alt="..." property="image" />
                         <div class="overlay">
                             <a class="text-decoration-none link-dark stretched-link" property="url">
-                                <img width="20" height="20"src="assets/YoutubeMusic.svg" alt="YoutubeMusic" class="image image_front_1" />
+                                <img width="20" height="20" src="assets/YoutubeMusic.svg" alt="YoutubeMusic" class="image image_front_1" />
                             </a>
                             <div class="image_front_text_1">Youtube Music</div>
                             <a class="text-decoration-none link-dark stretched-link" property="url">
@@ -310,82 +310,80 @@
         </div>
 
         <!-- Blog preview section-->
-        <section class="py-5">
-            <div class="container px-5 my-3">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <div class="text-center">
-                            <h2 class="fw-bolder">Carrete de artistas</h2>
-                            <p class="lead fw-normal text-muted mb-5">Navega por todos los artistas de la página y descubre nuevos estilos.</p>
+
+        <div class="container py-5 bg-light">
+            <div class="carrousel_row">
+                <div class="row__inner">
+
+                    <div class="tile" onclick="updateCurrentPage('Rick Astley');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/RickAstley.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Rick Astley
+                            </div>
                         </div>
                     </div>
+
+                    <div class="tile" onclick="updateCurrentPage('Daft Punk');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/Daft-Punk.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Daft Punk
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tile" onclick="updateCurrentPage('Louis Cole');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/Louis-Cole.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Louis Cole
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tile" onclick="updateCurrentPage('Luis Fonsi');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/Luis-Fonsi.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Luis Fonsi
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tile" onclick="updateCurrentPage('Tom Misch');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/Tom-Misch.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Tom Misch
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tile" onclick="updateCurrentPage('Rise on Fire');">
+                        <div class="tile__media">
+                            <img class="tile__img" src="assets/Rise_on_Fire-YBP.webp" alt="" />
+                        </div>
+                        <div class="tile__details">
+                            <div class="tile__title">
+                                Rise on Fire
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="gallery js-flickity">
-                    <!-- Div del carrousel -->
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rick Astley');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/RickAstley.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Rick Astley</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Daft Punk');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/Daft-Punk.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Daft Punk</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Louis Cole');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/Louis-Cole.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Louis Cole</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Luis Fonsi');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/Luis-Fonsi.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Luis Fonsi</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Tom Misch');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/Tom-Misch.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Tom Misch</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage('Rise on Fire');">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" width="300" height="300" src="assets/Rise_on_Fire-YBP.webp" alt="..." />
-                                <div class="card-body p-4 text-center">
-                                    <h5 class="card-title mb-3">Rise on Fire</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Call to action-->
             </div>
-        </section>
+        </div>
     </main>
     <!-- Footer-->
     <footer class="bg-dark py-4 mt-auto">
@@ -409,10 +407,11 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/jsonUtilities.js"></script>
-    <script src="js/flickity.js"></script>
+    <!-- <script src="js/flickity.js"></script> -->
     <script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 </body>
 
 </html>
