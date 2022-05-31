@@ -7,7 +7,6 @@
 // Use this file to add JavaScript to your project
 
 const urlMainJson = "../json/artists.json";
-//var wikiDescriptionLoaded = false;
 
 window.onload = function() {
     var storedArtist = retrieveLocalData("artistName");
@@ -21,12 +20,9 @@ window.onload = function() {
 };
 
 async function updateCurrentPage(artistName) {
-    //console.log("estado de la wiki", wikiDescriptionLoaded);
-    //wikiDescriptionLoaded = false;
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
         console.log("Eligió el mismo artista ya elegido, no hay actualización");
-        //updateCurrentPageWithLocalStorage(artistName);
     } else {
         console.log("cargando desde el json");
         const jsonContent = await readJson(urlMainJson);
@@ -38,12 +34,13 @@ async function updateCurrentPage(artistName) {
         storeData("artistName", artist[0].name);
         storeDataAsJSON("jsonContents", artist[0]);
         console.log(artist[0]);
-        //loadPage(artist[0]);
+        loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
         TwitterApiSearch(artist[0].name, artist[0].sameAs);
         console.log("Recording:");
         console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        loadComments(artist[0]);
     }
 }
 
@@ -67,9 +64,6 @@ function loadWikiDescription(data) {
     blurb.find('ol').remove();
     console.log(blurb);
     $('#biografia').html(blurb);
-
-    //wikiDescriptionLoaded = true;
-    //console.log("descripcion cargada", wikiDescriptionLoaded);
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -124,27 +118,6 @@ function generateSongList(musicAlbum, genre) {
     return songList;
 }
 
-async function filterArtistByGenre(selectedGenres) {
-    jsonContent = await readJson(urlMainJson);
-    var carrouselContent;
-    for (var i = 0; i < jsonContent.Person.length; i++) {
-        if (selectedGenres.includes(jsonContent.Person[i].genre)) {
-            carrouselContent += buildArtistCard(jsonContent.Person[i].name);
-        }
-    }
-}
-
-function buildArtistCard(artistName) {
-    var card = '<div class="col-lg-4 mx-1 my-1" onclick="updateCurrentPage(' + artistName + ');">';
-    card += '<a class="text-decoration-none link-dark stretched-link" href="#!">';
-    card += '<div class="card h-100 shadow border-0">';
-    card += '<img class="card-img-top" src="assets/' + artistName + '.jpg alt="..." />';
-    card += '<div class="card-body p-4 text-center">';
-    card += '<h5 class="card-title mb-3">' + artistName + '</h5>'
-    card += '</div></div></a></div>';
-    return card;
-}
-
 function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
@@ -155,14 +128,12 @@ function WikipediaApiSearch(artistName, section) {
         success: function(data, textStatus, jqXHR) {
             $.each(data, function(i, item) {
                 if (i == 1) {
-                    console.log(data);
                     var searchData = item[0];
                     WikipediaAPIGetContent(searchData, section);
                 }
             });
         },
         error: function(errorMessage) {
-            //wikiDescriptionLoaded = true;
             alert("Wikipedia apiSearch");
             alert(errorMessage);
         }
@@ -177,16 +148,11 @@ function WikipediaAPIGetContent(search, section) {
         async: true,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
-            //console.log("http://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?");
-            //console.log(data);
             var markup = data.parse.text["*"];
-            //console.log(markup);
             storeData("wiki", markup);
             loadWikiDescription(markup);
-            window.location.reload();
         },
         error: function(errorMessage) {
-            //wikiDescriptionLoaded = true;
             alert("Wikipedia getContent");
             alert(errorMessage);
         }
@@ -199,7 +165,7 @@ function TwitterApiSearch(artistName, artistTwitter) {
     console.log("artistTwitter: " + artistTwitter)
     console.log("twitterResponse: " + twitterResponse);
     storeData("twitter", twitterResponse);
-    //loadTwitts(twitterResponse, artistName);
+    loadTwitts(twitterResponse, artistName);
 }
 
 function loadTwitts(data, artistName) {
@@ -237,9 +203,6 @@ function loadComments(data) {
 
 async function guardarComentario() {
 
-    /*  const jsonContent = await readJson(urlMainJson);
-     var artista = jsonContent.Person.filter(document.getElementById("artist-name").value);
-     console.log(artista); */
     var comentario = document.getElementById("comment").value;
     var nombreUsuario = document.getElementById("commentor-name").value;
 
@@ -254,12 +217,6 @@ async function guardarComentario() {
     } catch (error) {
         alert(error);
     }
-    //modifyJson(urlMainJson, ',"author:": "' + nombreUsuario + '", \n"texto": "' + comentario + '"}');
-
-    //addComent(comentario, document.getElementById("artist_name").value, nombreUsuario);
-    /*     artista.Comment[author] = nombreUsuario;
-        artista.Comment[text] = comentario;
-        console.log(artista); */
 }
 
 function guardarComentariosLocalStorage(artistName, author, comment) {
@@ -285,7 +242,7 @@ function guardarComentariosLocalStorage(artistName, author, comment) {
 }
 
 function busqueda(artistName) {
-    if(event.key === 'Enter') {
-        updateCurrentPage(artistName.value);        
+    if (event.key === 'Enter') {
+        updateCurrentPage(artistName.value);
     }
 }
