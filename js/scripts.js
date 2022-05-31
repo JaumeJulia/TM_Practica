@@ -279,5 +279,7 @@ function guardarComentariosLocalStorage(artistName, author, comment){
     }
     newComment = JSON.parse(newComment);
     storeDataAsJSON("Reviews", newComment);
-    window.location.reload();
+    loadComments(retrieveLocalDataAsJSON("jsonContents"));
+    document.getElementById("comment").value = null;
+    document.getElementById("commentor-name").value = null;
 }
