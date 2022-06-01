@@ -37,7 +37,7 @@ async function updateCurrentPage(artistName) {
         console.log(artist[0]);
         loadPage(artist[0]);
         WikipediaApiSearch(artist[0].name, artist[0].description);
-        TwitterApiSearch(artist[0].name, artist[0].sameAs);
+
         console.log("Recording:");
         console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         //spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
@@ -54,18 +54,24 @@ function updateCurrentPageWithLocalStorage(artistName) {
 }
 
 function loadWikiDescription(data) {
-    //console.log(data);
-    var blurb = $('<div></div>').html(data);
-    // remove links as they will not work
-    console.log(blurb);
-    blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
-    // remove any references
-    blurb.find('sup').remove();
-    blurb.find('span').remove();
-    // remove cite error
-    blurb.find('ol').remove();
-    console.log(blurb);
-    $('#biografia').html(blurb);
+    if (data == "Rise on Fire") {
+        $('#biografia').html($('<div></div>').html($('<h2></h2>').html("Actualmente Rise on fire no tiene wikipedia")));
+    } else {
+        console.log(data);
+        var blurb = $('<div></div>').html(data);
+        // remove links as they will not work
+        console.log(blurb);
+        blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+        // remove any references
+        blurb.find('sup').remove();
+        blurb.find('.mw-editsection').remove();
+        blurb.find('.toc').remove();
+        // remove cite error
+        blurb.find('ol').remove();
+        console.log(blurb);
+        $('#biografia').html(blurb);
+    }
+
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
@@ -178,44 +184,97 @@ function buildArtistCard(artistName) {
 }
 
 async function WikipediaApiSearch(artistName, section) {
-    jQuery.ajax({
-        type: "GET",
-        url: "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
-        contentType: "application/json; charset=utf-8",
-        async: true,
-        dataType: "json",
-        success: function(data, textStatus, jqXHR) {
-            $.each(data, function(i, item) {
-                if (i == 1) {
-                    var searchData = item[0];
-                    WikipediaAPIGetContent(searchData, section);
-                }
-            });
-        },
-        error: function(errorMessage) {
-            alert("Wikipedia apiSearch");
-            alert(errorMessage);
-        }
-    });
+    console.log(artistName);
+    if (artistName == "Louis Cole" || artistName == "Tom Misch") {
+        jQuery.ajax({
+            type: "GET",
+            url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+                $.each(data, function(i, item) {
+                    if (i == 1) {
+                        if (artistName == "Louis Cole") {
+                            var searchData = item[1];
+                        } else {
+                            var searchData = item[0];
+                        }
+                        WikipediaAPIGetContent(searchData, section, artistName);
+                    }
+                });
+            },
+            error: function(errorMessage) {
+                alert("Wikipedia apiSearch");
+                alert(errorMessage);
+            }
+        });
+    } else if (artistName == "Rise on Fire") {
+        WikipediaAPIGetContent(null, null, artistName);
+    } else {
+        jQuery.ajax({
+            type: "GET",
+            url: "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+                $.each(data, function(i, item) {
+                    if (i == 1) {
+                        var searchData = item[0];
+                        WikipediaAPIGetContent(searchData, section, artistName);
+                    }
+                });
+            },
+            error: function(errorMessage) {
+                alert("Wikipedia apiSearch");
+                alert(errorMessage);
+            }
+        });
+    }
+
+
 }
 
-async function WikipediaAPIGetContent(search, section) {
-    jQuery.ajax({
-        type: "GET",
-        url: "https://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
-        contentType: "application/json; charset=utf-8",
-        async: true,
-        dataType: "json",
-        success: function(data, textStatus, jqXHR) {
-            var markup = data.parse.text["*"];
-            storeData("wiki", markup);
-            loadWikiDescription(markup);
-        },
-        error: function(errorMessage) {
-            alert("Wikipedia getContent");
-            alert(errorMessage);
-        }
-    });
+async function WikipediaAPIGetContent(search, section, artistName) {
+    if (artistName == "Louis Cole" || artistName == "Tom Misch") {
+        jQuery.ajax({
+            type: "GET",
+            url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+                console.log(data);
+                var markup = data.parse.text["*"];
+                storeData("wiki", markup);
+                loadWikiDescription(markup);
+            },
+            error: function(errorMessage) {
+                alert("Wikipedia getContent");
+                alert(errorMessage);
+            }
+        });
+    } else if (artistName == "Rise on Fire") {
+        loadWikiDescription(artistName);
+    } else {
+        jQuery.ajax({
+            type: "GET",
+            url: "https://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+                var markup = data.parse.text["*"];
+                storeData("wiki", markup);
+                loadWikiDescription(markup);
+            },
+            error: function(errorMessage) {
+                alert("Wikipedia getContent");
+                alert(errorMessage);
+            }
+        });
+    }
 }
 
 async function TwitterApiSearch(artistName, artistTwitter) {
@@ -226,7 +285,6 @@ async function TwitterApiSearch(artistName, artistTwitter) {
     console.log("twitterResponse: " + twitterResponse);
     storeData("twitter", twitterResponse);
     loadTwitts(twitterResponse, artistName);
-
 }
 
 async function loadTwitts(data, artistName) {
@@ -301,6 +359,16 @@ function busqueda(artistName) {
     }
 }
 
+async function cargarTwitter() {
+    const jsonContent = await readJson(urlMainJson);
+    var artist = jsonContent.filter(findArtist);
+
+    function findArtist(jsonContent) {
+        return jsonContent.name === $("#artist_name")[0].innerHTML;
+    }
+    TwitterApiSearch(artist[0].name, artist[0].sameAs);
+}
+
 function labnolIframe(div) {
     console.log('https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0');
     var iframe = document.createElement('iframe');
@@ -338,5 +406,4 @@ async function initYouTubeVideos() {
         labnolIframe(this);
     };
     youtubeVideo.appendChild(div);
-
 }
