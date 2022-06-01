@@ -86,6 +86,10 @@ a:hover {
     width: 100%;
 }
 
+.carrousel_row::-webkit-scrollbar {
+    display: none;
+}
+
 .row__inner {
     transition: 450ms transform;
     font-size: 0;
@@ -171,9 +175,14 @@ a:hover {
     padding: 10px;
 }
 
+
+/* .row__inner:first-child .row__inner:hover {
+    transform: translate3d(-4.5px, 0, 0) !important;
+}
+
 .row__inner:hover {
     transform: translate3d(-62.5px, 0, 0);
-}
+} */
 
 .row__inner:hover .tile {
     opacity: 0.3;
