@@ -39,7 +39,7 @@ async function updateCurrentPage(artistName) {
         TwitterApiSearch(artist[0].name, artist[0].sameAs);
         console.log("Recording:");
         console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
-        spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        //spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         loadComments(artist[0]);
     }
 }
