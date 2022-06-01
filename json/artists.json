@@ -2,7 +2,7 @@
         "@context": "https://schema.org",
         "@type": "MusicGroup",
         "name": "Rick Astley",
-        "url": "dQw4w9WgXcQ?start=0",
+        "url": "dQw4w9WgXcQ",
         "knowsAbout": "El artista detrás del Rick-Roll.",
         "genre": "pop",
         "description": "2",
