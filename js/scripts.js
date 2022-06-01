@@ -67,19 +67,14 @@ function loadWikiDescription(data) {
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
-    $('#artist_name').html(pageContent.name);
-    //document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
-    $('#artist_introduction').html(pageContent.knowsAbout);
-    //document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
-    $('#artist_video').attr("src", pageContent.url);
-    //document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
-    let album = $('#album_card')[0];
-    //let album = document.getElementById("album_card");
-    $('#album_section').empty();
-    //document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
+    document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
+    document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
+    document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
+
+    let album = document.getElementById("album_card");
+    document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
     console.log(album);
-    //console.log(document.getElementById("album_section"));
-    //console.log(pageContent.MusicAlbum.length);
+    console.log(pageContent.MusicAlbum.length);
     for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
         album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
@@ -93,13 +88,10 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         //introducing songs
         album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i], pageContent.genre);
         //append
-        $("#album_section").append(album.cloneNode(true));
-        //document.getElementById("album_section").appendChild(album.cloneNode(true));
+        document.getElementById("album_section").appendChild(album.cloneNode(true));
     }
 
-    ;
-    //var eventTable = document.createElement("tbody");
-    $("#event_table > tbody").empty();
+    var eventTable = document.createElement("tbody");
     var events = "";
     for (var i = 0; i < pageContent.Event.length; i++) {
         var index = i + 1;
@@ -110,10 +102,8 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         events = events + '<td property="url"><a href="' + pageContent.Event[i].url + '">Link</a></td>';
         events = events + '</tr>';
     }
-    var eventTable = $("<tbody></tbody>").html(events);
-    //eventTable.innerHTML = events;
-    $("#event_table").append(eventTable);
-    //document.getElementById("event_table").appendChild(eventTable);
+    eventTable.innerHTML = events;
+    document.getElementById("event_table").appendChild(eventTable);
     window.scrollTo({ top: 0 });
 }
 
@@ -122,7 +112,7 @@ function generateSongList(musicAlbum, genre) {
     var metadata = '<meta content="' + musicAlbum.MusicRecording.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />'
     var songList = metadata + "\n<ol>"
     for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
-        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" class=\"text-wrap\" style=\"cursor:hand;cursor:pointer;width: 12rem;\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
+        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" style=\"cursor:hand;cursor:pointer\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
@@ -232,7 +222,7 @@ function WikipediaAPIGetContent(search, section) {
 }
 
 function TwitterApiSearch(artistName, artistTwitter) {
-    var twitterResponse = '<a loading="lazy" class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
+    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
     console.log("artistTwitter: " + artistTwitter)
     console.log("twitterResponse: " + twitterResponse);
@@ -241,41 +231,36 @@ function TwitterApiSearch(artistName, artistTwitter) {
 }
 
 function loadTwitts(data, artistName) {
-    var twitterHead = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
-    $("#twitterHeading").html(twitterHead);
-    $("#twitterBody").html(data);
-    //document.getElementById("twitterHeading").innerHTML = twitterHead;
-    //document.getElementById("twitterBody").innerHTML = data;
+    document.getElementById("twitterHeading").innerHTML = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
+    document.getElementById("twitterBody").innerHTML = data;
 }
 
 function spotifyPlayer(url) {
-    var song = '<iframe loading="lazy" style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
-    $("#spotify-player").html(song);
-    //document.getElementById("spotify-player").innerHTML = song;
+    var song = '<iframe style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+    document.getElementById("spotify-player").innerHTML = song;
 }
 
 function loadComments(data) {
     console.log("Entrando en la seccion de comentarios");
-    //var seccionComentarios = document.getElementById("comentarios");
-    /* var seccionComentarios = $("#comentarios")[0];
-    console.log(seccionComentarios); */
-    var comentarios = "";
+    var seccionComentarios = document.getElementById("comentarios");
+    console.log(seccionComentarios);
+    var commentarios = "";
     for (let i = 0; i < data.Review.length; i++) {
-        comentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
+        commentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
     }
+    seccionComentarios.innerHTML = commentarios;
 
     var comments = retrieveLocalDataAsJSON("Reviews");
     if (comments != null) {
         for (let i = 0; i < comments.length; i++) {
             if (comments[i].artist == data.name) {
-                comentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
+                commentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + comments[i].author + '</div>' + comments[i].text + '</div></div>';
 
             }
         }
     }
-    $("#comentarios").html(comentarios);
-/*     seccionComentarios.innerHTML = comentarios;
-    console.log($("#comentarios")[0]); */
+    seccionComentarios.innerHTML = commentarios;
+    console.log(seccionComentarios);
 }
 
 async function guardarComentario() {

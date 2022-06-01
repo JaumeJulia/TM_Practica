@@ -6,7 +6,6 @@ async function readJson(fileUrl) { //Reads the whole json file and returns it as
     try {
         const response = await fetch(fileUrl);
         const jsonContent = await response.json();
-        console.log(jsonContent);
         return jsonContent;
     } catch (error) {
         console.log(error);
@@ -27,5 +26,5 @@ function storeDataAsJSON(tag, data) {
 
 function retrieveLocalDataAsJSON(tag, data) {
     data = localStorage.getItem(tag);
-    return jQuery.parseJSON(data);
+    return JSON.parse(data);
 }
