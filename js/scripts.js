@@ -67,11 +67,12 @@ function loadWikiDescription(data) {
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
-    
+
     $('#artist_name').html(pageContent.name);
     //document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
     $('#artist_introduction').html(pageContent.knowsAbout);
     //document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
+    $('#artist_main_genre').html(pageContent.genre);
     $('#artist_video').attr("src", pageContent.url);
     //document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
     let album = $('#album_card')[0];
@@ -99,7 +100,6 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     }
 
     var eventTable = document.createElement("tbody");
-    ;
     //var eventTable = document.createElement("tbody");
     $("#event_table > tbody").empty();
     var events = "";
@@ -277,16 +277,16 @@ function loadComments(data) {
         }
     }
     $("#comentarios").html(comentarios);
-/*     seccionComentarios.innerHTML = comentarios;
-    console.log($("#comentarios")[0]); */
+    /*     seccionComentarios.innerHTML = comentarios;
+        console.log($("#comentarios")[0]); */
 }
 
 async function guardarComentario() {
 
     var comentario = $("#comment").val();
     var nombreUsuario = $("#commentor-name").val();
-   /*  var comentario = document.getElementById("comment").value;
-    var nombreUsuario = document.getElementById("commentor-name").value; */
+    /*  var comentario = document.getElementById("comment").value;
+     var nombreUsuario = document.getElementById("commentor-name").value; */
 
     if (nombreUsuario == "") {
         alert("Debes poner un nombre para mostrar tu comentario");
@@ -321,9 +321,9 @@ function guardarComentariosLocalStorage(artistName, author, comment) {
     storeDataAsJSON("Reviews", newComment);
     loadComments(retrieveLocalDataAsJSON("jsonContents"));
     $("#comment").val('');
-    $("#commentor-name").val('');    
-/*     document.getElementById("comment").value = null;
-    document.getElementById("commentor-name").value = null; */
+    $("#commentor-name").val('');
+    /*     document.getElementById("comment").value = null;
+        document.getElementById("commentor-name").value = null; */
 }
 
 function busqueda(artistName) {
