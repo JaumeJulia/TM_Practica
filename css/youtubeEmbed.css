@@ -52,3 +52,14 @@
       background: url('//i.imgur.com/TxzC70f.png') no-repeat;
       cursor: pointer;
   }
+  /* Biography styles */
+  
+  .wiki {
+      overflow-y: scroll;
+      height: 400px;
+  }
+  
+  .div-size {
+      overflow-y: scroll;
+      max-height: 1000px;
+  }

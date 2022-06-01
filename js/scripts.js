@@ -20,6 +20,7 @@ window.onload = function() {
 };
 
 async function updateCurrentPage(artistName) {
+    $('html,body').scrollTop(0);
     var storedArtist = retrieveLocalData("artistName");
     if (storedArtist === artistName) {
         console.log("Eligió el mismo artista ya elegido, no hay actualización");
@@ -45,6 +46,7 @@ async function updateCurrentPage(artistName) {
 }
 
 function updateCurrentPageWithLocalStorage(artistName) {
+    $('html,body').scrollTop(0);
     loadPage(retrieveLocalDataAsJSON("jsonContents"));
     loadWikiDescription(retrieveLocalData("wiki"));
     loadTwitts(retrieveLocalData("twitter"), artistName);
@@ -104,7 +106,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     }
     var eventTable = $("<tbody></tbody>").html(events);
     $("#event_table").append(eventTable);
-    window.scrollTo({ top: 0 });
+    //window.scrollTo({ top: 0 });
 }
 
 function generateSongList(musicAlbum, genre) {
