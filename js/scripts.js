@@ -139,6 +139,9 @@ function fetchSelectedGenres() {
     if (document.getElementById("reggaeton_genre").checked) {
         selectedGenres.push("reggaeton");
     }
+    if (selectedGenres.length == 0) {
+        selectedGenres.push("pop", "metal", "fusion", "electronic", "jazz-fusion", "reggaeton");
+    }
     console.log("generos cogidos");
     console.log(selectedGenres);
     filterArtistByGenre(selectedGenres);
