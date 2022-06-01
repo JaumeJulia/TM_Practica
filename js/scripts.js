@@ -192,7 +192,7 @@ function buildArtistCard(artistName) {
     return card;
 }
 
-function WikipediaApiSearch(artistName, section) {
+async function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
         url: "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
@@ -214,7 +214,7 @@ function WikipediaApiSearch(artistName, section) {
     });
 }
 
-function WikipediaAPIGetContent(search, section) {
+async function WikipediaAPIGetContent(search, section) {
     jQuery.ajax({
         type: "GET",
         url: "https://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
@@ -233,7 +233,7 @@ function WikipediaAPIGetContent(search, section) {
     });
 }
 
-function TwitterApiSearch(artistName, artistTwitter) {
+async function TwitterApiSearch(artistName, artistTwitter) {
     var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     var twitterResponse = '<a loading="lazy" class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
@@ -244,7 +244,7 @@ function TwitterApiSearch(artistName, artistTwitter) {
 
 }
 
-function loadTwitts(data, artistName) {
+async function loadTwitts(data, artistName) {
     var twitterHead = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
     $("#twitterHeading").html(twitterHead);
     $("#twitterBody").html(data);
@@ -252,13 +252,13 @@ function loadTwitts(data, artistName) {
     //document.getElementById("twitterBody").innerHTML = data;
 }
 
-function spotifyPlayer(url) {
+async function spotifyPlayer(url) {
     var song = '<iframe loading="lazy" style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
     $("#spotify-player").html(song);
     //document.getElementById("spotify-player").innerHTML = song;
 }
 
-function loadComments(data) {
+async function loadComments(data) {
     console.log("Entrando en la seccion de comentarios");
     //console.log(seccionComentarios);
     //var seccionComentarios = document.getElementById("comentarios");
@@ -302,7 +302,7 @@ async function guardarComentario() {
     }
 }
 
-function guardarComentariosLocalStorage(artistName, author, comment) {
+async function guardarComentariosLocalStorage(artistName, author, comment) {
     var comments = retrieveLocalDataAsJSON("Reviews");
     var newComment = "";
     if (comments != null) {
