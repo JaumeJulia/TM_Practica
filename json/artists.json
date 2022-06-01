@@ -2,7 +2,7 @@
         "@context": "https://schema.org",
         "@type": "MusicGroup",
         "name": "Rick Astley",
-        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0",
+        "url": "dQw4w9WgXcQ?start=0",
         "knowsAbout": "El artista detrás del Rick-Roll.",
         "genre": "pop",
         "description": "2",
@@ -439,7 +439,7 @@
     {
         "@type": "MusicGroup",
         "name": "Daft Punk",
-        "url": "https://www.youtube.com/embed/gAjR4_CbPpQ",
+        "url": "gAjR4_CbPpQ",
         "knowsAbout": "Padres del sonido del futuro.",
         "genre": "electronic",
         "description": "2",
@@ -915,7 +915,7 @@
     {
         "@type": "MusicGroup",
         "name": "Louis Cole",
-        "url": "https://www.youtube.com/embed/GnEmD17kYsE",
+        "url": "GnEmD17kYsE",
         "knowsAbout": "Artista multi-instrumental con un estilo personal muy peculiar",
         "genre": "fusion",
         "description": "2",
@@ -1295,7 +1295,7 @@
     {
         "@type": "MusicGroup",
         "name": "Luis Fonsi",
-        "url": "https://www.youtube.com/embed/kJQP7kiw5Fk",
+        "url": "kJQP7kiw5Fk",
         "knowsAbout": "Artista de reggaeton que revolucionó la escena con una sola canción",
         "genre": "reggaeton",
         "description": "2",
@@ -1495,7 +1495,7 @@
     {
         "@type": "MusicGroup",
         "name": "Tom Misch",
-        "url": "https://www.youtube.com/embed/M1N_wbhAfQ4",
+        "url": "M1N_wbhAfQ4",
         "knowsAbout": "Se volvió uno con el groove desde muy joven como artista multi-instrumentista.",
         "genre": "jazz-funk",
         "description": "1",
@@ -1727,7 +1727,7 @@
     {
         "@type": "MusicGroup",
         "name": "Rise on Fire",
-        "url": "https://www.youtube.com/embed/qiMZjpvJIUI",
+        "url": "qiMZjpvJIUI",
         "knowsAbout": "Banda local de Mallorca.",
         "genre": "metal",
         "description": "2",
