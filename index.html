@@ -16,8 +16,9 @@
     <link href="css/carrouselStyle.css" rel="stylesheet" />
     <link href="css/imageFadeOut.css" rel="stylesheet" />
     <link href="css/searchBar.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="css/youtubeEmbed.css" rel="stylesheet" />
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -189,7 +190,8 @@
                         </div>
                     </div>
                     <div class="my-5 col-xl-5 col-xxl-6 d-none d-xl-block text-center" property="subjectOf" typeof="VideoObject">
-                        <iframe defer id="artist_video" width="500" height="300" title="YouTube video player" frameborder="0" allowfullscreen controls="2"></iframe>
+                        <!-- <iframe defer id="artist_video" width="500" height="300" title="YouTube video player" frameborder="0" allowfullscreen controls="2"></iframe> -->
+                        <div id="artist_video" class="youtube-player" width="500" height="300" data-id="VIDEO_ID"></div>
                     </div>
                 </div>
             </div>
@@ -201,7 +203,7 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="fw-bolder mb-0">Biografia</h2>
                     </div>
-                    <div class="col-lg-8" property="description">
+                    <div class="col-lg-8 wiki" property="description">
                         <p id="biografia" class="gx-5">
                         </p>
                     </div>
@@ -209,9 +211,10 @@
             </div>
         </section>
         <!-- Testimonial section-->
-        <div class="container py-5 justify-content-center">
+        <div class="container py-5 justify-content-center div-size">
             <div class="text-center">
-                <div class="fs-4 mb-4 fst-italic">Albums del Artista</div>
+                <div class="fs-4 fw-bolder">Albums del Artista</div>
+                <p class="lead fw-normal text-muted mb-5">Escucha sus canciones aqui mismo</p>
             </div>
             <div id="album_section" class="row justify-content-center">
                 <div id="album_card" vocab="https://schema.org/" typeof="MusicAlbum" class="card w-auto h-auto mb-1">
@@ -486,14 +489,14 @@
             </div>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <script src="js/jsonUtilities.js"></script>
-    <script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async src="js/scripts.js"></script>
+    <script async src="js/jsonUtilities.js"></script>
+    <script async id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
