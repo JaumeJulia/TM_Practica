@@ -143,14 +143,14 @@ function fetchSelectedGenres() {
     if (document.getElementById("electronic_genre").checked) {
         selectedGenres.push("electronic");
     }
-    if (document.getElementById("jazz-fusion_genre").checked) {
-        selectedGenres.push("jazz-fusion");
+    if (document.getElementById("jazz-funk_genre").checked) {
+        selectedGenres.push("jazz-funk");
     }
     if (document.getElementById("reggaeton_genre").checked) {
         selectedGenres.push("reggaeton");
     }
     if (selectedGenres.length == 0) {
-        selectedGenres.push("pop", "metal", "fusion", "electronic", "jazz-fusion", "reggaeton");
+        selectedGenres.push("pop", "metal", "fusion", "electronic", "jazz-funk", "reggaeton");
     }
     console.log("generos cogidos");
     console.log(selectedGenres);
