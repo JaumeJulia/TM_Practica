@@ -72,7 +72,9 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     $('#artist_name').html(pageContent.name);
     $('#artist_introduction').html(pageContent.knowsAbout);
     $('#artist_main_genre').html(pageContent.genre);
-    $('#artist_video').attr("src", pageContent.url);
+    $('#artist_video').attr("data-id", pageContent.url);
+    initYouTubeVideos();
+    console.log(document.getElementById("artist_video"));
     let album = $('#album_card')[0];
     $('#album_section').empty();
     console.log(album);
@@ -297,4 +299,44 @@ function busqueda(artistName) {
     if (event.key === 'Enter') {
         updateCurrentPage(artistName.value);
     }
+}
+
+function labnolIframe(div) {
+    console.log('https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0');
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute(
+        'src',
+        'https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0'
+    );
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '1');
+    iframe.setAttribute(
+        'allow',
+        'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+    );
+    iframe.setAttribute('width', "500");
+    iframe.setAttribute('height', "300");
+    div.parentNode.replaceChild(iframe, div);
+}
+
+async function initYouTubeVideos() {
+    document.getElementById("artist_video").innerHTML = "";
+    var youtubeVideo = document.getElementById("artist_video");
+    var videoId = youtubeVideo.dataset.id;
+    var div = document.createElement('div');
+    div.setAttribute('data-id', videoId);
+    var thumbNode = document.createElement('img');
+    thumbNode.src = '//i.ytimg.com/vi/ID/hqdefault.jpg'.replace(
+        'ID',
+        videoId
+    );
+    div.appendChild(thumbNode);
+    var playButton = document.createElement('div');
+    playButton.setAttribute('class', 'play');
+    div.appendChild(playButton);
+    div.onclick = function() {
+        labnolIframe(this);
+    };
+    youtubeVideo.appendChild(div);
+
 }
