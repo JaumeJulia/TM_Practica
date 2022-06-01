@@ -284,24 +284,24 @@
                                                 <!-- Comment form-->
                                                 <form class="mb-4" action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
                                                     <input id="commentor-name" class="form-label" rows="1" placeholder="Dinos tu nombre" name="Commentor's name"></input>
-                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="¡Dejanos tu comentario!" name="Comment" "></textarea> <input type="button " class="btn btn-outline-primary " value="Dejar el comentario "
-                                                        onclick="guardarComentario() " />
+                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="¡Dejanos tu comentario!" name="Comment"></textarea> <input type="button" class="btn btn-outline-primary" value="Dejar el comentario"
+                                                        onclick="guardarComentario()" />
                                                     <!-- </input> -->
                                                 </form>
 
                                                 <!-- Comment with nested comments-->
-                                                <div id="comentarios " vocab="https://schema.org/ " typeof="Review "></div>
+                                                <div id="comentarios" vocab="https://schema.org/" typeof="Review"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="twitterPanel " class="col-md-4 ">
-                                        <div id="artistTwitterPanel " class="panel panel-danger ">
-                                            <div id="twitterHeading " class="panel-heading ">
-                                                <!-- <h3 class="panel-title "><i class="fa fa-twitter-square " aria-hidden="true "></i> Rick Astley
+                                    <div id="twitterPanel" class="col-md-4">
+                                        <div id="artistTwitterPanel" class="panel panel-danger">
+                                            <div id="twitterHeading" class="panel-heading">
+                                                <!-- <h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i> Rick Astley
                                                 </h3> -->
                                             </div>
-                                            <div id="twitterBody " class="panel-body ">
-                                                <!-- <a class="twitter-timeline " href="https://twitter.com/rickastley " data-widget-id="12345 " width="280 " data-chrome="transparent ">Tweets by rickastley</a> -->
+                                            <div id="twitterBody" class="panel-body">
+                                                <!-- <a class="twitter-timeline" href="https://twitter.com/rickastley" data-widget-id="12345" width="280" data-chrome="transparent">Tweets by rickastley</a> -->
                                             </div>
                                         </div>
                                     </div>
@@ -314,61 +314,61 @@
         </div>
 
         <!-- Blog preview section-->
-        <div class="modal fade " id="genreListModal " tabindex="-1 " aria-labelledby="exampleModalLabel " aria-hidden="true ">
-            <div class="modal-dialog modal-lg ">
-                <div class="modal-content ">
-                    <div class="modal-header ">
-                        <div class="text-center my-5 ">
-                            <h1 class="fw-bolder mb-3 ">
+        <div class="modal fade" id="genreListModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text-center my-5">
+                            <h1 class="fw-bolder mb-3">
                                 Elige todos los géneros que quieras
                             </h1>
                         </div>
                     </div>
-                    <div class="modal-body justify-content-center ">
-                        <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center ">
+                    <div class="modal-body justify-content-center">
+                        <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
                             <div>
-                                <input type="checkbox " class="form-check-input " id="pop_genre ">
-                                <label class="form-check-label " for="pop_genre ">
+                                <input type="checkbox" class="form-check-input" id="pop_genre">
+                                <label class="form-check-label" for="pop_genre">
                                     Pop
                                 </label>
                             </div>
                             <div>
-                                <input type="checkbox " class="form-check-input " id="metal_genre ">
-                                <label class="form-check-label " for="metal_genre ">
+                                <input type="checkbox" class="form-check-input" id="metal_genre">
+                                <label class="form-check-label" for="metal_genre">
                                     Metal
                                 </label>
                             </div>
                             <div>
-                                <input type="checkbox " class="form-check-input " id="fusion_genre ">
-                                <label class="form-check-label " for="fusion_genre ">
+                                <input type="checkbox" class="form-check-input" id="fusion_genre">
+                                <label class="form-check-label" for="fusion_genre">
                                     Fusion
                                 </label>
                             </div>
                             <div>
-                                <input type="checkbox " class="form-check-input " id="electronic_genre ">
-                                <label class="form-check-label " for="electronic_genre ">
+                                <input type="checkbox" class="form-check-input" id="electronic_genre">
+                                <label class="form-check-label" for="electronic_genre">
                                     Electronic
                                 </label>
                             </div>
                             <div>
-                                <input type="checkbox " class="form-check-input " id="jazz-fusion_genre ">
-                                <label class="form-check-label " for="jazz-fusion_genre ">
+                                <input type="checkbox" class="form-check-input" id="jazz-fusion_genre">
+                                <label class="form-check-label" for="jazz-fusion_genre">
                                     Jazz-fusion
                                 </label>
                             </div>
                             <div>
-                                <input type="checkbox " class="form-check-input " id="reggaeton_genre ">
-                                <label class="form-check-label " for="reggaeton_genre ">
+                                <input type="checkbox" class="form-check-input" id="reggaeton_genre">
+                                <label class="form-check-label" for="reggaeton_genre">
                                     Reggaeton
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer ">
-                        <button type="button " class="btn btn-outline-primary " data-bs-dismiss="modal " onclick="fetchSelectedGenres() ">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="fetchSelectedGenres()">
                             Aplicar
                         </button>
-                        <button type="button " class="btn btn-outline-danger " data-bs-dismiss="modal ">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
                             Cerrar
                         </button>
                     </div>
@@ -377,90 +377,90 @@
         </div>
 
         <!-- Blog preview section-->
-        <section class="py-5 ">
-            <div class="container ">
-                <div class="row gx-5 justify-content-center ">
-                    <div class="col-lg-8 col-xl-7 ">
-                        <div class="text-center ">
-                            <h2 class="fw-bolder ">Carrete de artistas</h2>
-                            <p class="lead fw-normal text-muted mb-5 ">Navega por todos los artistas de la página y descubre nuevos estilos.</p>
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <div class="text-center">
+                            <h2 class="fw-bolder">Carrete de artistas</h2>
+                            <p class="lead fw-normal text-muted mb-5">Navega por todos los artistas de la página y descubre nuevos estilos.</p>
                         </div>
                     </div>
                 </div>
-                <div class="container my-1 ">
-                    <div class="row ">
-                        <div class="mb-5 mb-lg-0 ">
-                            <!-- <label class="custom-control-label lead fw-normal " for="genreFiltering ">Filtro por géneros</label> -->
-                            <input type="button " class="btn btn-outline-danger " id="genreFiltering " value="Filtro por géneros " data-bs-toggle="modal " data-bs-target="#genreListModal ">
+                <div class="container my-1">
+                    <div class="row">
+                        <div class="mb-5 mb-lg-0">
+                            <!-- <label class="custom-control-label lead fw-normal" for="genreFiltering">Filtro por géneros</label> -->
+                            <input type="button" class="btn btn-outline-danger" id="genreFiltering" value="Filtro por géneros" data-bs-toggle="modal" data-bs-target="#genreListModal">
                         </div>
                     </div>
                 </div>
 
-                <div class="container py-5 bg-light ">
-                    <div class="carrousel_row ">
-                        <div class="row__inner " id="carrousel ">
+                <div class="container py-5 bg-light">
+                    <div class="carrousel_row">
+                        <div class="row__inner" id="carrousel">
 
-                            <div class="tile " onclick="updateCurrentPage( 'Rick Astley'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Rick Astley.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Rick Astley');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Rick Astley.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Rick Astley
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tile " onclick="updateCurrentPage( 'Daft Punk'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Daft Punk.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Daft Punk');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Daft Punk.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Daft Punk
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tile " onclick="updateCurrentPage( 'Louis Cole'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Louis Cole.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Louis Cole');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Louis Cole.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Louis Cole
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tile " onclick="updateCurrentPage( 'Luis Fonsi'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Luis Fonsi.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Luis Fonsi');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Luis Fonsi.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Luis Fonsi
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tile " onclick="updateCurrentPage( 'Tom Misch'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Tom Misch.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Tom Misch');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Tom Misch.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Tom Misch
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tile " onclick="updateCurrentPage( 'Rise on Fire'); ">
-                                <div class="tile__media ">
-                                    <img class="tile__img " src="assets/Rise on Fire.webp " alt=" " />
+                            <div class="tile" onclick="updateCurrentPage('Rise on Fire');">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="assets/Rise on Fire.webp" alt="" />
                                 </div>
-                                <div class="tile__details ">
-                                    <div class="tile__title ">
+                                <div class="tile__details">
+                                    <div class="tile__title">
                                         Rise on Fire
                                     </div>
                                 </div>
@@ -473,30 +473,30 @@
         </section>
     </main>
     <!-- Footer-->
-    <footer class="bg-dark py-4 mt-auto ">
-        <div class="container px-5 ">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row ">
-                <div class="col-auto ">
-                    <div class="small m-0 text-white ">Copyright &copy; Your Website 2022</div>
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Your Website 2022</div>
                 </div>
-                <div class="col-auto ">
-                    <a class="link-light small " href="#! ">Privacy</a>
-                    <span class="text-white mx-1 ">&middot;</span>
-                    <a class="link-light small " href="#! ">Terms</a>
-                    <span class="text-white mx-1 ">&middot;</span>
-                    <a class="link-light small " href="#! ">Contact</a>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Core theme JS-->
-    <script async src="js/scripts.js "></script>
-    <script async src="js/jsonUtilities.js "></script>
-    <script async id="twitterApiScript " async src="https://platform.twitter.com/widgets.js " charset="utf-8 "></script>
-    <script async src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script async src="js/scripts.js"></script>
+    <script async src="js/jsonUtilities.js"></script>
+    <script async id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap core JS-->
-    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script> -->
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
