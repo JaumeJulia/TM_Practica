@@ -67,22 +67,14 @@ function loadWikiDescription(data) {
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
-
     $('#artist_name').html(pageContent.name);
-    //document.getElementById("artist_name").innerHTML = pageContent.name; //this changes the artist name
     $('#artist_introduction').html(pageContent.knowsAbout);
-    //document.getElementById("artist_introduction").innerHTML = pageContent.knowsAbout; //this changes the artist presentation
     $('#artist_main_genre').html(pageContent.genre);
     $('#artist_video').attr("src", pageContent.url);
-    //document.getElementById("artist_video").setAttribute("src", pageContent.url); //this changes the video that is shown
     let album = $('#album_card')[0];
-    //let album = document.getElementById("album_card");
     $('#album_section').empty();
-    //document.getElementById("album_section").innerHTML = ""; // erases album_section content so it can be filled up accordingly 
     console.log(album);
     console.log(pageContent.MusicAlbum.length);
-    //console.log(document.getElementById("album_section"));
-    //console.log(pageContent.MusicAlbum.length);
     for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
         //changing image
         album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
@@ -96,11 +88,9 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i], pageContent.genre);
         //append
         $("#album_section").append(album.cloneNode(true));
-        //document.getElementById("album_section").appendChild(album.cloneNode(true));
     }
 
     var eventTable = document.createElement("tbody");
-    //var eventTable = document.createElement("tbody");
     $("#event_table > tbody").empty();
     var events = "";
     for (var i = 0; i < pageContent.Event.length; i++) {
@@ -113,9 +103,7 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         events = events + '</tr>';
     }
     var eventTable = $("<tbody></tbody>").html(events);
-    //eventTable.innerHTML = events;
     $("#event_table").append(eventTable);
-    //document.getElementById("event_table").appendChild(eventTable);
     window.scrollTo({ top: 0 });
 }
 
@@ -170,13 +158,6 @@ async function filterArtistByGenre(selectedGenres) {
     console.log(document.getElementById("carrousel").childNodes);
     console.log(carrouselContent);
     document.getElementById("carrousel").innerHTML = carrouselContent;
-    //var flickity = document.getElementById("flickity");
-    //document.getElementById("flickity").remove;
-    //var flickity = document.createElement('script');
-    //flickity.id = "flickity";
-    //flickity.src = "js/flickity.js?amapola=0";
-    //document.getElementById('body').appendChild(flickity);
-    //document.getElementsById('body').appendChild(flickity);
 }
 
 function buildArtistCard(artistName) {
@@ -248,22 +229,15 @@ async function loadTwitts(data, artistName) {
     var twitterHead = '<h3 class="panel-title"><i class="fa fa-twitter-square" aria-hidden="true"></i>' + artistName + '</h3>';
     $("#twitterHeading").html(twitterHead);
     $("#twitterBody").html(data);
-    //document.getElementById("twitterHeading").innerHTML = twitterHead;
-    //document.getElementById("twitterBody").innerHTML = data;
 }
 
 async function spotifyPlayer(url) {
     var song = '<iframe loading="lazy" style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
     $("#spotify-player").html(song);
-    //document.getElementById("spotify-player").innerHTML = song;
 }
 
 async function loadComments(data) {
     console.log("Entrando en la seccion de comentarios");
-    //console.log(seccionComentarios);
-    //var seccionComentarios = document.getElementById("comentarios");
-    /* var seccionComentarios = $("#comentarios")[0];
-    console.log(seccionComentarios); */
     var comentarios = "";
     for (let i = 0; i < data.Review.length; i++) {
         comentarios += '<div class="d-flex mb-3"property="review" typeof="Review"><div class="ms-3" property="reviewBody"><div class="fw-bold" property="author">' + data.Review[i].author + '</div>' + data.Review[i].text + '</div></div>';
@@ -277,17 +251,12 @@ async function loadComments(data) {
         }
     }
     $("#comentarios").html(comentarios);
-    /*     seccionComentarios.innerHTML = comentarios;
-        console.log($("#comentarios")[0]); */
 }
 
 async function guardarComentario() {
 
     var comentario = $("#comment").val();
     var nombreUsuario = $("#commentor-name").val();
-    /*  var comentario = document.getElementById("comment").value;
-     var nombreUsuario = document.getElementById("commentor-name").value; */
-
     if (nombreUsuario == "") {
         alert("Debes poner un nombre para mostrar tu comentario");
     }
@@ -295,7 +264,6 @@ async function guardarComentario() {
         alert("El campo del comentario no debe estar vacio");
     }
     try {
-        //guardarComentariosLocalStorage(document.getElementById("artist_name").innerHTML, nombreUsuario, comentario);
         guardarComentariosLocalStorage($("#artist_name")[0], nombreUsuario, comentario);
     } catch (error) {
         alert(error);
@@ -307,7 +275,6 @@ async function guardarComentariosLocalStorage(artistName, author, comment) {
     var newComment = "";
     if (comments != null) {
         var i = 0;
-        //var newComment = "";
         newComment = newComment + '[{"artist" : "' + comments[i].artist + '", "author" : "' + comments[i].author + '", "text" : "' + comments[i].text + '"},';
         i = i + 1;
         for (; i < comments.length; i++) {
@@ -322,8 +289,6 @@ async function guardarComentariosLocalStorage(artistName, author, comment) {
     loadComments(retrieveLocalDataAsJSON("jsonContents"));
     $("#comment").val('');
     $("#commentor-name").val('');
-    /*     document.getElementById("comment").value = null;
-        document.getElementById("commentor-name").value = null; */
 }
 
 function busqueda(artistName) {
