@@ -118,6 +118,68 @@ function generateSongList(musicAlbum, genre) {
     return songList;
 }
 
+function fetchSelectedGenres() {
+    var selectedGenres = [];
+    if (document.getElementById("pop_genre").checked) {
+        console.log("popeado bro");
+        selectedGenres.push("pop");
+    }
+    if (document.getElementById("metal_genre").checked) {
+        selectedGenres.push("metal");
+    }
+    if (document.getElementById("fusion_genre").checked) {
+        selectedGenres.push("fusion");
+    }
+    if (document.getElementById("electronic_genre").checked) {
+        selectedGenres.push("electronic");
+    }
+    if (document.getElementById("jazz-fusion_genre").checked) {
+        selectedGenres.push("jazz-fusion");
+    }
+    if (document.getElementById("reggaeton_genre").checked) {
+        selectedGenres.push("reggaeton");
+    }
+    if (selectedGenres.length == 0) {
+        selectedGenres.push("pop", "metal", "fusion", "electronic", "jazz-fusion", "reggaeton");
+    }
+    console.log("generos cogidos");
+    console.log(selectedGenres);
+    filterArtistByGenre(selectedGenres);
+}
+
+async function filterArtistByGenre(selectedGenres) {
+    jsonContent = await readJson(urlMainJson);
+    var carrouselContent = "";
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (selectedGenres.includes(jsonContent[i].genre)) {
+            carrouselContent += buildArtistCard(jsonContent[i].name);
+        }
+    }
+    console.log(document.getElementById("carrousel").childNodes);
+    console.log(carrouselContent);
+    document.getElementById("carrousel").innerHTML = carrouselContent;
+    //var flickity = document.getElementById("flickity");
+    //document.getElementById("flickity").remove;
+    //var flickity = document.createElement('script');
+    //flickity.id = "flickity";
+    //flickity.src = "js/flickity.js?amapola=0";
+    //document.getElementById('body').appendChild(flickity);
+    //document.getElementsById('body').appendChild(flickity);
+}
+
+function buildArtistCard(artistName) {
+    console.log("building card");
+    var card = '<div class="tile" onclick="updateCurrentPage(\'' + artistName + '\');">';
+    card += '<div class="tile__media">';
+    card += '<img class="tile__img" src="assets/' + artistName + '.webp" alt="" />';
+    card += '</div>';
+    card += '<div class="tile__details">';
+    card += '<div class="tile__title">';
+    card += artistName;
+    card += '</div></div></div>';
+    return card;
+}
+
 function WikipediaApiSearch(artistName, section) {
     jQuery.ajax({
         type: "GET",
