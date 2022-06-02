@@ -7188,6 +7188,27 @@ fieldset:disabled .btn {
     }
 }
 
+.ui-autocomplete{
+    position:absolute;
+    cursor:pointer;
+    z-index:9999 !important;
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+    background: #6693bc !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    font-size: +1;
+    width: 100%;
+} 
+
+
+
 .hstack {
     display: flex;
     flex-direction: row;
