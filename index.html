@@ -285,12 +285,32 @@
                                         <div class="card bg-light">
                                             <div class="card-body">
                                                 <!-- Comment form-->
-                                                <form class="mb-4" action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
-                                                    <input id="commentor-name" class="form-label" rows="1" placeholder="Dinos tu nombre" name="Commentor's name"></input>
-                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="¡Dejanos tu comentario!" name="Comment"></textarea> <input type="button" class="btn btn-outline-primary" value="Dejar el comentario"
-                                                        onclick="guardarComentario()" />
-                                                    <!-- </input> -->
+                                                <form action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
+                                                    <div class="form-floating">
+                                                        <input id="commentor-name" class="form-control" name="Commentor's name" type="text" placeholder="Dinos tu nombre" data-sb-validations="required" />
+                                                        <label for="name">Dinos tu nombre</label>
+                                                        <div class="invalid-feedback" data-sb-feedback="name:required">
+                                                            Se requiere un nombre.
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <textarea id="comment" class="form-control" name="Comment" type="text" placeholder="¡Dejanos tu comentario!" style="height: 10rem" data-sb-validations="required"></textarea>
+                                                        <label for="comment">¡Dejanos tu comentario!</label>
+                                                        <div class="invalid-feedback" data-sb-feedback="message:required">
+                                                            Que opinas de este artista.
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-primary" data-bs-toggle="modal" onclick="guardarComentario()">
+                                                        Dejar el comentario
+                                                        </button>
                                                 </form>
+                                                <!-- <form action="https://formsubmit.co/artistasdestacadosTM@hotmail.com" method="POST">
+                                                    <input id="commentor-name" class="form-label" rows="1" placeholder="Dinos tu nombre" name="Commentor's name" required></input>
+                                                    <textarea id="comment" type="text" class="form-control mb-1" rows="3" placeholder="¡Dejanos tu comentario!" name="Comment" required></textarea> 
+                                                    <button type="button" class="btn btn-outline-primary" onclick="guardarComentario()">Dejar el comentario</button>
+                                                     </input>
+                                                </form> -->
 
                                                 <!-- Comment with nested comments-->
                                                 <div id="comentarios" vocab="https://schema.org/" typeof="Review"></div>

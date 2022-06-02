@@ -323,6 +323,8 @@ async function loadComments(data) {
 }
 
 async function guardarComentario() {
+    console.log($("#comment")[0]);
+    console.log($("#commentor-name")[0]);
 
     var comentario = $("#comment").val();
     var nombreUsuario = $("#commentor-name").val();
