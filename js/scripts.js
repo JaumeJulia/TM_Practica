@@ -40,6 +40,7 @@ async function updateCurrentPage(artistName) {
 
         console.log("Recording:");
         console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        disableSpotifyPlayer();
         //spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         loadComments(artist[0]);
     }
@@ -75,6 +76,7 @@ function loadWikiDescription(data) {
 }
 
 function loadPage(pageContent) { // it will load the page with the contents found within the variable pageContent
+    $('meta[name=description]').attr('content', pageContent.name + ' musical career');
     $('#artist_name').html(pageContent.name);
     $('#artist_introduction').html(pageContent.knowsAbout);
     $('#artist_main_genre').html(pageContent.genre);
@@ -295,7 +297,12 @@ async function loadTwitts(data, artistName) {
 
 async function spotifyPlayer(url) {
     var song = '<iframe loading="lazy" style="border-radius:12px" src="' + url + '" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+    $("#spotify-player").show();
     $("#spotify-player").html(song);
+}
+
+async function disableSpotifyPlayer() {
+    $("#spotify-player").hide();
 }
 
 async function loadComments(data) {
