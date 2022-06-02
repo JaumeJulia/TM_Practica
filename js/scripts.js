@@ -356,12 +356,13 @@ async function guardarComentariosLocalStorage(artistName, author, comment) {
 function busqueda() {
     artistName = $("#searchBar").val();
     if (event.key === 'Enter') {
+        event.preventDefault();
         console.log(artistName);
-        $(function(){
-            $( "#searchBar" ).val('');
+        $(function() {
+            $("#searchBar").val('');
         });
-        if(artistName != ' '){
-            
+        if (artistName != ' ') {
+
             updateCurrentPage(artistName);
         }
     }
@@ -417,16 +418,16 @@ async function initYouTubeVideos() {
 }
 
 $(async function() {
-	$.getJSON(urlMainJson, function(data) {
-		autoComplete = [];
-		for (var i = 0, len = data.length; i < len; i++) {
-			autoComplete.push(data[i].name);
-		}
-		$( "#searchBar" ).autocomplete({
-			source: autoComplete,
+    $.getJSON(urlMainJson, function(data) {
+        autoComplete = [];
+        for (var i = 0, len = data.length; i < len; i++) {
+            autoComplete.push(data[i].name);
+        }
+        $("#searchBar").autocomplete({
+            source: autoComplete,
             autoFill: true,
             minLenght: 2,
             appendTo: "#auto-complete"
-		});
-	});
+        });
+    });
 });
