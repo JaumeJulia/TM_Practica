@@ -426,7 +426,7 @@ async function initYouTubeVideos() {
     youtubeVideo.appendChild(div);
 }
 
-$(async function() {
+$(function() {
     $.getJSON(urlMainJson, function(data) {
         autoComplete = [];
         for (var i = 0, len = data.length; i < len; i++) {
