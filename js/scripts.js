@@ -333,7 +333,7 @@ async function guardarComentario() {
         alert("El campo del comentario no debe estar vacio");
     }
     try {
-        guardarComentariosLocalStorage($("#artist_name")[0], nombreUsuario, comentario);
+        guardarComentariosLocalStorage($("#artist_name")[0].innerHTML, nombreUsuario, comentario);
     } catch (error) {
         alert(error);
     }
