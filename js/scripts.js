@@ -360,9 +360,18 @@ async function guardarComentariosLocalStorage(artistName, author, comment) {
     $("#commentor-name").val('');
 }
 
-function busqueda(artistName) {
+function busqueda() {
+    artistName = $("#searchBar").val();
     if (event.key === 'Enter') {
-        updateCurrentPage(artistName.value);
+        event.preventDefault();
+        console.log(artistName);
+        $(function() {
+            $("#searchBar").val('');
+        });
+        if (artistName != ' ') {
+
+            updateCurrentPage(artistName);
+        }
     }
 }
 
@@ -414,3 +423,18 @@ async function initYouTubeVideos() {
     };
     youtubeVideo.appendChild(div);
 }
+
+$(async function() {
+    $.getJSON(urlMainJson, function(data) {
+        autoComplete = [];
+        for (var i = 0, len = data.length; i < len; i++) {
+            autoComplete.push(data[i].name);
+        }
+        $("#searchBar").autocomplete({
+            source: autoComplete,
+            autoFill: true,
+            minLenght: 2,
+            appendTo: "#auto-complete"
+        });
+    });
+});
