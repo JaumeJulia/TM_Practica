@@ -81,6 +81,8 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     $('#artist_introduction').html(pageContent.knowsAbout);
     $('#artist_main_genre').html(pageContent.genre);
     $('#artist_video').attr("data-id", pageContent.url);
+    $("#comment").val('');
+    $("#commentor-name").val('');
     initYouTubeVideos();
     console.log(document.getElementById("artist_video"));
     let album = $('#album_card')[0];
@@ -358,8 +360,6 @@ async function guardarComentariosLocalStorage(artistName, author, comment) {
     newComment = JSON.parse(newComment);
     storeDataAsJSON("Reviews", newComment);
     loadComments(retrieveLocalDataAsJSON("jsonContents"));
-    $("#comment").val('');
-    $("#commentor-name").val('');
 }
 
 function busqueda() {
