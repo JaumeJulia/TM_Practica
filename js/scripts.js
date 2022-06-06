@@ -95,9 +95,9 @@ function loadPage(pageContent) { // it will load the page with the contents foun
         music_album.childNodes[1].childNodes[1].setAttribute("src", pageContent.album[i].image);
         console.log(pageContent.album[i].image);
         //changing urlSpotify
-        music_album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.album[i].url[0].urlSpotify);
+        music_album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.album[i].url[0]);
         //changing urlYoutube
-        music_album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.album[i].url[0].urlYoutube);
+        music_album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.album[i].url[1]);
         //changing name
         music_album.childNodes[3].childNodes[1].innerHTML = pageContent.album[i].name;
         //introducing songs
@@ -125,10 +125,11 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 
 function generateSongList(musicAlbum, genre) {
     var type = 'property="track" typeof="MusicRecording"';
-    var metadata = '<meta content="' + musicAlbum.track.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />'
-    var songList = metadata + "\n<ol>"
+    var metadata = '<meta content="' + musicAlbum.track.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />';
+    var songList = metadata + "\n<ol>";
     for (var i = 0; i < musicAlbum.track.length; i++) {
-        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.track[i].url[0].urlSpotify + "')\" class=\"text-wrap\" style=\"cursor:hand;cursor:pointer;width: 12rem;\">" + musicAlbum.track[i].name + "</div></li>";
+        console.log(musicAlbum.track[i].url[0]);
+        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.track[i].url[0] + "')\" class=\"text-wrap\" style=\"cursor:hand;cursor:pointer;width: 12rem;\">" + musicAlbum.track[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
