@@ -193,10 +193,9 @@ async function WikipediaApiSearch(artistName, section) {
         jQuery.ajax({
             type: "GET",
             url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
-            contentType: "application/json; charset=utf-8",
             async: true,
             dataType: "json",
-            success: function(data, textStatus, jqXHR) {
+            success: function(data) {
                 $.each(data, function(i, item) {
                     if (i == 1) {
                         if (artistName == "Louis Cole") {
@@ -219,10 +218,9 @@ async function WikipediaApiSearch(artistName, section) {
         jQuery.ajax({
             type: "GET",
             url: "https://es.wikipedia.org/w/api.php?action=opensearch&search=" + artistName + "&callback=?",
-            contentType: "application/json; charset=utf-8",
             async: true,
             dataType: "json",
-            success: function(data, textStatus, jqXHR) {
+            success: function(data) {
                 $.each(data, function(i, item) {
                     if (i == 1) {
                         var searchData = item[0];
@@ -245,10 +243,9 @@ async function WikipediaAPIGetContent(search, section, artistName) {
         jQuery.ajax({
             type: "GET",
             url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
-            contentType: "application/json; charset=utf-8",
             async: true,
             dataType: "json",
-            success: function(data, textStatus, jqXHR) {
+            success: function(data) {
                 console.log(data);
                 var markup = data.parse.text["*"];
                 storeData("wiki", markup);
@@ -260,15 +257,15 @@ async function WikipediaAPIGetContent(search, section, artistName) {
             }
         });
     } else if (artistName == "Rise on Fire") {
+        storeData("wiki", "<div><h2>Actualmente Rise on fire no tiene wikipedia</h2></div>");
         loadWikiDescription(artistName);
     } else {
         jQuery.ajax({
             type: "GET",
             url: "https://es.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=" + section + "&page=" + search + "&callback=?",
-            contentType: "application/json; charset=utf-8",
             async: true,
             dataType: "json",
-            success: function(data, textStatus, jqXHR) {
+            success: function(data) {
                 var markup = data.parse.text["*"];
                 storeData("wiki", markup);
                 loadWikiDescription(markup);
@@ -282,7 +279,6 @@ async function WikipediaAPIGetContent(search, section, artistName) {
 }
 
 async function TwitterApiSearch(artistName, artistTwitter) {
-    var twitterResponse = '<a class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     var twitterResponse = '<a loading="lazy" class="twitter-timeline" href="https://twitter.com/' + artistTwitter + '?ref_src=twsrc%5Etfw" width="280" height="500" data-chrome="transparent">Tweets by ' + artistTwitter + '</a>';
     twitterResponse += '<script id="twitterApiScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
     console.log("artistTwitter: " + artistTwitter)
