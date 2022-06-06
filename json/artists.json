@@ -7,7 +7,7 @@
         "genre": "pop",
         "description": "2",
         "sameAs": "rickastley",
-        "MusicAlbum": [{
+        "album": [{
                 "@type": "MusicAlbum",
                 "name": "Whenever You Need Somebody",
                 "image": "assets/WheneverYouNeedSomebody.webp",
@@ -15,7 +15,7 @@
                     "urlSpotify": "https://open.spotify.com/album/5Z9iiGl2FcIfa3BMiv6OIw?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nmDUsWOMoEcz0SsVqUwir0oxu-k1oUyXE"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Never Gonna Give You Up",
                         "url": [{
@@ -105,7 +105,7 @@
                     "urlSpotify": "https://open.spotify.com/album/7jFoulkN5p0nHAZ1gyAPHs?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kFftR4F4OZ_rnM4lusrhrqDQirLSwsZ_0"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "She Wants to Dance with Me",
                         "url": [{
@@ -195,7 +195,7 @@
                     "urlSpotify": "https://open.spotify.com/album/4f9CV4zRabJ0e5q8QEx0tv?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nFVlLCq67W_4Dle-u83WYE5rTsuqr72E4"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Keep Singing",
                         "url": [{
@@ -301,7 +301,7 @@
                     "urlSpotify": "https://open.spotify.com/album/3IqiZzsC1gef7qgvCXTqTj?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_m9j_zS31asUS2iqI6_oA8zfY6Nx-NWMYU"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Beautiful Life",
                         "url": [{
@@ -444,7 +444,7 @@
         "genre": "electronic",
         "description": "2",
         "sameAs": "daftpunk",
-        "MusicAlbum": [{
+        "album": [{
                 "@type": "MusicAlbum",
                 "name": "Random Access Memories",
                 "image": "assets/RandomAccessMemories.webp",
@@ -452,7 +452,7 @@
                     "urlSpotify": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nZZjkBu_E4olFSb5Ey-fQ-4a0ZCqJICdQ&feature=gws_kp_album&feature=gws_kp_artist"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Give Life Back to Music",
                         "url": [{
@@ -566,7 +566,7 @@
                     "urlSpotify": "https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lMA_iEf3aqk5YSDsnrPKojXegOiecSF94&feature=gws_kp_album&feature=gws_kp_artist"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "One More Time",
                         "url": [{
@@ -688,7 +688,7 @@
                     "urlSpotify": "https://open.spotify.com/album/6JRaPcrT3cMBEmkgSqEPhI?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lAbfrCq-BVAU2Z2yAIjsEN0jwghzcAFSY"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Daftendirekt",
                         "url": [{
@@ -826,7 +826,7 @@
                     "urlSpotify": "https://open.spotify.com/album/1A2GTWGtFfWp7KSQTwWOyo?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kyBLbpI5BRf2wHsxpI8MM_WwF3epmn7U0"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Human After All",
                         "url": [{
@@ -920,7 +920,7 @@
         "genre": "fusion",
         "description": "2",
         "sameAs": "LouisColeMusic",
-        "MusicAlbum": [{
+        "album": [{
                 "@type": "MusicAlbum",
                 "name": "Louis Cole and Genevieve Artadi",
                 "image": "assets/Louis_cole-firstAlbum.webp",
@@ -928,7 +928,7 @@
                     "urlSpotify": "https://open.spotify.com/album/7o5y1ttfkpL6zf6P2uCYPQ?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lhCqHosxyxeVMBhhnHA1Ok1RSn3m2AT-w"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Hyugens",
                         "url": [{
@@ -1026,7 +1026,7 @@
                     "urlSpotify": "https://open.spotify.com/album/3c9ODwk9kgkv90SSbhPqwl?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lUarVSyFvtS2zszcz7ivVS1A9b7vUhEk0"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Gotta Be Another Way",
                         "url": [{
@@ -1116,7 +1116,7 @@
                     "urlSpotify": "https://open.spotify.com/album/4Zs8pUAVPJjiSjIEtI9BG8?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lVpskavU3X5bHVDUGNe3zrno7YmKoMTY4"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "What's in Your Heart",
                         "url": [{
@@ -1190,7 +1190,7 @@
                     "urlSpotify": "https://open.spotify.com/album/4SVxz8yqIymDrdiX2YBeQe",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_n9H5AcBM8dgFVZiWzrtoT1jmZ33AVL1NE"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Knower Rulez",
                         "url": [{
@@ -1300,7 +1300,7 @@
         "genre": "reggaeton",
         "description": "2",
         "sameAs": "LuisFonsi",
-        "MusicAlbum": [{
+        "album": [{
                 "@type": "MusicAlbum",
                 "name": "Comenzare",
                 "image": "assets/Luis_Fonsi-Comenzare.webp",
@@ -1308,7 +1308,7 @@
                     "urlSpotify": "https://open.spotify.com/album/10TIwSSiAKER6mmXVawoOi?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_kADb2U7KzLlORjwZ8vKqQq65MGf4iYj9o"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Si Tú Quisieras",
                         "url": [{
@@ -1398,7 +1398,7 @@
                     "urlSpotify": "https://open.spotify.com/album/7cvzxUV0peinUHJmdhADmU?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_nXOyihBPTkMHdr3JRyn9Dw0Q8RmlwIQqU"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Fight The Feeling",
                         "url": [{
@@ -1500,7 +1500,7 @@
         "genre": "jazz-funk",
         "description": "1",
         "sameAs": "TomMisch",
-        "MusicAlbum": [{
+        "album": [{
                 "@type": "MusicAlbum",
                 "name": "Geography",
                 "image": "assets/Tom_Misch-Geography.webp",
@@ -1508,7 +1508,7 @@
                     "urlSpotify": "https://open.spotify.com/album/28enuddLPEA914scE6Drvk?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_mmD1gNBJZVNLv1HQqK4i7Cfg_CiWIy5d0"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "Before Paris",
                         "url": [{
@@ -1622,7 +1622,7 @@
                     "urlSpotify": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI?autoplay=true",
                     "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lxzy3zKmi0jbWs2EDXNU4gm-IVR7544dM"
                 }],
-                "MusicRecording": [{
+                "track": [{
                         "@type": "MusicRecording",
                         "name": "What Kinda Music",
                         "url": [{
@@ -1732,7 +1732,7 @@
         "genre": "metal",
         "description": "2",
         "sameAs": "rise_onfire",
-        "MusicAlbum": [{
+        "album": [{
             "@type": "MusicAlbum",
             "name": "You Better Pray",
             "image": "assets/Rise_on_Fire-YBP.webp",
@@ -1740,7 +1740,7 @@
                 "urlSpotify": "https://open.spotify.com/album/6kQbLoNTZpZGcYTl1uN06N",
                 "urlYoutube": "https://music.youtube.com/playlist?list=OLAK5uy_lj-cXVGpZ9Bc1ZcFktf0tyIexney2X2oY"
             }],
-            "MusicRecording": [{
+            "track": [{
                     "@type": "MusicRecording",
                     "name": "The Pray",
                     "url": [{
