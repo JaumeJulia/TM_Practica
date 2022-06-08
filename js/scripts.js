@@ -39,7 +39,7 @@ async function updateCurrentPage(artistName) {
         WikipediaApiSearch(artist[0].name, artist[0].description);
 
         console.log("Recording:");
-        console.log(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
+        console.log(artist[0].album[0].track[0].url[0].urlSpotify);
         disableSpotifyPlayer();
         //spotifyPlayer(artist[0].MusicAlbum[0].MusicRecording[0].url[0].urlSpotify);
         loadComments(artist[0]);
@@ -85,23 +85,25 @@ function loadPage(pageContent) { // it will load the page with the contents foun
     $("#commentor-name").val('');
     initYouTubeVideos();
     console.log(document.getElementById("artist_video"));
-    let album = $('#album_card')[0];
+    let music_album = $('#album_card')[0];
+    console.log(music_album);
     $('#album_section').empty();
-    console.log(album);
-    console.log(pageContent.MusicAlbum.length);
-    for (var i = 0; i < pageContent.MusicAlbum.length; i++) {
+    console.log(pageContent.album.length);
+    console.log(pageContent.album);
+    for (var i = 0; i < pageContent.album.length; i++) {
         //changing image
-        album.childNodes[1].childNodes[1].setAttribute("src", pageContent.MusicAlbum[i].image);
+        music_album.childNodes[1].childNodes[1].setAttribute("src", pageContent.album[i].image);
+        console.log(pageContent.album[i].image);
         //changing urlSpotify
-        album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.MusicAlbum[i].url[0].urlSpotify);
+        music_album.childNodes[1].childNodes[3].childNodes[5].setAttribute("href", pageContent.album[i].url[0]);
         //changing urlYoutube
-        album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.MusicAlbum[i].url[0].urlYoutube);
+        music_album.childNodes[1].childNodes[3].childNodes[1].setAttribute("href", pageContent.album[i].url[1]);
         //changing name
-        album.childNodes[3].childNodes[1].innerHTML = pageContent.MusicAlbum[i].name;
+        music_album.childNodes[3].childNodes[1].innerHTML = pageContent.album[i].name;
         //introducing songs
-        album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.MusicAlbum[i], pageContent.genre);
+        music_album.childNodes[3].childNodes[3].innerHTML = generateSongList(pageContent.album[i], pageContent.genre);
         //append
-        $("#album_section").append(album.cloneNode(true));
+        $("#album_section").append(music_album.cloneNode(true));
     }
 
     var eventTable = document.createElement("tbody");
@@ -123,10 +125,11 @@ function loadPage(pageContent) { // it will load the page with the contents foun
 
 function generateSongList(musicAlbum, genre) {
     var type = 'property="track" typeof="MusicRecording"';
-    var metadata = '<meta content="' + musicAlbum.MusicRecording.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />'
-    var songList = metadata + "\n<ol>"
-    for (var i = 0; i < musicAlbum.MusicRecording.length; i++) {
-        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.MusicRecording[i].url[0].urlSpotify + "')\" class=\"text-wrap\" style=\"cursor:hand;cursor:pointer;width: 12rem;\">" + musicAlbum.MusicRecording[i].name + "</div></li>";
+    var metadata = '<meta content="' + musicAlbum.track.length + '" property="numTracks" />\n<meta content="' + genre + '" property="genre" />';
+    var songList = metadata + "\n<ol>";
+    for (var i = 0; i < musicAlbum.track.length; i++) {
+        console.log(musicAlbum.track[i].url[0]);
+        songList = songList + "<li><div " + type + " onclick=\"spotifyPlayer('" + musicAlbum.track[i].url[0] + "')\" class=\"text-wrap\" style=\"cursor:hand;cursor:pointer;width: 12rem;\">" + musicAlbum.track[i].name + "</div></li>";
     }
     songList = songList + "</ol>";
     return songList;
